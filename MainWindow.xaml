@@ -4,9 +4,73 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481_Digital_Library_Prototype"
+        xmlns:components="clr-namespace:CPSC_481_Digital_Library_Prototype.Components"
+        xmlns:pages="clr-namespace:CPSC_481_Digital_Library_Prototype.Pages"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="852" Width="393">
+    <Window.Resources>
+        <ResourceDictionary Source="/Styles/Styles.xaml" />
+    </Window.Resources>
+    
+    
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Name="TopBar" Height="59*"/>
+            <RowDefinition Name="SafeArea" Height="794*"/>
+            <RowDefinition Name="BottomBar" Height="34*"/>
+        </Grid.RowDefinitions>
 
+        <Grid Grid.Row="1">
+            <TabControl
+                Style="{DynamicResource ResourceKey=styleTabControl}"
+                TabStripPlacement="bottom"
+            >
+                <TabItem 
+                    IsSelected="True"
+                    Name="DockIcon"
+                    Style="{DynamicResource ResourceKey=styleTabItemDefault}">
+                    <TabItem.Header>
+                        <components:TabIcon TabName="Browse">
+                            <components:TabIcon.ImagePath>
+                                <BitmapImage UriSource="/Images/browse.png"/>
+                            </components:TabIcon.ImagePath>
+                        </components:TabIcon>
+                    </TabItem.Header>
+                    <TextBlock Text="Browse Page"></TextBlock>
+                    <!--<pages:Browse
+                        Style="{DynamicResource ResourceKey=PageStyle}" />-->
+                </TabItem>
+
+                <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
+                    <TabItem.Header>
+                        <components:TabIcon TabName="Account">
+                            <components:TabIcon.ImagePath>
+                                <BitmapImage UriSource="./Images/account.png"/>
+                            </components:TabIcon.ImagePath>
+                        </components:TabIcon>
+                    </TabItem.Header>
+                </TabItem>
+
+                <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
+                    <TabItem.Header>
+                        <components:TabIcon TabName="Search">
+                            <components:TabIcon.ImagePath>
+                                <BitmapImage UriSource="Images/search.png"/>
+                            </components:TabIcon.ImagePath>
+                        </components:TabIcon>
+                    </TabItem.Header>
+                </TabItem>
+
+                <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
+                    <TabItem.Header>
+                        <components:TabIcon TabName="Bag">
+                            <components:TabIcon.ImagePath>
+                                <BitmapImage UriSource="Images/bag.png"/>
+                            </components:TabIcon.ImagePath>
+                        </components:TabIcon>
+                    </TabItem.Header>
+                </TabItem>
+            </TabControl>
+        </Grid>
     </Grid>
 </Window>
