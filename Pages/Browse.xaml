@@ -8,7 +8,7 @@
       d:DesignHeight="648" d:DesignWidth="393"
       Title="Browse">
 
-    <Grid>
+    <Grid Background="White">
         <TextBlock Text="Default page" />
     </Grid>
 </Page>

@@ -25,20 +25,14 @@
                 Style="{DynamicResource ResourceKey=styleTabControl}"
                 TabStripPlacement="bottom"
             >
-                <TabItem 
-                    IsSelected="True"
-                    Name="DockIcon"
-                    Style="{DynamicResource ResourceKey=styleTabItemDefault}">
+                <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
                     <TabItem.Header>
-                        <components:TabIcon TabName="Browse">
+                        <components:TabIcon TabName="My Books">
                             <components:TabIcon.ImagePath>
-                                <BitmapImage UriSource="/Images/browse.png"/>
+                                <BitmapImage UriSource="./Images/account.png"/>
                             </components:TabIcon.ImagePath>
                         </components:TabIcon>
                     </TabItem.Header>
-                    <TextBlock Text="Browse Page"></TextBlock>
-                    <!--<pages:Browse
-                        Style="{DynamicResource ResourceKey=PageStyle}" />-->
                 </TabItem>
 
                 <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
@@ -61,7 +55,7 @@
                     </TabItem.Header>
                 </TabItem>
 
-                <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
+                <!--<TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
                     <TabItem.Header>
                         <components:TabIcon TabName="Bag">
                             <components:TabIcon.ImagePath>
@@ -69,7 +63,7 @@
                             </components:TabIcon.ImagePath>
                         </components:TabIcon>
                     </TabItem.Header>
-                </TabItem>
+                </TabItem>-->
             </TabControl>
         </Grid>
     </Grid>

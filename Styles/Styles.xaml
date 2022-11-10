@@ -96,6 +96,7 @@
 
                         <Border Padding="0,10,0,10">
                             <ContentPresenter x:Name="ContentSite"
+                                    ContentSource="SelectedContent"
                                     HorizontalAlignment="Stretch"
                                     RecognizesAccessKey="True"
                                     VerticalAlignment="Center" />
