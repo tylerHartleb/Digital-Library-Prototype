@@ -13,9 +13,15 @@
     <Compile Update="Pages\Browse.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Scan.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Pages\Browse.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Scan.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Styles.xaml">

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rant2\\Documents\\My School\\CPSC-481\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj": {}
+    "C:\\Users\\ghaia\\Source\\Repos\\tylerHartleb\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rant2\\Documents\\My School\\CPSC-481\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj": {
+    "C:\\Users\\ghaia\\Source\\Repos\\tylerHartleb\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rant2\\Documents\\My School\\CPSC-481\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj",
+        "projectUniqueName": "C:\\Users\\ghaia\\Source\\Repos\\tylerHartleb\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj",
         "projectName": "CPSC-481-Digital-Library-Prototype",
-        "projectPath": "C:\\Users\\rant2\\Documents\\My School\\CPSC-481\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj",
-        "packagesPath": "C:\\Users\\rant2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rant2\\Documents\\My School\\CPSC-481\\CPSC-481-Digital-Library-Prototype\\obj\\",
+        "projectPath": "C:\\Users\\ghaia\\Source\\Repos\\tylerHartleb\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj",
+        "packagesPath": "C:\\Users\\ghaia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ghaia\\Source\\Repos\\tylerHartleb\\CPSC-481-Digital-Library-Prototype\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Visual Studio\\shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\rant2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ghaia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -58,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
