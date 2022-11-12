@@ -10,12 +10,12 @@
     <Compile Update="Components\TabIcon.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Browse.xaml.cs">
+    <Compile Update="Pages\Search.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Pages\Browse.xaml">
+    <Page Update="Pages\Search.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Styles.xaml">
