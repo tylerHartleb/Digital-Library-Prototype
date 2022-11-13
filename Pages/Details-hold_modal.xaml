@@ -257,52 +257,27 @@
             <Border.Effect>
                 <DropShadowEffect ShadowDepth="0.5"/>
             </Border.Effect>
-            <StackPanel>
-                <Grid Margin="10,8,10,12">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+
+                <Grid Grid.Row="0" Margin="10,8,10,12">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    
+
                     <TextBlock Grid.Column="0" HorizontalAlignment="Left" Text="Place Hold" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" TextAlignment="Center" Margin="0,8,0,8"/>
                     <Button Grid.Column="1" Background="White" BorderBrush="White" HorizontalAlignment="Right">
                         <Image Source="/Icons/close.png" Width="35" Height="35" />
                     </Button>
                 </Grid>
-                <TextBlock HorizontalAlignment="Left" Text="Prefered Location" VerticalAlignment="Center" FontSize="20" FontWeight="Medium" TextAlignment="Center" Margin="10,0,10,6"/>
-                <Button Background="white" Margin="10, 0, 10, 12" BorderBrush="Green" BorderThickness="2">
-                    <Grid Width="373">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-
-                        <TextBlock Grid.Column="0" Grid.Row="0" Text="Nose Hill" HorizontalAlignment="Left" Margin="10,10,10,4" FontSize="18" FontWeight="SemiBold" TextAlignment="Center"  VerticalAlignment="Center"/>
-                        <TextBlock Grid.Column="0" Grid.Row="1" Text="0 Available, 2 on Hold" HorizontalAlignment="Left" Margin="10,0,0,10" FontSize="12" TextAlignment="Center"  VerticalAlignment="Center"/>
-                        <Rectangle Grid.Column="1" Grid.RowSpan="2" Fill="Green" Width="40" Height="40" HorizontalAlignment="Right" Margin="10">
-                            <Rectangle.OpacityMask>
-                                <VisualBrush>
-                                    <VisualBrush.Visual>
-                                        <Image Source="/Icons/checkmark.png"  />
-                                    </VisualBrush.Visual>
-                                </VisualBrush>
-                            </Rectangle.OpacityMask>
-                        </Rectangle>
-                    </Grid>
-                </Button>
-                <TextBlock HorizontalAlignment="Left" Text="Other Locations" VerticalAlignment="Center" FontSize="20" FontWeight="Medium" TextAlignment="Center" Margin="10,0,10,6"/>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-
-                    <Button Grid.Row="0" Background="white" Margin="10, 0, 10, 8" BorderBrush="Transparent" BorderThickness="2">
+                <StackPanel Grid.Row="1">
+                    <TextBlock HorizontalAlignment="Left" Text="Prefered Location" VerticalAlignment="Center" FontSize="20" FontWeight="Medium" TextAlignment="Center" Margin="10,0,10,6"/>
+                    <Button Background="white" Margin="10, 0, 10, 12" BorderBrush="Green" BorderThickness="2">
                         <Grid Width="373">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
@@ -316,23 +291,67 @@
 
                             <TextBlock Grid.Column="0" Grid.Row="0" Text="Nose Hill" HorizontalAlignment="Left" Margin="10,10,10,4" FontSize="18" FontWeight="SemiBold" TextAlignment="Center"  VerticalAlignment="Center"/>
                             <TextBlock Grid.Column="0" Grid.Row="1" Text="0 Available, 2 on Hold" HorizontalAlignment="Left" Margin="10,0,0,10" FontSize="12" TextAlignment="Center"  VerticalAlignment="Center"/>
-                            <TextBlock Grid.Column="1" Grid.RowSpan="2" FontSize="16" FontWeight="Medium" Text="Select" HorizontalAlignment="Right" VerticalAlignment="Center" TextAlignment="Center" Margin="10" />
-
+                            <Rectangle Grid.Column="1" Grid.RowSpan="2" Fill="Green" Width="40" Height="40" HorizontalAlignment="Right" Margin="10">
+                                <Rectangle.OpacityMask>
+                                    <VisualBrush>
+                                        <VisualBrush.Visual>
+                                            <Image Source="/Icons/checkmark.png"  />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
                         </Grid>
                     </Button>
-                    <Button Grid.Row="1" Width="75" HorizontalAlignment="Right" Background="White" BorderBrush="White">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Left" Text="Other Locations" VerticalAlignment="Center" FontSize="20" FontWeight="Medium" TextAlignment="Center" Margin="10,0,10,6"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
 
-                            <TextBlock Text="See all" Grid.Column="0" FontWeight="Medium" VerticalAlignment="Center" TextAlignment="Center"/>
-                            <Image Source="/Icons/forward.png" Grid.Column="1" Height="15" Width="20" />
-                        </Grid>
+                        <Button Grid.Row="0" Background="white" Margin="10, 0, 10, 8" BorderBrush="Transparent" BorderThickness="2">
+                            <Grid Width="373">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Column="0" Grid.Row="0" Text="Nose Hill" HorizontalAlignment="Left" Margin="10,10,10,4" FontSize="18" FontWeight="SemiBold" TextAlignment="Center"  VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="0" Grid.Row="1" Text="0 Available, 2 on Hold" HorizontalAlignment="Left" Margin="10,0,0,10" FontSize="12" TextAlignment="Center"  VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="1" Grid.RowSpan="2" FontSize="16" FontWeight="Medium" Text="Select" HorizontalAlignment="Right" VerticalAlignment="Center" TextAlignment="Center" Margin="10" />
+
+                            </Grid>
+                        </Button>
+                        <Button Grid.Row="1" Width="75" HorizontalAlignment="Right" Background="White" BorderBrush="White">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Text="See all" Grid.Column="0" FontWeight="Medium" VerticalAlignment="Center" TextAlignment="Center"/>
+                                <Image Source="/Icons/forward.png" Grid.Column="1" Height="15" Width="20" />
+                            </Grid>
+                        </Button>
+                    </Grid>
+                </StackPanel>
+                <Border Grid.Row="1" CornerRadius="8" Margin="5" VerticalAlignment="Bottom" HorizontalAlignment="Center" BorderBrush="#007AFF" Background="#007AFF">
+                    <Button Grid.Row="1"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Height="50"
+                        Width="273"
+                        Foreground="White"
+                    >
+                        <TextBlock Text="Place hold" FontSize="22" FontWeight="Bold" />
                     </Button>
-                </Grid>
-            </StackPanel>
+                </Border>
+            </Grid>
         </Border>
     </Grid>
 </Page>
