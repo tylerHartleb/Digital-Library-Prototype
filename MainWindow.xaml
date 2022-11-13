@@ -25,15 +25,7 @@
                 Style="{DynamicResource ResourceKey=styleTabControl}"
                 TabStripPlacement="bottom"
             >
-                <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
-                    <TabItem.Header>
-                        <components:TabIcon TabName="My Books">
-                            <components:TabIcon.ImagePath>
-                                <BitmapImage UriSource="./Images/account.png"/>
-                            </components:TabIcon.ImagePath>
-                        </components:TabIcon>
-                    </TabItem.Header>
-                </TabItem>
+                
 
                 <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
                     <TabItem.Header>
@@ -50,6 +42,16 @@
                         <components:TabIcon TabName="Search">
                             <components:TabIcon.ImagePath>
                                 <BitmapImage UriSource="Images/search.png"/>
+                            </components:TabIcon.ImagePath>
+                        </components:TabIcon>
+                    </TabItem.Header>
+                </TabItem>
+
+                <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
+                    <TabItem.Header>
+                        <components:TabIcon TabName="Scan">
+                            <components:TabIcon.ImagePath>
+                                <BitmapImage UriSource="./Images/scan.png"/>
                             </components:TabIcon.ImagePath>
                         </components:TabIcon>
                     </TabItem.Header>

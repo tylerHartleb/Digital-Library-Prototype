@@ -1,0 +1,27 @@
+﻿<Page x:Class="CPSC_481_Digital_Library_Prototype.Pages.Account"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CPSC_481_Digital_Library_Prototype.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="648" d:DesignWidth="393"
+      Title="Browse">
+
+    <Grid Background="White">
+        <Image Source="\Images\account.png" HorizontalAlignment="Center" Height="100" Margin="0,40,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Name" FontSize="20" HorizontalAlignment="Center" Margin="0,135,0,0" VerticalAlignment="Top"/>
+        <Button Content="Checked out items" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48" Width="373" Margin="0,350,0,0"/>
+        <Button Content="On hold items" FontSize="20" HorizontalAlignment="Center" Margin="0,405,0,0" VerticalAlignment="Top" Height="47" Width="373"/>
+        <Button Content="Fees" FontSize="20" HorizontalAlignment="Center" Margin="0,457,0,0" VerticalAlignment="Top" Height="47" Width="373"/>
+        <Button Content="Email and password" FontSize="20" HorizontalAlignment="Center" Margin="0,509,0,0" VerticalAlignment="Top" Height="47" Width="373"/>
+        <Button Content="Sign out" Background="pink" FontSize="20" HorizontalAlignment="Center" Margin="0,591,0,0" VerticalAlignment="Top" Height="47" Width="373"/>
+        <Label Content="Items checked out:" FontSize="20" HorizontalAlignment="Left" Margin="10,209,0,0" VerticalAlignment="Top"/>
+        <Label Content="Items on hold:" FontSize="20" HorizontalAlignment="Left" Margin="10,251,0,0" VerticalAlignment="Top"/>
+        <Label Content="Overdue fees:" FontSize="20" HorizontalAlignment="Left" Margin="10,297,0,0" VerticalAlignment="Top"/>
+
+
+
+
+    </Grid>
+</Page>
