@@ -9,93 +9,230 @@
       Title="Browse">
 
     <Grid Background="White">
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="35" Margin="0,24,0,0" VerticalAlignment="Top" Width="372">
-            <Grid Margin="-1,0,0,0">
-                <Image Margin="10,6,336,7" Source="/icons8-search-30.png" Stretch="Fill"/>
-                <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="Books, Audiobooks, and more" VerticalAlignment="Top" Width="321" Height="18" Margin="40,6,0,0" TextChanged="TextBox_TextChanged" BorderBrush="Transparent" VerticalContentAlignment="Center" />
-            </Grid>
-        </Border>
-        <TextBlock x:Name="Discover_Heading" HorizontalAlignment="Left" Margin="10,75,0,0" TextWrapping="Wrap" Text="Discover" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-        <Button BorderBrush="Black" BorderThickness="1" Background="White" Height="25" Margin="10,124,285,499">
-            <Grid Width="92">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-
+        <StackPanel>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="35" Margin="0,10,0,16" VerticalAlignment="Top" Width="373">
+                <Grid Margin="0,0,0,0" Width="373">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Image Grid.Column="0" Margin="8,0,8,0" Source="/icons/search.png" Stretch="Fill" Width="20" Height="20"/>
+                    <TextBox Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Books, Audiobooks, and more" VerticalAlignment="Top" Width="321" Height="18" Margin="0,6,0,0" TextChanged="TextBox_TextChanged" BorderBrush="Transparent" VerticalContentAlignment="Center" />
+                </Grid>
+            </Border>
+            <Grid Margin="10,0,10,16">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <Image Grid.Row="0" Grid.Column="0"  Source="/icons8-search-30.png" Margin="0,2,5,3" />
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="History" VerticalAlignment="Top" FontSize="14" />
+                <TextBlock x:Name="Discover_Heading" Grid.Row="0" HorizontalAlignment="Left" Margin="0,0,0,16" TextWrapping="Wrap" Text="Discover" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <Button BorderBrush="Black" BorderThickness="1" Background="White" Height="25" Margin="0,0,16,0">
+                        <Grid Width="92">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Image Grid.Row="0" Grid.Column="0"  Source="/icons/search.png" Margin="0,2,5,3" />
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="History" VerticalAlignment="Top" FontSize="14" />
+                        </Grid>
+                    </Button>
+                    <Button BorderBrush="Black" BorderThickness="1" Background="White" Height="25" Margin="0,0,16,0">
+                        <Grid Width="92">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Image Grid.Row="0" Grid.Column="0"  Source="/icons/search.png" Margin="0,2,5,3" />
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="Adventure" VerticalAlignment="Top" FontSize="14" />
+                        </Grid>
+                    </Button>
+                    <Button BorderBrush="Black" BorderThickness="1" Background="White" Height="25" Margin="0,0,16,0">
+                        <Grid Width="92">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Image Grid.Row="0" Grid.Column="0"  Source="/icons/search.png" Margin="0,2,5,3" />
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="Fiction" VerticalAlignment="Top" FontSize="14" />
+                        </Grid>
+                    </Button>
+                </StackPanel>
             </Grid>
-        </Button>
-        <Button BorderBrush="Black" BorderThickness="1" Background="White" Height="25" Margin="126,124,169,499">
-            <Grid Width="92">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
+            <TextBlock x:Name="Rec_Heading" HorizontalAlignment="Left" Margin="10,0,0,16" TextWrapping="Wrap" Text="Reccommended" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" MinHeight="200" Width="373" Margin="10,0,10,0">
+                <StackPanel Width="373">
+                    <Grid Margin="0,0,0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="180" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+                        <Image Source="/Book covers/The-Last-Odyssey.jpg" Width="106" Height="135" Margin="0,0,8,0" Stretch="Fill" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" />
+                        <StackPanel Grid.Column="1" Grid.Row="0">
+                            <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="The Last Odyssey" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="James Rollin" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="4.6" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
+                                <Image Source="/Icons/star.png" Width="15" Height="15" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Bottom">
+                            <Rectangle Fill="Red" Width="20" Height="20" Margin="0,0,8,0">
+                                <Rectangle.OpacityMask>
+                                    <VisualBrush>
+                                        <VisualBrush.Visual>
+                                            <Image Source="/Icons/book.png"  />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                            <Rectangle Fill="Green" Width="20" Height="20" Margin="0,0,8,0">
+                                <Rectangle.OpacityMask>
+                                    <VisualBrush>
+                                        <VisualBrush.Visual>
+                                            <Image Source="/Icons/smartphone.png"  />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                            <Rectangle Fill="Red" Width="20" Height="20" Margin="0,0,8,0">
+                                <Rectangle.OpacityMask>
+                                    <VisualBrush>
+                                        <VisualBrush.Visual>
+                                            <Image Source="/Icons/headphone.png"  />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                        </StackPanel>
+                        <Button Grid.Column="2" Grid.Row="0" Height="30" Width="30" VerticalAlignment="Top" HorizontalAlignment="Right" Background="White" BorderBrush="White">
+                            <Image Source="/Icons/bookmark.png"  VerticalAlignment="Top" HorizontalAlignment="Right" />
+                        </Button>
+                    </Grid>
+                    <Separator Foreground="LightGray" Margin="10,0,10,8" />
+                    <Grid Margin="0,0,0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="180" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
 
-                <Image Grid.Row="0" Grid.Column="0"  Source="/icons8-search-30.png" Margin="0,2,5,3" />
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="Adventure" VerticalAlignment="Top" FontSize="14" />
-            </Grid>
-        </Button>
-        <Button BorderBrush="Black" BorderThickness="1" Background="White" Height="25" Margin="242,124,53,499">
-            <Grid Width="92">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
+                        <Image Source="/Book covers/song-achilles.jpg" Width="106" Height="135" Margin="0,0,8,0" Stretch="Fill" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" />
+                        <StackPanel Grid.Column="1" Grid.Row="0">
+                            <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="The Song of Achilles" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="Madeline Miller" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="4.5" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
+                                <Image Source="/Icons/star.png" Width="15" Height="15" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Bottom">
+                            <Rectangle Fill="Green" Width="20" Height="20" Margin="0,0,8,0">
+                                <Rectangle.OpacityMask>
+                                    <VisualBrush>
+                                        <VisualBrush.Visual>
+                                            <Image Source="/Icons/book.png"  />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                            <Rectangle Fill="Green" Width="20" Height="20" Margin="0,0,8,0">
+                                <Rectangle.OpacityMask>
+                                    <VisualBrush>
+                                        <VisualBrush.Visual>
+                                            <Image Source="/Icons/smartphone.png"  />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                        </StackPanel>
+                        <Button Grid.Column="2" Grid.Row="0" Height="30" Width="30" VerticalAlignment="Top" HorizontalAlignment="Right" Background="White" BorderBrush="White">
+                            <Image Source="/Icons/bookmark.png"  VerticalAlignment="Top" HorizontalAlignment="Right" />
+                        </Button>
+                    </Grid>
+                    <Separator Foreground="LightGray" Margin="10,0,10,8" />
+                    <Grid Margin="0,0,0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="180" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-
-                <Image Grid.Row="0" Grid.Column="0"  Source="/icons8-search-30.png" Margin="0,2,5,3" />
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="Fiction" VerticalAlignment="Top" FontSize="14" />
-            </Grid>
-        </Button>
-        <TextBlock x:Name="Rec_Heading" HorizontalAlignment="Left" Margin="10,166,0,0" TextWrapping="Wrap" Text="Reccommended" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-        <Grid x:Name="Book_Grid" Margin="10,217,40,296">
-            <Image Margin="10,10,247,10" Source="/Book covers/The-Last-Odyssey.jpg" Stretch="Fill"/>
-            <TextBlock HorizontalAlignment="Left" Margin="101,10,0,0" TextWrapping="Wrap" Text="The Last Odyssey" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-            <TextBlock HorizontalAlignment="Left" Margin="101,34,0,0" TextWrapping="Wrap" Text="James Rollin" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
-            <TextBlock HorizontalAlignment="Left" Margin="101,52,0,0" TextWrapping="Wrap" Text="4.6" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
-            <Image Margin="125,54,202,66" Source="/Icons/star.png" Stretch="Fill"/>
-            <Image Margin="101,105,222,10" Source="/Icons/book.png" Stretch="Fill"/>
-            <Image Margin="126,105,194,10" Source="/Icons/smartphone.png" Stretch="Fill"/>
-            <Image Margin="154,105,169,10" Source="/Icons/headphone.png" Stretch="Fill"/>
-        </Grid>
-        <Rectangle HorizontalAlignment="Center" Height="1" Margin="0,352,0,0" Stroke="LightSlateGray" Fill="LightSlateGray" VerticalAlignment="Top" Width="311"/>
-        <Grid Margin="10,357,41,156">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="73*"/>
-                <ColumnDefinition Width="41*"/>
-            </Grid.ColumnDefinitions>
-            <Image Margin="10,10,124,10" Source="/Book covers/son-of-neptune.jpg" Stretch="Fill"/>
-            <TextBlock HorizontalAlignment="Left" Margin="101,10,0,0" TextWrapping="Wrap" Text="The Son of Neptune" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Grid.ColumnSpan="2"/>
-            <TextBlock HorizontalAlignment="Left" Margin="101,34,0,0" TextWrapping="Wrap" Text="Rick Riordan" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
-            <TextBlock HorizontalAlignment="Center" Margin="0,52,0,0" TextWrapping="Wrap" Text="4.9" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
-            <Image Margin="125,54,79,66" Source="/Icons/star.png" Stretch="Fill"/>
-            <Image Margin="101,105,99,10" Source="/Icons/book.png" Stretch="Fill"/>
-            <Image Margin="126,105,71,10" Source="/Icons/smartphone.png" Stretch="Fill"/>
-        </Grid>
-        <Rectangle HorizontalAlignment="Center" Height="1" Margin="0,496,0,0" Stroke="LightSlateGray" Fill="LightSlateGray" VerticalAlignment="Top" Width="312"/>
-        <Grid Margin="10,497,41,16">
-            <Image Margin="10,10,247,10" Source="/Book covers/song-achilles.jpg" Stretch="Fill"/>
-            <TextBlock HorizontalAlignment="Left" Margin="101,10,0,0" TextWrapping="Wrap" Text="The Song of Achilles" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-            <TextBlock HorizontalAlignment="Left" Margin="101,34,0,0" TextWrapping="Wrap" Text="Madeline Miller" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
-            <TextBlock HorizontalAlignment="Left" Margin="101,52,0,0" TextWrapping="Wrap" Text="4.5" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
-            <Image Margin="125,54,202,66" Source="/Icons/star.png" Stretch="Fill"/>
-            <Image Margin="101,105,222,10" Source="/Icons/book.png" Stretch="Fill"/>
-            <Image Margin="126,105,194,10" Source="/Icons/smartphone.png" Stretch="Fill"/>
-            <Image Margin="154,105,169,10" Source="/Icons/headphone.png" Stretch="Fill"/>
-        </Grid>
+                        <Image Source="/Book covers/son-of-neptune.jpg" Width="106" Height="135" Margin="0,0,8,0" Stretch="Fill" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" />
+                        <StackPanel Grid.Column="1" Grid.Row="0">
+                            <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="The Son of Neptune" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="Rick Riordan" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="4.2" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
+                                <Image Source="/Icons/star.png" Width="15" Height="15" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Bottom">
+                            <Rectangle Fill="Red" Width="20" Height="20" Margin="0,0,8,0">
+                                <Rectangle.OpacityMask>
+                                    <VisualBrush>
+                                        <VisualBrush.Visual>
+                                            <Image Source="/Icons/book.png"  />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                            <Rectangle Fill="Red" Width="20" Height="20" Margin="0,0,8,0">
+                                <Rectangle.OpacityMask>
+                                    <VisualBrush>
+                                        <VisualBrush.Visual>
+                                            <Image Source="/Icons/smartphone.png"  />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                            <Rectangle Fill="Green" Width="20" Height="20" Margin="0,0,8,0">
+                                <Rectangle.OpacityMask>
+                                    <VisualBrush>
+                                        <VisualBrush.Visual>
+                                            <Image Source="/Icons/headphone.png"  />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                        </StackPanel>
+                        <Button Grid.Column="2" Grid.Row="0" Height="30" Width="30" VerticalAlignment="Top" HorizontalAlignment="Right" Background="White" BorderBrush="White">
+                            <Image Source="/Icons/bookmark.png"  VerticalAlignment="Top" HorizontalAlignment="Right" />
+                        </Button>
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
     </Grid>
 </Page>

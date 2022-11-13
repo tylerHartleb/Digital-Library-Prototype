@@ -15,6 +15,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Pages\Details-hold_modal.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Details.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Results.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\Search.xaml">
       <SubType>Designer</SubType>
     </Page>

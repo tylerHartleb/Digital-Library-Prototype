@@ -12,11 +12,19 @@
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Border Grid.Row="0" Padding="0, 4, 0, 0">
-            <Image Width="25" Height="25" Source="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=ImagePath}"/>
+        <Border Grid.Row="0" Padding="0, 4, 0, 0" Width="30" Height="30">
+            <Rectangle x:Name="TabRectangle" Fill="Black">
+                <Rectangle.OpacityMask>
+                    <VisualBrush>
+                        <VisualBrush.Visual>
+                            <Image Source="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=ImagePath}"/>
+                        </VisualBrush.Visual>
+                    </VisualBrush>
+                </Rectangle.OpacityMask>
+            </Rectangle>
         </Border>
 
-        <Border Grid.Row="1" Padding="0, 0, 0, 4">
+        <Border Grid.Row="1" Padding="0, 0, 0, 4" HorizontalAlignment="Center">
             <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=TabName}" FontWeight="SemiBold" FontSize="12" VerticalAlignment="Center" />
         </Border>
     </Grid>

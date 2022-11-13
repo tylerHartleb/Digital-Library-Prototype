@@ -15,9 +15,7 @@
     
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Name="TopBar" Height="59*"/>
             <RowDefinition Name="SafeArea" Height="794*"/>
-            <RowDefinition Name="BottomBar" Height="34*"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="1">
@@ -54,16 +52,6 @@
                         </components:TabIcon>
                     </TabItem.Header>
                 </TabItem>
-
-                <!--<TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
-                    <TabItem.Header>
-                        <components:TabIcon TabName="Bag">
-                            <components:TabIcon.ImagePath>
-                                <BitmapImage UriSource="Images/bag.png"/>
-                            </components:TabIcon.ImagePath>
-                        </components:TabIcon>
-                    </TabItem.Header>
-                </TabItem>-->
             </TabControl>
         </Grid>
     </Grid>
