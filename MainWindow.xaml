@@ -18,7 +18,9 @@
             <RowDefinition Name="TopBar" Height="59*"/>
             <RowDefinition Name="SafeArea" Height="794*"/>
             <RowDefinition Name="BottomBar" Height="34*"/>
-        </Grid.RowDefinitions>
+        </Grid.RowDefinitions>\\mac\home\desktop\481\project\mainwindow.xaml.cs
+\\mac\home\desktop\481\project\mainwindow.xaml
+
 
         <Grid Grid.Row="1">
             <TabControl

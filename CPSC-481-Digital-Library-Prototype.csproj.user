@@ -13,9 +13,33 @@
     <Compile Update="Pages\Browse.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\checkedOutItems.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\emailPass.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\fees.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\onHoldItems.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Pages\Browse.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\checkedOutItems.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\emailPass.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\fees.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\onHoldItems.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Styles.xaml">

@@ -1,0 +1,31 @@
+﻿<Page x:Class="CPSC_481_Digital_Library_Prototype.Pages.Browse"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CPSC_481_Digital_Library_Prototype.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="648" d:DesignWidth="393"
+      Title="Browse">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Background="black" Margin="-7,0,-5,600">
+            <TextBlock Foreground="White" FontSize="15px" FontWeight="Bold" Text="Checked Out Items" Margin="133,11,-11,0"/>
+        </Grid>
+        <TextBlock FontWeight="Bold" Text="Percy Jackson and the Olympians" Margin="119,59,-119,567"/>
+        <TextBlock Text="Checked Out:     Nov 20 2022" Margin="120,109,-120,520" />
+        <TextBlock Text="Return By:         Dec 12 2022" Margin="120,127,-120,502" />
+        <TextBlock Text="Library:           Crowfoot Library" Margin="120,146,-120,483" />
+
+        <Separator Background="black" Margin="38,138,38,412"/>
+        <ScrollBar RenderTransformOrigin="14.985,0.578" Margin="376,48,0,-48"/>
+        <Image Margin="30,62,296,483" Source="/Images/Percy_Jackson_&amp;_the_Olympians_The_Lightning_Thief_poster.jpg" Stretch="Fill"/>
+        <TextBlock FontSize="9px" Text="The Lightning Thief" Margin="119,78,-119,551" />
+    </Grid>
+
+</Page>
+
+    

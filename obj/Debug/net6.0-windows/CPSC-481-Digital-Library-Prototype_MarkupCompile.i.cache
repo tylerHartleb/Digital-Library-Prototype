@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\rant2\Documents\My School\CPSC-481\CPSC-481-Digital-Library-Prototype\obj\Debug\net6.0-windows\
+\\Mac\Home\Desktop\481\project\obj\Debug\net6.0-windows\
 CPSC_481_Digital_Library_Prototype
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\rant2\Documents\My School\CPSC-481\CPSC-481-Digital-Library-Prototype\App.xaml
-11407045341
+\\Mac\Home\Desktop\481\project\App.xaml
+8-1847260925
 
-51033254980
-194618410957
-MainWindow.xaml;
+111646802017
+194-2004305220
+Components\Tabicon.xaml;MainWindow.xaml;Pages\Browse.xaml;Pages\checkedOutItems.xaml;Pages\emailPass.xaml;Pages\fees.xaml;Pages\onHoldItems.xaml;Styles\Styles.xaml;
 
-False
+True
 
