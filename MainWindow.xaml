@@ -26,8 +26,7 @@
                             </components:TabIcon.ImagePath>
                         </components:TabIcon>
                     </TabItem.Header>
-                    <pages:Account/>
-
+                    <pages:Fees/>
                 </TabItem>
 
                 <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">

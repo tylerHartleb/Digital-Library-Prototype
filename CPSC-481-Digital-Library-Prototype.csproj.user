@@ -15,6 +15,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Pages\Login.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\EmailPassword.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Fees.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\CheckItems.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\HoldItems.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\Scan.xaml">
       <SubType>Designer</SubType>
     </Page>

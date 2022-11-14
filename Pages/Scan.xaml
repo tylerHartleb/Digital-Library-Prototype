@@ -15,8 +15,10 @@
                 </Image.Source>
             </Image>
         </Border>
-        
-        <TextBlock HorizontalAlignment="Center" Margin="0,457,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254" TextAlignment="Center" FontSize="20"><Run Language="en-ca" Text="Scan at self-checkout station "/></TextBlock>
+
+        <TextBlock HorizontalAlignment="Center" Margin="0,457,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254" TextAlignment="Center" FontSize="20"><Run Language="en-ca" Text="Scan at self-checkout station"/></TextBlock>
+
+        <TextBlock HorizontalAlignment="Center" Margin="0,411,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254" TextAlignment="Center" FontSize="16"><Run Language="en-ca" Text="Barcode: 022313256"/></TextBlock>
     </Grid>
 
 

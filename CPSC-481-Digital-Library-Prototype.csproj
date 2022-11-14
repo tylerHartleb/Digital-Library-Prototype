@@ -12,6 +12,8 @@
     <None Remove="Book covers\battle-of-the-lab.jpg" />
     <None Remove="Book covers\daughter-of-the-deep.jpg" />
     <None Remove="Book covers\hammer-of-thor.jpg" />
+    <None Remove="Book covers\harryPotter.jpg" />
+    <None Remove="Book covers\PercyJackson.jpg" />
     <None Remove="Book covers\red-pyramid.jpg" />
     <None Remove="Book covers\son-of-neptune.jpg" />
     <None Remove="Book covers\song-achilles.jpg" />
@@ -32,6 +34,7 @@
     <None Remove="Images\bag.png" />
     <None Remove="Images\browse.png" />
     <None Remove="Images\greenArrowUp.png" />
+    <None Remove="Images\logoLibrary.png" />
     <None Remove="Images\qrCode.png" />
     <None Remove="Images\scan.png" />
     <None Remove="Images\search.png" />
@@ -41,6 +44,8 @@
     <Resource Include="Book covers\battle-of-the-lab.jpg" />
     <Resource Include="Book covers\daughter-of-the-deep.jpg" />
     <Resource Include="Book covers\hammer-of-thor.jpg" />
+    <Resource Include="Book covers\harryPotter.jpg" />
+    <Resource Include="Book covers\PercyJackson.jpg" />
     <Resource Include="Book covers\red-pyramid.jpg" />
     <Resource Include="Book covers\son-of-neptune.jpg" />
     <Resource Include="Book covers\song-achilles.jpg" />
@@ -61,12 +66,28 @@
     <Resource Include="Images\bag.png" />
     <Resource Include="Images\browse.png" />
     <Resource Include="Images\greenArrowUp.png" />
+    <Resource Include="Images\logoLibrary.png" />
     <Resource Include="Images\qrCode.png" />
     <Resource Include="Images\scan.png" />
     <Resource Include="Images\search.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Pages\Login.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\EmailPassword.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Fees.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\CheckItems.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\HoldItems.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Scan.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -94,6 +115,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Pages\Login.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Pages\EmailPassword.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Pages\Fees.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Pages\CheckItems.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Pages\HoldItems.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
     <Page Update="Pages\Scan.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>

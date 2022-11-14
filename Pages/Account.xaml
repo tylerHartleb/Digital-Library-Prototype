@@ -10,14 +10,14 @@
     <Grid Background="White">
         <Image Source="\Images\account.png" HorizontalAlignment="Center" Height="100" Margin="0,27,0,0" VerticalAlignment="Top" Width="100"/>
         <Label Content="Name" FontSize="20" HorizontalAlignment="Center" Margin="0,122,0,0" VerticalAlignment="Top"/>
-        <Button Content="Checked out items" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48" Width="373" Margin="0,311,0,0"/>
-        <Button Content="On hold items" FontSize="20" HorizontalAlignment="Center" Margin="0,366,0,0" VerticalAlignment="Top" Height="47" Width="373"/>
-        <Button Content="Fees" FontSize="20" HorizontalAlignment="Center" Margin="0,418,0,0" VerticalAlignment="Top" Height="47" Width="373"/>
-        <Button Content="Email and password" FontSize="20" HorizontalAlignment="Center" Margin="0,470,0,0" VerticalAlignment="Top" Height="47" Width="373"/>
-        <Button Content="Sign out" Background="pink" FontSize="20" HorizontalAlignment="Center" Margin="0,552,0,0" VerticalAlignment="Top" Height="47" Width="373"/>
-        <Label Content="Items checked out:" FontSize="20" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top"/>
-        <Label Content="Items on hold:" FontSize="20" HorizontalAlignment="Left" Margin="10,212,0,0" VerticalAlignment="Top"/>
-        <Label Content="Overdue fees:" FontSize="20" HorizontalAlignment="Left" Margin="10,258,0,0" VerticalAlignment="Top"/>
+        <Button Content="Checked out items" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48" Width="373" Margin="0,311,0,0" Click="CheckOut_Button_Click"/>
+        <Button Content="On hold items" FontSize="20" HorizontalAlignment="Center" Margin="0,366,0,0" VerticalAlignment="Top" Height="47" Width="373" Click="OnHold_Button_Click"/>
+        <Button Content="Fees" FontSize="20" HorizontalAlignment="Center" Margin="0,418,0,0" VerticalAlignment="Top" Height="47" Width="373" Click="Fees_Button_Click"/>
+        <Button Content="Email and password" FontSize="20" HorizontalAlignment="Center" Margin="0,470,0,0" VerticalAlignment="Top" Height="47" Width="373" Click="EmailPassword_Button_Click"/>
+        <Button Content="Sign out" Background="pink" FontSize="20" HorizontalAlignment="Center" Margin="0,552,0,0" VerticalAlignment="Top" Height="47" Width="373" Click="SignOut_Button_Click"/>
+        <Label Content="Items checked out: 1" FontSize="20" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top"/>
+        <Label Content="Items on hold: 1" FontSize="20" HorizontalAlignment="Left" Margin="10,212,0,0" VerticalAlignment="Top"/>
+        <Label Content="Overdue fees: $3.00" FontSize="20" HorizontalAlignment="Left" Margin="10,258,0,0" VerticalAlignment="Top"/>
 
 
 
