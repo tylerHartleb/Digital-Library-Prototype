@@ -8,4 +8,83 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Book covers\battle-of-the-lab.jpg" />
+    <None Remove="Book covers\daughter-of-the-deep.jpg" />
+    <None Remove="Book covers\hammer-of-thor.jpg" />
+    <None Remove="Book covers\red-pyramid.jpg" />
+    <None Remove="Book covers\son-of-neptune.jpg" />
+    <None Remove="Book covers\song-achilles.jpg" />
+    <None Remove="Book covers\The-Last-Odyssey.jpg" />
+    <None Remove="Book covers\the-lost-hero.jpg" />
+    <None Remove="Book covers\the-titans-curse.jpg" />
+    <None Remove="Icons\back.png" />
+    <None Remove="Icons\book.png" />
+    <None Remove="Icons\bookmark.png" />
+    <None Remove="Icons\checkmark.png" />
+    <None Remove="Icons\close.png" />
+    <None Remove="Icons\forward.png" />
+    <None Remove="Icons\headphone.png" />
+    <None Remove="Icons\search.png" />
+    <None Remove="Icons\smartphone.png" />
+    <None Remove="Icons\star.png" />
+    <None Remove="Images\account.png" />
+    <None Remove="Images\bag.png" />
+    <None Remove="Images\browse.png" />
+    <None Remove="Images\search.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Book covers\battle-of-the-lab.jpg" />
+    <Resource Include="Book covers\daughter-of-the-deep.jpg" />
+    <Resource Include="Book covers\hammer-of-thor.jpg" />
+    <Resource Include="Book covers\red-pyramid.jpg" />
+    <Resource Include="Book covers\son-of-neptune.jpg" />
+    <Resource Include="Book covers\song-achilles.jpg" />
+    <Resource Include="Book covers\The-Last-Odyssey.jpg" />
+    <Resource Include="Book covers\the-lost-hero.jpg" />
+    <Resource Include="Book covers\the-titans-curse.jpg" />
+    <Resource Include="Icons\back.png" />
+    <Resource Include="Icons\book.png" />
+    <Resource Include="Icons\bookmark.png" />
+    <Resource Include="Icons\checkmark.png" />
+    <Resource Include="Icons\close.png" />
+    <Resource Include="Icons\forward.png" />
+    <Resource Include="Icons\headphone.png" />
+    <Resource Include="Icons\search.png" />
+    <Resource Include="Icons\smartphone.png" />
+    <Resource Include="Icons\star.png" />
+    <Resource Include="Images\account.png" />
+    <Resource Include="Images\bag.png" />
+    <Resource Include="Images\browse.png" />
+    <Resource Include="Images\search.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Pages\Details-hold_modal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Details.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Results.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Pages\Details-hold_modal.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Details.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Results.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
 </Project>

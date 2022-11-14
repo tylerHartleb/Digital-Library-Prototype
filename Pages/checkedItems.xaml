@@ -1,0 +1,77 @@
+﻿<Page x:Class="CPSC_481_Digital_Library_Prototype.Pages.Browse"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CPSC_481_Digital_Library_Prototype.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="648" d:DesignWidth="393"
+      Title="checkedItems">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="Hold" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" TextAlignment="Center" Margin="20,65,0,0"><Run Language="en-ca" Text="Checked Out"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Back" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="44,22,0,0" Width="48"/>
+        <Image Margin="13,22,354,599" Source="/Icons/back.png" Stretch="Fill"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" MinHeight="200" Width="373" Margin="20,109,0,71">
+            <StackPanel Width="373">
+                <Grid Margin="0,0,40,8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="180" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Image Source="/Book covers/Percy_Jackson_&amp;_the_Olympians_The_Lightning_Thief_poster.jpg" Width="106" Height="135" Margin="0,0,8,0" Stretch="Fill" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" />
+                    <StackPanel Grid.Column="1" Grid.Row="0">
+                        <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="The Lightning Thief" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="Rick Riordan" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="4.9" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
+                            <Image Source="/Icons/star.png" Width="15" Height="15" />
+
+
+                        </StackPanel>
+                        <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="Checked Out: Nov 20 2022" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="Return By: Dec 12 2022" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="Library: Crowfoot Library" FontSize="14" FontWeight="Medium"/>
+                    </StackPanel>
+
+                    <Button Grid.Column="2" Grid.Row="0" Height="30" Width="30" VerticalAlignment="Top" HorizontalAlignment="Right" Background="White" BorderBrush="White">
+                        <Image Source="/Icons/bookmark.png"  VerticalAlignment="Top" HorizontalAlignment="Right" />
+                    </Button>
+                </Grid>
+                <Separator Foreground="LightGray" Margin="10,0,40,8" />
+                <Grid Margin="0,0,40,8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="180" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                </Grid>
+
+
+            </StackPanel>
+        </ScrollViewer>
+
+
+
+    </Grid>
+
+
+
+</Page>
+
+    

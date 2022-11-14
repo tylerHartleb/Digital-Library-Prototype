@@ -6,12 +6,9 @@
       xmlns:local="clr-namespace:CPSC_481_Digital_Library_Prototype.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="648" d:DesignWidth="393"
-      Title="Browse">
+      Title="feeHistory">
 
     <Grid Background="White">
-        <Grid Background="black" Margin="-7,0,-5,600">
-            <TextBlock Foreground="White" FontSize="15px" FontWeight="Bold" Text="Fees" Margin="190,13,-68,-2"/>
-        </Grid>
         <Border BorderBrush="Black" BorderThickness="2" CornerRadius ="10" Margin="58,87,53,427">
             <TextBlock FontSize ="20px" Text="Outstanding Fees: 3$" Margin="45,48,41,45" ></TextBlock>
         </Border>
@@ -22,6 +19,8 @@
         <Grid Background="black" Margin="58,275,53,335">
             <TextBlock Foreground="White" FontSize="15px" FontWeight="Bold" Text="History" Margin="116,8,6,3"/>
         </Grid>
+        <TextBlock x:Name="Back_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Back" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="54,22,0,0" Width="48"/>
+        <Image Margin="24,21,339,597" Source="/Icons/back.png" Stretch="Fill"/>
     </Grid>
 
 </Page>

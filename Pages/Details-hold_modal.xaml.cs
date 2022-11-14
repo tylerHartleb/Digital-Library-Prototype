@@ -16,13 +16,18 @@ using System.Windows.Shapes;
 namespace CPSC_481_Digital_Library_Prototype.Pages
 {
     /// <summary>
-    /// Interaction logic for Browse.xaml
+    /// Interaction logic for Details.xaml
     /// </summary>
-    public partial class Browse : Page
+    public partial class DetailsM : Page
     {
-        public Browse()
+        public DetailsM()
         {
             InitializeComponent();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

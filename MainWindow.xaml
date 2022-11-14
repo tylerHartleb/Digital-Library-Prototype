@@ -7,27 +7,18 @@
         xmlns:components="clr-namespace:CPSC_481_Digital_Library_Prototype.Components"
         xmlns:pages="clr-namespace:CPSC_481_Digital_Library_Prototype.Pages"
         mc:Ignorable="d"
-        Title="MainWindow" Height="852" Width="393">
-    <Window.Resources>
-        <ResourceDictionary Source="/Styles/Styles.xaml" />
-    </Window.Resources>
-    
-    
+        Title="MainWindow" Height="706" Width="393">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Name="TopBar" Height="59*"/>
-            <RowDefinition Name="SafeArea" Height="794*"/>
-            <RowDefinition Name="BottomBar" Height="34*"/>
-        </Grid.RowDefinitions>\\mac\home\desktop\481\project\mainwindow.xaml.cs
-\\mac\home\desktop\481\project\mainwindow.xaml
-
+            <RowDefinition Name="SafeArea" Height="706*"/>
+        </Grid.RowDefinitions>
 
         <Grid Grid.Row="1">
             <TabControl
                 Style="{DynamicResource ResourceKey=styleTabControl}"
                 TabStripPlacement="bottom"
             >
-                <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
+                <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}" IsSelected="True">
                     <TabItem.Header>
                         <components:TabIcon TabName="My Books">
                             <components:TabIcon.ImagePath>
@@ -47,7 +38,7 @@
                     </TabItem.Header>
                 </TabItem>
 
-                <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
+                <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}" Name="SearchTab">
                     <TabItem.Header>
                         <components:TabIcon TabName="Search">
                             <components:TabIcon.ImagePath>
@@ -55,17 +46,8 @@
                             </components:TabIcon.ImagePath>
                         </components:TabIcon>
                     </TabItem.Header>
+                    <pages:Search />
                 </TabItem>
-
-                <!--<TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
-                    <TabItem.Header>
-                        <components:TabIcon TabName="Bag">
-                            <components:TabIcon.ImagePath>
-                                <BitmapImage UriSource="Images/bag.png"/>
-                            </components:TabIcon.ImagePath>
-                        </components:TabIcon>
-                    </TabItem.Header>
-                </TabItem>-->
             </TabControl>
         </Grid>
     </Grid>

@@ -10,36 +10,45 @@
     <Compile Update="Components\TabIcon.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Browse.xaml.cs">
+    <Compile Update="Pages\checkedItems.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\checkedOutItems.xaml.cs">
+    <Compile Update="Pages\emailPassword.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\emailPass.xaml.cs">
+    <Compile Update="Pages\feeHistory.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\fees.xaml.cs">
+    <Compile Update="Pages\holdItems.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\onHoldItems.xaml.cs">
+    <Compile Update="Pages\Search.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Pages\Browse.xaml">
+    <Page Update="Pages\checkedItems.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\checkedOutItems.xaml">
+    <Page Update="Pages\Details-hold_modal.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\emailPass.xaml">
+    <Page Update="Pages\Details.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\fees.xaml">
+    <Page Update="Pages\emailPassword.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\onHoldItems.xaml">
+    <Page Update="Pages\feeHistory.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\holdItems.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Results.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Search.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Styles.xaml">
