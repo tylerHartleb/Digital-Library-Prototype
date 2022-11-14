@@ -45,7 +45,7 @@
 
                     <Image Width="106" Height="135" Margin="0,0,8,0" Stretch="Fill" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
                         <Image.Source>
-                            <BitmapImage UriSource ="/Book covers/PercyJackson.jpg"/>
+                            <BitmapImage UriSource = "/Book covers/PercyJackson.jpg"/>
                         </Image.Source>
                     </Image>
                     <StackPanel Grid.Column="1" Grid.Row="0">
