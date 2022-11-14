@@ -8,18 +8,18 @@
       d:DesignHeight="648" d:DesignWidth="393">
 
     <Grid Background="White">
-        <Border BorderBrush="Black" BorderThickness="2" CornerRadius ="10" Margin="58,87,53,427">
-            <TextBlock FontSize ="20px" Text="Outstanding Fees: 3$" Margin="45,48,41,45" ></TextBlock>
-        </Border>
-        <Border BorderBrush="Black" BorderThickness="2" CornerRadius ="10" Margin="58,276,53,58">
-            <TextBlock FontSize ="20px" Text="History of Charges" Margin="60,6,26,265"></TextBlock>
-        </Border>
-        <TextBlock Text="11/12/2022 late fee 3$" Margin="139,328,-140,248"></TextBlock>
-        <Grid Background="black" Margin="58,275,53,335">
-            <TextBlock Foreground="White" FontSize="15px" FontWeight="Bold" Text="History" Margin="116,8,6,3"/>
-        </Grid>
         <TextBlock x:Name="Back_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Back" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="54,22,0,0" Width="48"/>
         <Image Margin="24,21,339,597" Source="/Icons/back.png" Stretch="Fill"/>
+
+        <StackPanel Margin="104,229,109,182">
+            <TextBlock HorizontalAlignment="Center" Margin="0,0,0,5" TextWrapping="Wrap" Text="You Owe" VerticalAlignment="Top" FontSize="25" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,0,0,5" TextWrapping="Wrap" Text="3.00$" VerticalAlignment="Top" FontSize="20" FontWeight="Medium"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,0,0,5" TextWrapping="Wrap" Text="History" VerticalAlignment="Top" FontSize="25" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,0,0,5" TextWrapping="Wrap" Text="11/9/22 late fee 1.00$ " VerticalAlignment="Top" FontSize="15" FontWeight="Medium"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,0,0,5" TextWrapping="Wrap" Text="11/7/22 late fee 1.00$ " VerticalAlignment="Top" FontSize="15" FontWeight="Medium"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,0,0,5" TextWrapping="Wrap" Text="11/3/22 late fee 1.00$ " VerticalAlignment="Top" FontSize="15" FontWeight="Medium"/>
+
+        </StackPanel>
     </Grid>
 
 </UserControl>
