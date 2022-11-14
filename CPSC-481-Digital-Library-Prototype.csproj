@@ -31,6 +31,8 @@
     <None Remove="Images\account.png" />
     <None Remove="Images\bag.png" />
     <None Remove="Images\browse.png" />
+    <None Remove="Images\greenArrowUp.png" />
+    <None Remove="Images\qrCode.png" />
     <None Remove="Images\scan.png" />
     <None Remove="Images\search.png" />
   </ItemGroup>
@@ -58,11 +60,16 @@
     <Resource Include="Images\account.png" />
     <Resource Include="Images\bag.png" />
     <Resource Include="Images\browse.png" />
+    <Resource Include="Images\greenArrowUp.png" />
+    <Resource Include="Images\qrCode.png" />
     <Resource Include="Images\scan.png" />
     <Resource Include="Images\search.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Pages\Scan.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Details_digital.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -81,9 +88,15 @@
     <Compile Update="Pages\Results.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Account.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Pages\Scan.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
     <Page Update="Pages\Details-hold_digital-modal.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
@@ -105,6 +118,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Results.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Pages\Account.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
