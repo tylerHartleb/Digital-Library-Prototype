@@ -6,11 +6,11 @@ using System.Windows.Media;
 namespace CPSC_481_Digital_Library_Prototype.Pages
 {
     /// <summary>
-    /// Interaction logic for Search.xaml
+    /// Interaction logic for Details.xaml
     /// </summary>
-    public partial class Results : UserControl
+    public partial class DetailsHM : UserControl
     {
-        public Results()
+        public DetailsHM()
         {
             InitializeComponent();
         }

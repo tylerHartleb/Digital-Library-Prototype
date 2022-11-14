@@ -1,4 +1,4 @@
-﻿<Page x:Class="CPSC_481_Digital_Library_Prototype.Pages.Details"
+﻿<UserControl x:Class="CPSC_481_Digital_Library_Prototype.Pages.Details"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:CPSC_481_Digital_Library_Prototype.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="648" d:DesignWidth="393"
-      Title="Browse">
+>
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -265,4 +265,4 @@
                 </Button>
         </Border>
     </Grid>
-</Page>
+</UserControl>

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\doowo\Desktop\Assignment2\CPSC-481-Digital-Library-Prototype\App.xaml
-11-260721552
+14512103523
 
-141413763314
+172064033261
 194-2004305220
-Components\Tabicon.xaml;MainWindow.xaml;Pages\checkedItems.xaml;Pages\Details-hold_modal.xaml;Pages\Details.xaml;Pages\emailPassword.xaml;Pages\feeHistory.xaml;Pages\HoldItems.xaml;Pages\Results.xaml;Pages\Search.xaml;Styles\Styles.xaml;
+Components\Tabicon.xaml;MainWindow.xaml;Pages\checkedItems.xaml;Pages\Details-hold_confirm-modal.xaml;Pages\Details-hold_digital-modal.xaml;Pages\Details-hold_modal.xaml;Pages\Details.xaml;Pages\Details_digital.xaml;Pages\emailPassword.xaml;Pages\feeHistory.xaml;Pages\HoldItems.xaml;Pages\Results.xaml;Pages\Search.xaml;Styles\Styles.xaml;
 
-True
+False
 
