@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\rant2\Documents\My School\CPSC-481\CPSC-481-Digital-Library-Prototype\obj\Debug\net6.0-windows\
+C:\Users\FallenByGravity\Source\Repos\CPSC-481-Digital-Library-Prototype\obj\Debug\net6.0-windows\
 CPSC_481_Digital_Library_Prototype
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\rant2\Documents\My School\CPSC-481\CPSC-481-Digital-Library-Prototype\App.xaml
-11407045341
+C:\Users\FallenByGravity\Source\Repos\CPSC-481-Digital-Library-Prototype\App.xaml
+11127919653
 
-51033254980
-194618410957
-MainWindow.xaml;
+14-1267476118
+194-2004305220
+Components\Tabicon.xaml;MainWindow.xaml;Pages\Details-hold_confirm-modal.xaml;Pages\Details-hold_digital-modal.xaml;Pages\Details-hold_modal.xaml;Pages\Details.xaml;Pages\Details_digital.xaml;Pages\Login.xaml;Pages\Results.xaml;Pages\Search.xaml;Styles\Styles.xaml;
 
-False
+True
 
