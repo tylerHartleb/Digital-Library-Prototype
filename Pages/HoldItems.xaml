@@ -6,77 +6,8 @@
       xmlns:local="clr-namespace:CPSC_481_Digital_Library_Prototype.Pages"
       xmlns:Components="clr-namespace:CPSC_481_Digital_Library_Prototype.Components" x:Class="CPSC_481_Digital_Library_Prototype.Pages.HoldItems"
       mc:Ignorable="d" 
-<<<<<<< Updated upstream
       d:DesignHeight="648" d:DesignWidth="393">
-
-    <Grid Background="White">
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="On Hold Items" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" TextAlignment="Center" Margin="23,75,0,0"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Back" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="54,22,0,0" Width="48"/>
-        <Image Margin="23,22,344,599" Source="/Icons/back.png" Stretch="Fill"/>
-        <Grid Background="White">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
-            <TextBlock  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" TextAlignment="Center" Margin="20,65,0,0"><Run Language="en-ca" Text="On Hold"/><LineBreak/><Run Language="en-ca"/></TextBlock>
-            <TextBlock  HorizontalAlignment="Left" TextWrapping="Wrap" Text="Back" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="44,22,0,0" Width="48"/>
-            <Image Margin="13,22,354,599" Source="/Icons/back.png" Stretch="Fill"/>
-            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" MinHeight="200" Width="373" Margin="20,109,0,71">
-                <StackPanel Width="373">
-                    <Grid Margin="0,0,40,8">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="180" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-
-                        <Image Source="/Book covers/harryPotter.jpg" Width="106" Height="135" Margin="0,0,8,0" Stretch="Fill" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" />
-                        <StackPanel Grid.Column="1" Grid.Row="0">
-                            <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="The Lightning Thief" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-                            <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="Rick Riordan" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="4.9" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
-                                <Image Source="/Icons/star.png" Width="15" Height="15" />
-
-
-                            </StackPanel>
-                            <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="Hold Until: Dec 12 2022" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
-                            <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="Library: Crowfoot Library" FontSize="14" FontWeight="Medium"/>
-                            <Button Content="Remove" Height="23" Margin="0,8,4,0" Background="Snow" BorderThickness="2" BorderBrush="Black"/>
-                        </StackPanel>
-
-
-                        <Button Grid.Column="2" Grid.Row="0" Height="30" Width="30" VerticalAlignment="Top" HorizontalAlignment="Right" Background="White" BorderBrush="White">
-                            <Image Source="/Icons/bookmark.png"  VerticalAlignment="Top" HorizontalAlignment="Right" />
-                        </Button>
-
-                    </Grid>
-                    <Separator Foreground="LightGray" Margin="10,0,40,8" />
-                    <Grid Margin="0,0,40,8">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="180" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-
-                    </Grid>
-
-
-                </StackPanel>
-            </ScrollViewer>
-
-
-=======
-      d:DesignHeight="648" d:DesignWidth="393"
->
+  
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="86*" />
@@ -138,7 +69,6 @@
                             </Image.Source>
                         </Image>
                     </Button>
->>>>>>> Stashed changes
 
                 </Grid>
                 <Separator Foreground="LightGray" Margin="10,0,40,8" />
