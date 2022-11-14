@@ -1,18 +1,15 @@
-<<<<<<< Updated upstream
 {
   "version": 2,
   "dgSpecHash": "dt+d12zhfaPkrt9/KnnUSjKZw+EisfWawhMe85RrpPZw4LoPgP08e+h5BkweeIN0B92anMuvUoEBMB6bPB1gdw==",
   "success": true,
   "projectFilePath": "C:\\Users\\doowo\\Desktop\\Assignment2\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj",
   "expectedPackageFiles": [],
-  "logs": []
-=======
-{
-  "version": 2,
-  "dgSpecHash": "dt+d12zhfaPkrt9/KnnUSjKZw+EisfWawhMe85RrpPZw4LoPgP08e+h5BkweeIN0B92anMuvUoEBMB6bPB1gdw==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\doowo\\Desktop\\Assignment2\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
->>>>>>> Stashed changes
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\doowo\\Desktop\\Assignment2\\CPSC-481-Digital-Library-Prototype\\obj\\project.nuget.cache : Unexpected character encountered while parsing value: <. Path '', line 0, position 0."
+    }
+  ]
 }
