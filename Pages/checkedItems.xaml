@@ -9,13 +9,33 @@
 
     <Grid Background="White">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="86*" />
+            <ColumnDefinition Width="174" />
+            <ColumnDefinition Width="86*" />
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="9*" />
+            <RowDefinition Height="89*" />
+        </Grid.RowDefinitions>
 
+<<<<<<< Updated upstream:Pages/checkedItems.xaml
         <TextBlock x:Name="Hold" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" TextAlignment="Center" Margin="20,65,0,0"><Run Language="en-ca" Text="Checked Out"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Back" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="44,22,0,0" Width="48"/>
         <Image Margin="13,22,354,599" Source="/Icons/back.png" Stretch="Fill"/>
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" MinHeight="200" Width="373" Margin="20,109,0,71">
+=======
+        <Image Grid.Column="0" Margin="0,10,68,0" HorizontalAlignment="Right" Width="36" Height="30" VerticalAlignment="Top" >
+            <Image.Source>
+                <BitmapImage UriSource="/Icons/back.png" />
+            </Image.Source>
+        </Image>
+
+        <TextBlock Grid.Row="0" Text="Back" VerticalAlignment="Top" FontSize="19" FontWeight="Bold" Height="27" Margin="0,11,174,0" HorizontalAlignment="Right" Width="64" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row ="1" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="Checked Out" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" TextAlignment="Center" Margin="0,3,100,0" Height="51" HorizontalAlignment="Right" Width="184"/>
+
+        <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" MinHeight="200" Margin="21,52,0,0" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="2" Height="200" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345">
+>>>>>>> Stashed changes:Pages/CheckItems.xaml
             <StackPanel Width="373">
                 <Grid Margin="0,0,40,8">
                     <Grid.ColumnDefinitions>
@@ -28,21 +48,32 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
 
+<<<<<<< Updated upstream:Pages/checkedItems.xaml
                     <Image Source="/Book covers/Percy_Jackson_&amp;_the_Olympians_The_Lightning_Thief_poster.jpg" Width="106" Height="135" Margin="0,0,8,0" Stretch="Fill" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" />
                     <StackPanel Grid.Column="1" Grid.Row="0">
                         <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="The Lightning Thief" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
                         <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="Rick Riordan" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
+=======
+                    <Image Height="135" Margin="0,0,5,0" Stretch="Fill" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Bottom">
+                        <Image.Source>
+                            <BitmapImage UriSource ="/Book covers/harryPotter.jpg"/>
+                        </Image.Source>
+                    </Image>
+                    <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Margin="0,2,44,16" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Right" Width="180">
+                        <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" FontSize="18" FontWeight="Bold"><Run Language="en-ca" Text="The Goblet of Fire"/></TextBlock>
+                        <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"><Run Language="en-ca" Text="J,K ROWLING"/></TextBlock>
+>>>>>>> Stashed changes:Pages/CheckItems.xaml
                         <StackPanel Orientation="Horizontal">
                             <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="4.9" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
                             <Image Source="/Icons/star.png" Width="15" Height="15" />
 
 
                         </StackPanel>
-                        <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="Checked Out: Nov 20 2022" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="Return By: Dec 12 2022" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"><Run Language="en-ca" Text="Checked Out"/><Run Text=": "/><Run Language="en-ca" Text="11/12/22"/></TextBlock>
                         <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="Library: Crowfoot Library" FontSize="14" FontWeight="Medium"/>
                     </StackPanel>
 
+<<<<<<< Updated upstream:Pages/checkedItems.xaml
                     <Button Grid.Column="2" Grid.Row="0" Height="30" Width="30" VerticalAlignment="Top" HorizontalAlignment="Right" Background="White" BorderBrush="White">
                         <Image Source="/Icons/bookmark.png"  VerticalAlignment="Top" HorizontalAlignment="Right" />
                     </Button>
@@ -60,17 +91,16 @@
                     </Grid.RowDefinitions>
 
                 </Grid>
+=======
+>>>>>>> Stashed changes:Pages/CheckItems.xaml
 
+                    <Button Grid.Column="2" Width="30" Background="White" BorderBrush="White" Margin="0,0,5,0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right"/>
 
+                </Grid>
+                <Separator Foreground="LightGray" Margin="10,0,40,8" />
             </StackPanel>
         </ScrollViewer>
-
-
-
     </Grid>
-
-
-
 </UserControl>
 
     
