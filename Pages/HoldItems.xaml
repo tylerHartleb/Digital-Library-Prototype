@@ -4,7 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:CPSC_481_Digital_Library_Prototype.Pages"
-      xmlns:Components="clr-namespace:CPSC_481_Digital_Library_Prototype.Components" x:Class="CPSC_481_Digital_Library_Prototype.Pages.HoldItems"
+      xmlns:Components="clr-namespace:CPSC_481_Digital_Library_Prototype.Components" 
+      x:Class="CPSC_481_Digital_Library_Prototype.Pages.HoldItems"
       mc:Ignorable="d" 
       d:DesignHeight="648" d:DesignWidth="393">
   

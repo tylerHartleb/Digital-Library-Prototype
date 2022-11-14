@@ -26,10 +26,7 @@
                             </components:TabIcon.ImagePath>
                         </components:TabIcon>
                     </TabItem.Header>
-<<<<<<< Updated upstream
-=======
-                    <pages:CheckedItems/>
->>>>>>> Stashed changes
+                    <pages:CheckedItems />
                 </TabItem>
 
                 <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">

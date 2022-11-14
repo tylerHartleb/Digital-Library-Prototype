@@ -4,12 +4,5 @@
   "success": true,
   "projectFilePath": "C:\\Users\\doowo\\Desktop\\Assignment2\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\doowo\\Desktop\\Assignment2\\CPSC-481-Digital-Library-Prototype\\obj\\project.nuget.cache : Unexpected character encountered while parsing value: <. Path '', line 0, position 0."
-    }
-  ]
+  "logs": []
 }

@@ -18,9 +18,9 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
     /// <summary>
     /// Interaction logic for checkedItems.xaml
     /// </summary>
-    public partial class checkedItems : UserControl
+    public partial class CheckedItems : UserControl
     {
-        public checkedItems()
+        public CheckedItems()
         {
             InitializeComponent();
         }

@@ -59,7 +59,7 @@ namespace CPSC_481_Digital_Library_Prototype {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/CPSC-481-Digital-Library-Prototype;V1.0.0.0;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CPSC-481-Digital-Library-Prototype;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
