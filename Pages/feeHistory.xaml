@@ -9,7 +9,11 @@
 
     <Grid Background="White">
         <TextBlock x:Name="Back_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Back" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="54,22,0,0" Width="48"/>
-        <Image Margin="24,21,339,597" Source="/Icons/back.png" Stretch="Fill"/>
+        <Image Margin="23,22,344,599" Stretch="Fill">
+            <Image.Source>
+                <BitmapImage UriSource="/Icons/back.png" />
+            </Image.Source>
+        </Image>
 
         <StackPanel Margin="104,229,109,182">
             <TextBlock HorizontalAlignment="Center" Margin="0,0,0,5" TextWrapping="Wrap" Text="You Owe" VerticalAlignment="Top" FontSize="25" FontWeight="Bold"/>
