@@ -18,16 +18,6 @@
                 Style="{DynamicResource ResourceKey=styleTabControl}"
                 TabStripPlacement="bottom"
             >
-                <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}" IsSelected="True">
-                    <TabItem.Header>
-                        <components:TabIcon TabName="My Books">
-                            <components:TabIcon.ImagePath>
-                                <BitmapImage UriSource="./Images/account.png"/>
-                            </components:TabIcon.ImagePath>
-                        </components:TabIcon>
-                    </TabItem.Header>
-                </TabItem>
-
                 <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
                     <TabItem.Header>
                         <components:TabIcon TabName="Account">
@@ -38,7 +28,7 @@
                     </TabItem.Header>
                 </TabItem>
 
-                <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}" Name="SearchTab">
+                <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
                     <TabItem.Header>
                         <components:TabIcon TabName="Search">
                             <components:TabIcon.ImagePath>
@@ -46,7 +36,17 @@
                             </components:TabIcon.ImagePath>
                         </components:TabIcon>
                     </TabItem.Header>
-                    <pages:Search />
+                    <pages:Results />
+                </TabItem>
+
+                <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
+                    <TabItem.Header>
+                        <components:TabIcon TabName="Scan">
+                            <components:TabIcon.ImagePath>
+                                <BitmapImage UriSource="Images/scan.png"/>
+                            </components:TabIcon.ImagePath>
+                        </components:TabIcon>
+                    </TabItem.Header>
                 </TabItem>
             </TabControl>
         </Grid>
