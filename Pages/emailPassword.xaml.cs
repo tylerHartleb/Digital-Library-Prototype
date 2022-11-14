@@ -18,7 +18,7 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
     /// <summary>
     /// Interaction logic for emailPassword.xaml
     /// </summary>
-    public partial class emailPassword : Page
+    public partial class emailPassword : UserControl
     {
         public emailPassword()
         {

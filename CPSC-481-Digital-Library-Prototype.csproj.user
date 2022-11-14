@@ -19,7 +19,7 @@
     <Compile Update="Pages\feeHistory.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\holdItems.xaml.cs">
+    <Compile Update="Pages\HoldItems.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\Search.xaml.cs">
@@ -42,7 +42,7 @@
     <Page Update="Pages\feeHistory.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\holdItems.xaml">
+    <Page Update="Pages\HoldItems.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Results.xaml">

@@ -18,9 +18,9 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
     /// <summary>
     /// Interaction logic for holdItems.xaml
     /// </summary>
-    public partial class holdItems : Page
+    public partial class HoldItems : UserControl
     {
-        public holdItems()
+        public HoldItems()
         {
             InitializeComponent();
         }

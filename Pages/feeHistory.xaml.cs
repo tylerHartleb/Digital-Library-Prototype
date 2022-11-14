@@ -18,7 +18,7 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
     /// <summary>
     /// Interaction logic for feeHistory.xaml
     /// </summary>
-    public partial class feeHistory : Page
+    public partial class feeHistory : UserControl
     {
         public feeHistory()
         {
