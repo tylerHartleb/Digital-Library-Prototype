@@ -26,6 +26,7 @@
                             </components:TabIcon.ImagePath>
                         </components:TabIcon>
                     </TabItem.Header>
+                    <pages:Fees/>
                 </TabItem>
 
                 <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
@@ -47,6 +48,7 @@
                             </components:TabIcon.ImagePath>
                         </components:TabIcon>
                     </TabItem.Header>
+                    <pages:Scan/>
                 </TabItem>
             </TabControl>
         </Grid>

@@ -15,6 +15,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Pages\Login.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\EmailPassword.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Fees.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\CheckItems.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\HoldItems.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Scan.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\Details-hold_digital-modal.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -31,6 +49,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Results.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Account.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Search.xaml">

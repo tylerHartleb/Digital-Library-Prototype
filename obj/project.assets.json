@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\rant2\\.nuget\\packages\\": {}
+    "C:\\Users\\Daniel Jin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rant2\\Documents\\My School\\CPSC-481\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj",
+      "projectUniqueName": "C:\\Users\\Daniel Jin\\Desktop\\CPSC 481\\CPSC-481-Digital-Library-Prototype.csproj",
       "projectName": "CPSC-481-Digital-Library-Prototype",
-      "projectPath": "C:\\Users\\rant2\\Documents\\My School\\CPSC-481\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj",
-      "packagesPath": "C:\\Users\\rant2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rant2\\Documents\\My School\\CPSC-481\\CPSC-481-Digital-Library-Prototype\\obj\\",
+      "projectPath": "C:\\Users\\Daniel Jin\\Desktop\\CPSC 481\\CPSC-481-Digital-Library-Prototype.csproj",
+      "packagesPath": "C:\\Users\\Daniel Jin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Daniel Jin\\Desktop\\CPSC 481\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\rant2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Daniel Jin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
