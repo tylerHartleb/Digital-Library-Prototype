@@ -253,7 +253,7 @@
                 </Grid>
             </StackPanel>
         </ScrollViewer>
-        <Border Grid.Row="1" CornerRadius="8,8,0,0" Height="275" Width="393" VerticalAlignment="Bottom" HorizontalAlignment="Center" BorderBrush="White" Background="White">
+        <Border Grid.Row="1"  CornerRadius="8,8,0,0" Height="548" Width="393" VerticalAlignment="Bottom" HorizontalAlignment="Center" BorderBrush="White" Background="White">
             <Border.Effect>
                 <DropShadowEffect ShadowDepth="0.5"/>
             </Border.Effect>
@@ -276,57 +276,135 @@
                     </Button>
                 </Grid>
                 <StackPanel Grid.Row="1">
-                    <TextBlock HorizontalAlignment="Left" Text="Prefered Location" VerticalAlignment="Center" FontSize="20" FontWeight="Medium" TextAlignment="Center" Margin="10,0,10,9"/>
-                    <Button Background="white" Margin="10, 0, 10, 16" BorderBrush="Green" BorderThickness="2">
-                        <Grid Width="373">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Left" Text="Locations" VerticalAlignment="Center" FontSize="20" FontWeight="Medium" TextAlignment="Center" Margin="10,0,10,9"/>
+                    <StackPanel>
+                        <Button Background="white" Margin="10, 0, 10, 16" BorderBrush="Green" BorderThickness="2">
+                            <Grid Width="373">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
 
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
 
-                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Nose Hill" HorizontalAlignment="Left" Margin="10,10,10,4" FontSize="18" FontWeight="SemiBold" TextAlignment="Center"  VerticalAlignment="Center"/>
-                            <TextBlock Grid.Column="0" Grid.Row="1" Text="0 Available, 2 on Hold" HorizontalAlignment="Left" Margin="10,0,0,10" FontSize="12" TextAlignment="Center"  VerticalAlignment="Center"/>
-                            <Rectangle Grid.Column="1" Grid.RowSpan="2" Fill="Green" Width="40" Height="40" HorizontalAlignment="Right" Margin="10">
-                                <Rectangle.OpacityMask>
-                                    <VisualBrush>
-                                        <VisualBrush.Visual>
-                                            <Image Source="/Icons/checkmark.png"  />
-                                        </VisualBrush.Visual>
-                                    </VisualBrush>
-                                </Rectangle.OpacityMask>
-                            </Rectangle>
-                        </Grid>
-                    </Button>
+                                <TextBlock Grid.Column="0" Grid.Row="0" Text="Nose Hill" HorizontalAlignment="Left" Margin="10,10,10,4" FontSize="18" FontWeight="SemiBold" TextAlignment="Center"  VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="0" Grid.Row="1" Text="0 Available, 2 on Hold" HorizontalAlignment="Left" Margin="10,0,0,10" FontSize="12" TextAlignment="Center"  VerticalAlignment="Center"/>
+                                <Rectangle Grid.Column="1" Grid.RowSpan="2" Fill="Green" Width="40" Height="40" HorizontalAlignment="Right" Margin="10">
+                                    <Rectangle.OpacityMask>
+                                        <VisualBrush>
+                                            <VisualBrush.Visual>
+                                                <Image Source="/Icons/checkmark.png"  />
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                            </Grid>
+                        </Button>
+                        <Separator Foreground="LightGray" Margin="10,0,10,8" />
+                        <Button Background="white" Margin="10, 0, 10, 16" BorderBrush="Transparent" BorderThickness="2">
+                            <Grid Width="373">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Column="0" Grid.Row="0" Text="Downtown" HorizontalAlignment="Left" Margin="10,10,10,4" FontSize="18" FontWeight="SemiBold" TextAlignment="Center"  VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="0" Grid.Row="1" Text="0 Available, 7 on Hold" HorizontalAlignment="Left" Margin="10,0,0,10" FontSize="12" TextAlignment="Center"  VerticalAlignment="Center"/>
+                                <Button Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Right" Margin="10" Background="white" BorderBrush="White">
+                                    <TextBlock Text="Select" FontSize="18" FontWeight="Medium" />
+                                </Button>
+                                <Rectangle >
+                                    <Rectangle.OpacityMask>
+                                        <VisualBrush>
+                                            <VisualBrush.Visual>
+                                                <Image Source="/Icons/checkmark.png"  />
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                            </Grid>
+                        </Button>
+                        <Separator Foreground="LightGray" Margin="10,0,10,8" />
+                        <Button Background="white" Margin="10, 0, 10, 16" BorderBrush="Transparent" BorderThickness="2">
+                            <Grid Width="373">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Column="0" Grid.Row="0" Text="Fish Creek" HorizontalAlignment="Left" Margin="10,10,10,4" FontSize="18" FontWeight="SemiBold" TextAlignment="Center"  VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="0" Grid.Row="1" Text="0 Available, 1 on Hold" HorizontalAlignment="Left" Margin="10,0,0,10" FontSize="12" TextAlignment="Center"  VerticalAlignment="Center"/>
+                                <Button Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Right" Margin="10" Background="white" BorderBrush="White">
+                                    <TextBlock Text="Select" FontSize="18" FontWeight="Medium" />
+                                </Button>
+                                <Rectangle >
+                                    <Rectangle.OpacityMask>
+                                        <VisualBrush>
+                                            <VisualBrush.Visual>
+                                                <Image Source="/Icons/checkmark.png"  />
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                            </Grid>
+                        </Button>
+                        <Separator Foreground="LightGray" Margin="10,0,10,8" />
+                        <Button Background="white" Margin="10, 0, 10, 16" BorderBrush="Transparent" BorderThickness="2">
+                            <Grid Width="373">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Column="0" Grid.Row="0" Text="Bowness" HorizontalAlignment="Left" Margin="10,10,10,4" FontSize="18" FontWeight="SemiBold" TextAlignment="Center"  VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="0" Grid.Row="1" Text="0 Available, 4 on Hold" HorizontalAlignment="Left" Margin="10,0,0,10" FontSize="12" TextAlignment="Center"  VerticalAlignment="Center"/>
+                                <Button Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Right" Margin="10" Background="white" BorderBrush="White">
+                                    <TextBlock Text="Select" FontSize="18" FontWeight="Medium" />
+                                </Button>
+                                <Rectangle >
+                                    <Rectangle.OpacityMask>
+                                        <VisualBrush>
+                                            <VisualBrush.Visual>
+                                                <Image Source="/Icons/checkmark.png"  />
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                            </Grid>
+                        </Button>
+                    </StackPanel>
+
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Border Grid.Row="1" CornerRadius="8" Margin="5" VerticalAlignment="Bottom" HorizontalAlignment="Center" BorderBrush="#007AFF" BorderThickness="2" Background="#007AFF">
                             <Button Grid.Row="1"
                                 Background="Transparent"
                                 BorderBrush="Transparent"
                                 Height="50"
-                                Width="175"
+                                Width="273"
                                 Foreground="White"
                             >
                                 <TextBlock Text="Confirm hold" FontSize="20" FontWeight="Bold" />
                             </Button>
                         </Border>
-                        <Border Grid.Row="1" CornerRadius="8" Margin="5" VerticalAlignment="Bottom" HorizontalAlignment="Center" BorderBrush="#007AFF" BorderThickness="2" Background="White">
-                            <Button Grid.Row="1"
-                                Background="Transparent"
-                                BorderBrush="Transparent"
-                                Height="50"
-                                Width="175"
-                                Foreground="#007AFF"
-                            >
-                                <TextBlock Text="More Locations" FontSize="20" FontWeight="Bold" />
-                            </Button>
-                        </Border>
                     </StackPanel>
-                    
                 </StackPanel>
             </Grid>
         </Border>
