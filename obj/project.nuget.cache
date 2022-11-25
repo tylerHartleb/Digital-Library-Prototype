@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "version": 2,
   "dgSpecHash": "dt+d12zhfaPkrt9/KnnUSjKZw+EisfWawhMe85RrpPZw4LoPgP08e+h5BkweeIN0B92anMuvUoEBMB6bPB1gdw==",
@@ -5,4 +6,13 @@
   "projectFilePath": "C:\\Users\\doowo\\Desktop\\Assignment2\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj",
   "expectedPackageFiles": [],
   "logs": []
+=======
+{
+  "version": 2,
+  "dgSpecHash": "+/MoM//e3c0vwq2tPJWDtRTotGXgrVtycmo0LQEmdpMAqLASfNpsUQiINbeWph+m1l2EfU8qckV7zJPO+qpiGQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Daniel Jin\\Desktop\\CPSC 481\\CPSC-481-Digital-Library-Prototype.csproj",
+  "expectedPackageFiles": [],
+  "logs": []
+>>>>>>> Tyler-search-page
 }
