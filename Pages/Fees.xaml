@@ -7,40 +7,6 @@
       mc:Ignorable="d" 
       d:DesignHeight="648" d:DesignWidth="393"
 >
-<<<<<<< HEAD
-	<Grid Background="white">
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="86*" />
-			<ColumnDefinition Width="auto" />
-			<ColumnDefinition Width="86*" />
-		</Grid.ColumnDefinitions>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="63*" />
-			<RowDefinition Height="464*" />
-			<RowDefinition Height="121*" />
-
-		</Grid.RowDefinitions>
-
-		<Button Grid.Column="0" Margin="6,0,0,0" HorizontalAlignment="Left" Width="36" Height="30" VerticalAlignment="Center" Background="White" BorderBrush="White">
-			<Image >
-				<Image.Source>
-					<BitmapImage UriSource="/Icons/back.png" />
-				</Image.Source>
-			</Image>
-		</Button>
-		<TextBlock Text="Back" VerticalAlignment="Center" FontSize="19" FontWeight="Bold" Height="27" Margin="40,0,0,0" HorizontalAlignment="Left" Width="64"/>
-		<StackPanel Grid.Column="1" Grid.Row="1" Height="238" VerticalAlignment="Center" HorizontalAlignment="Center" Width="154">
-			<TextBlock HorizontalAlignment="Center" Margin="0,0,0,5" TextWrapping="Wrap" Text="You Owe" FontSize="25" FontWeight="Bold"/>
-			<TextBlock HorizontalAlignment="Center" Margin="0,0,0,20" TextWrapping="Wrap" Text="3.00$" FontSize="20" FontWeight="Medium"/>
-
-			<TextBlock HorizontalAlignment="Center" Margin="0,0,0,5" TextWrapping="Wrap" Text="History" VerticalAlignment="Top" FontSize="25" FontWeight="Bold"/>
-			<TextBlock HorizontalAlignment="Center" Margin="0,0,0,5" TextWrapping="Wrap" Text="11/9/22 late fee 1.00$ " VerticalAlignment="Top" FontSize="15" FontWeight="Medium"/>
-			<TextBlock HorizontalAlignment="Center" Margin="0,0,0,5" TextWrapping="Wrap" Text="11/7/22 late fee 1.00$ " VerticalAlignment="Top" FontSize="15" FontWeight="Medium"/>
-			<TextBlock HorizontalAlignment="Center" Margin="0,0,0,5" TextWrapping="Wrap" Text="11/3/22 late fee 1.00$ " VerticalAlignment="Top" FontSize="15" FontWeight="Medium"/>
-
-		</StackPanel>
-	</Grid>
-=======
     <Grid Background="White">
         <TextBlock x:Name="Back_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Back" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="54,22,0,0" Width="48"/>
         <Image Margin="23,22,344,599" Stretch="Fill">
@@ -59,7 +25,6 @@
 
         </StackPanel>
     </Grid>
->>>>>>> Tyler-search-page
 
 
 </UserControl>

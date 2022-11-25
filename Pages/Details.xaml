@@ -253,19 +253,6 @@
                 </Grid>
             </StackPanel>
         </ScrollViewer>
-<<<<<<< HEAD
-        <Border Grid.Row="1" CornerRadius="8" Margin="20" VerticalAlignment="Bottom" HorizontalAlignment="Center" BorderBrush="#007AFF" Background="#007AFF">
-            <Button Grid.Row="1"
-                Background="Transparent"
-                BorderBrush="Transparent"
-                Height="50"
-                Width="273"
-                Foreground="White"
-            >
-                    <TextBlock Text="Place hold" FontSize="22" FontWeight="Bold" />
-                </Button>
-        </Border>
-=======
         <Button Grid.Row="1"
                 Style="{StaticResource styleBtnPrimary}"
                 VerticalAlignment="Bottom"
@@ -273,6 +260,5 @@
                 Height="50"
                 Width="273"
         />
->>>>>>> Tyler-search-page
     </Grid>
 </UserControl>
