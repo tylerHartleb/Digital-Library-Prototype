@@ -1,18 +1,15 @@
-<<<<<<< HEAD
 {
   "version": 2,
-  "dgSpecHash": "dt+d12zhfaPkrt9/KnnUSjKZw+EisfWawhMe85RrpPZw4LoPgP08e+h5BkweeIN0B92anMuvUoEBMB6bPB1gdw==",
+  "dgSpecHash": "azk+N06W4g8VMItqYMLpqKQG13eyRCIVlJVT5rz+lbeu7lMU1/I0im+foNmInSQhesw+4bOVz44ghmbBdOHCeQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\doowo\\Desktop\\Assignment2\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj",
+  "projectFilePath": "C:\\Users\\doowo\\Desktop\\cpsc481\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj",
   "expectedPackageFiles": [],
-  "logs": []
-=======
-{
-  "version": 2,
-  "dgSpecHash": "+/MoM//e3c0vwq2tPJWDtRTotGXgrVtycmo0LQEmdpMAqLASfNpsUQiINbeWph+m1l2EfU8qckV7zJPO+qpiGQ==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Daniel Jin\\Desktop\\CPSC 481\\CPSC-481-Digital-Library-Prototype.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
->>>>>>> Tyler-search-page
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\doowo\\Desktop\\cpsc481\\CPSC-481-Digital-Library-Prototype\\obj\\project.nuget.cache : Unexpected character encountered while parsing value: <. Path '', line 0, position 0."
+    }
+  ]
 }
