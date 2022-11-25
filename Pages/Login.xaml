@@ -23,45 +23,24 @@
 
         <!--Username block-->
         <StackPanel Grid.Row="1" Margin="10 0 10 108">
-            <TextBlock Text="USERNAME:" FontWeight="Bold"/>
+            <TextBlock Text="Library Card Number:" FontWeight="Bold"/>
             <TextBox Padding="16"/>
         </StackPanel>
 
         <!--Password block-->
         <StackPanel Grid.Row="1" Margin="10 108 10 0">
-            <TextBlock Text="PASSWORD:" FontWeight="Bold"/>
+            <TextBlock Text="Password:" FontWeight="Bold"/>
             <TextBox Padding="16" UndoLimit="101"/>
         </StackPanel>
 
         <!--Login Click block-->
-        <!--
-        <Button Margin="30 30 30 30" Grid.Row="2" Content="LOGIN" BorderBrush="#007AFF" 
-                Foreground="White" Background="#007AFF" Height="50" Width="273" 
-                FontWeight="Bold" FontSize="22" />
-        -->
-
-        <Border CornerRadius="8" Margin="30 -60 30 30"  Grid.Row="2"  BorderBrush="#007AFF" BorderThickness="2" Background="#007AFF" Height="50" Width="273">
-            <Button 
-                                Background="Transparent"
-                                BorderBrush="Transparent"
-                                Height="50" Width="273"
-                                Foreground="White"
-                            >
-                <TextBlock Text="Login" FontSize="20" FontWeight="Bold" />
-            </Button>
-        </Border>
-
-        <Border CornerRadius="8" Margin="30 60 30 0"  Grid.Row="2"  BorderBrush="#007AFF" BorderThickness="2" Background="#007AFF" Height="50" Width="273">
-            <Button 
-                                Background="Transparent"
-                                BorderBrush="Transparent"
-                                Height="50" Width="273"
-                                Foreground="White"
-                            >
-                <TextBlock Text="Help" FontSize="20" FontWeight="Bold" />
-            </Button>
-        </Border>
-
+        <Button
+            Grid.Row="2"
+            Style="{StaticResource styleBtnPrimary}"
+            Height="50" Width="273"
+        >
+            <TextBlock Text="Login" />
+        </Button>
     </Grid>
 
 

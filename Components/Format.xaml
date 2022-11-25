@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="CPSC_481_Digital_Library_Prototype.Components.Format"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CPSC_481_Digital_Library_Prototype.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="40">
+    <Rectangle x:Name="RecFill" Fill="Red" Width="20" Height="20" Margin="0,0,8,0">
+        <Rectangle.OpacityMask>
+            <VisualBrush>
+                <VisualBrush.Visual>
+                    <Image x:Name="FormatImage" Source="/Icons/book.png"  />
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Rectangle.OpacityMask>
+    </Rectangle>
+</UserControl>

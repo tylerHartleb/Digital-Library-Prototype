@@ -7,7 +7,7 @@
         xmlns:components="clr-namespace:CPSC_481_Digital_Library_Prototype.Components"
         xmlns:pages="clr-namespace:CPSC_481_Digital_Library_Prototype.Pages"
         mc:Ignorable="d"
-        Title="MainWindow" Height="706" Width="393">
+        Title="MainWindow" Height="706" Width="413">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Name="SafeArea" Height="706*"/>
@@ -26,7 +26,7 @@
                             </components:TabIcon.ImagePath>
                         </components:TabIcon>
                     </TabItem.Header>
-                    <pages:Fees/>
+                    <pages:Account/>
                 </TabItem>
 
                 <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
@@ -37,7 +37,7 @@
                             </components:TabIcon.ImagePath>
                         </components:TabIcon>
                     </TabItem.Header>
-                    <pages:Results />
+                    <pages:Search />
                 </TabItem>
 
                 <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">

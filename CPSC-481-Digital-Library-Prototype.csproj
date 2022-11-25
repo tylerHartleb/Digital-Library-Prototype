@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="Book covers\battle-of-the-lab.jpg" />
+    <None Remove="Book covers\book-cover-placeholder.png" />
     <None Remove="Book covers\daughter-of-the-deep.jpg" />
     <None Remove="Book covers\hammer-of-thor.jpg" />
     <None Remove="Book covers\harryPotter.jpg" />
@@ -27,6 +28,8 @@
     <None Remove="Icons\close.png" />
     <None Remove="Icons\forward.png" />
     <None Remove="Icons\headphone.png" />
+    <None Remove="Icons\icon-forward.png" />
+    <None Remove="Icons\remove.png" />
     <None Remove="Icons\search.png" />
     <None Remove="Icons\smartphone.png" />
     <None Remove="Icons\star.png" />
@@ -42,6 +45,7 @@
 
   <ItemGroup>
     <Resource Include="Book covers\battle-of-the-lab.jpg" />
+    <Resource Include="Book covers\book-cover-placeholder.png" />
     <Resource Include="Book covers\daughter-of-the-deep.jpg" />
     <Resource Include="Book covers\hammer-of-thor.jpg" />
     <Resource Include="Book covers\harryPotter.jpg" />
@@ -59,6 +63,8 @@
     <Resource Include="Icons\close.png" />
     <Resource Include="Icons\forward.png" />
     <Resource Include="Icons\headphone.png" />
+    <Resource Include="Icons\icon-forward.png" />
+    <Resource Include="Icons\remove.png" />
     <Resource Include="Icons\search.png" />
     <Resource Include="Icons\smartphone.png" />
     <Resource Include="Icons\star.png" />

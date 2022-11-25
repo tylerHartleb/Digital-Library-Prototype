@@ -111,14 +111,23 @@
             </Setter.Value>
         </Setter>
     </Style>
-</ResourceDictionary>
-<!-- <Border x:Name="Border" CornerRadius="8" Margin="20" HorizontalAlignment="Center" BorderBrush="#007AFF" Background="#007AFF" >
-    <ContentPresenter x:Name="contentPresenter" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" />
-    </Border>
 
-    <Setter Property="FontSize" Value="22" />
-    <Setter Property="FontWeight" Value="Bold" />
-    <Setter Property="Foreground" Value="White" />
-    <Setter Property="Background" Value="Transparent" />
-    <Setter Property="BorderBrush" Value="Transparent" />
-    -->
+    <Style x:Key="styleBtnImportant" TargetType="Button">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Margin" Value="20" />
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Border" CornerRadius="8" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" HorizontalAlignment="Center" BorderBrush="Red" Background="Red" >
+                        <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

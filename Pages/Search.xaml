@@ -8,8 +8,8 @@
                 d:DesignHeight="648" d:DesignWidth="393"
 >
 
-    <Grid Background="White">
-        <StackPanel>
+    <Grid Background="White" Margin="10,0,10,0">
+        <StackPanel x:Name="SearchPage">
             <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="35" Margin="0,10,0,16" VerticalAlignment="Top" Width="373">
                 <Grid Margin="0,0,0,0" Width="373">
                     <Grid.ColumnDefinitions>
@@ -24,7 +24,7 @@
                     <TextBox Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Books, Audiobooks, and more" VerticalAlignment="Top" Width="321" Height="18" Margin="0,6,0,0" TextChanged="TextBox_TextChanged" BorderBrush="Transparent" VerticalContentAlignment="Center" />
                 </Grid>
             </Border>
-            <Grid Margin="10,0,10,16">
+            <Grid Margin="0,0,0,16">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -92,216 +92,9 @@
                 </StackPanel>
             </Grid>
             <TextBlock x:Name="Rec_Heading" HorizontalAlignment="Left" Margin="10,0,0,16" TextWrapping="Wrap" Text="Reccommended" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" MinHeight="200" Width="373" Margin="10,0,10,0">
-                <StackPanel Width="373">
-                    <Grid Margin="0,0,0,8">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="180" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-
-                        <Image Width="106" Height="135" Margin="0,0,8,0" Stretch="Fill" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
-                            <Image.Source>
-                                <BitmapImage UriSource="/Book covers/The-Last-Odyssey.jpg" />
-                            </Image.Source>
-                        </Image>
-                        <StackPanel Grid.Column="1" Grid.Row="0">
-                            <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="The Last Odyssey" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-                            <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="James Rollin" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="4.6" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
-                                <Image Source="/Icons/star.png" Width="15" Height="15" />
-                            </StackPanel>
-                        </StackPanel>
-                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Bottom">
-                            <Rectangle Fill="Red" Width="20" Height="20" Margin="0,0,8,0">
-                                <Rectangle.OpacityMask>
-                                    <VisualBrush>
-                                        <VisualBrush.Visual>
-                                            <Image>
-                                                <Image.Source>
-                                                    <BitmapImage UriSource="/Icons/book.png" />
-                                                </Image.Source>
-                                            </Image>
-                                        </VisualBrush.Visual>
-                                    </VisualBrush>
-                                </Rectangle.OpacityMask>
-                            </Rectangle>
-                            <Rectangle Fill="Green" Width="20" Height="20" Margin="0,0,8,0">
-                                <Rectangle.OpacityMask>
-                                    <VisualBrush>
-                                        <VisualBrush.Visual>
-                                            <Image>
-                                                <Image.Source>
-                                                    <BitmapImage UriSource="/Icons/smartphone.png" />
-                                                </Image.Source>
-                                            </Image>
-                                        </VisualBrush.Visual>
-                                    </VisualBrush>
-                                </Rectangle.OpacityMask>
-                            </Rectangle>
-                            <Rectangle Fill="Red" Width="20" Height="20" Margin="0,0,8,0">
-                                <Rectangle.OpacityMask>
-                                    <VisualBrush>
-                                        <VisualBrush.Visual>
-                                            <Image>
-                                                <Image.Source>
-                                                    <BitmapImage UriSource="/Icons/headphone.png" />
-                                                </Image.Source>
-                                            </Image>
-                                        </VisualBrush.Visual>
-                                    </VisualBrush>
-                                </Rectangle.OpacityMask>
-                            </Rectangle>
-                        </StackPanel>
-                        <Button Grid.Column="2" Grid.Row="0" Height="30" Width="30" VerticalAlignment="Top" HorizontalAlignment="Right" Background="White" BorderBrush="White">
-                            <Image VerticalAlignment="Top" HorizontalAlignment="Right">
-                                <Image.Source>
-                                    <BitmapImage UriSource="/Icons/bookmark.png" />
-                                </Image.Source>
-                            </Image>
-                        </Button>
-                    </Grid>
-                    <Separator Foreground="LightGray" Margin="10,0,10,8" />
-                    <Grid Margin="0,0,0,8">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="180" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-
-                        <Image Width="106" Height="135" Margin="0,0,8,0" Stretch="Fill" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
-                            <Image.Source>
-                                <BitmapImage UriSource="/Book covers/song-achilles.jpg" />
-                            </Image.Source>
-                        </Image>
-                        <StackPanel Grid.Column="1" Grid.Row="0">
-                            <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="The Song of Achilles" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-                            <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="Madeline Miller" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="4.5" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
-                                <Image Source="/Icons/star.png" Width="15" Height="15" />
-                            </StackPanel>
-                        </StackPanel>
-                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Bottom">
-                            <Rectangle Fill="Green" Width="20" Height="20" Margin="0,0,8,0">
-                                <Rectangle.OpacityMask>
-                                    <VisualBrush>
-                                        <VisualBrush.Visual>
-                                            <Image>
-                                                <Image.Source>
-                                                    <BitmapImage UriSource="/Icons/book.png" />
-                                                </Image.Source>
-                                            </Image>
-                                        </VisualBrush.Visual>
-                                    </VisualBrush>
-                                </Rectangle.OpacityMask>
-                            </Rectangle>
-                            <Rectangle Fill="Green" Width="20" Height="20" Margin="0,0,8,0">
-                                <Rectangle.OpacityMask>
-                                    <VisualBrush>
-                                        <VisualBrush.Visual>
-                                            <Image>
-                                                <Image.Source>
-                                                    <BitmapImage UriSource="/Icons/smartphone.png" />
-                                                </Image.Source>
-                                            </Image>
-                                        </VisualBrush.Visual>
-                                    </VisualBrush>
-                                </Rectangle.OpacityMask>
-                            </Rectangle>
-                        </StackPanel>
-                        <Button Grid.Column="2" Grid.Row="0" Height="30" Width="30" VerticalAlignment="Top" HorizontalAlignment="Right" Background="White" BorderBrush="White">
-                            <Image VerticalAlignment="Top" HorizontalAlignment="Right">
-                                <Image.Source>
-                                    <BitmapImage UriSource="/Icons/bookmark.png" />
-                                </Image.Source>
-                            </Image>
-                        </Button>
-                    </Grid>
-                    <Separator Foreground="LightGray" Margin="10,0,10,8" />
-                    <Grid Margin="0,0,0,8">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="180" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-
-                        <Image Width="106" Height="135" Margin="0,0,8,0" Stretch="Fill" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
-                            <Image.Source>
-                                <BitmapImage UriSource="/Book covers/son-of-neptune.jpg" />
-                            </Image.Source>
-                        </Image>
-                        <StackPanel Grid.Column="1" Grid.Row="0">
-                            <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="The Son of Neptune" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-                            <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="Rick Riordan" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="4.2" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
-                                <Image Source="/Icons/star.png" Width="15" Height="15" />
-                            </StackPanel>
-                        </StackPanel>
-                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Bottom">
-                            <Rectangle Fill="Red" Width="20" Height="20" Margin="0,0,8,0">
-                                <Rectangle.OpacityMask>
-                                    <VisualBrush>
-                                        <VisualBrush.Visual>
-                                            <Image>
-                                                <Image.Source>
-                                                    <BitmapImage UriSource="/Icons/book.png" />
-                                                </Image.Source>
-                                            </Image>
-                                        </VisualBrush.Visual>
-                                    </VisualBrush>
-                                </Rectangle.OpacityMask>
-                            </Rectangle>
-                            <Rectangle Fill="Red" Width="20" Height="20" Margin="0,0,8,0">
-                                <Rectangle.OpacityMask>
-                                    <VisualBrush>
-                                        <VisualBrush.Visual>
-                                            <Image>
-                                                <Image.Source>
-                                                    <BitmapImage UriSource="/Icons/smartphone.png" />
-                                                </Image.Source>
-                                            </Image>
-                                        </VisualBrush.Visual>
-                                    </VisualBrush>
-                                </Rectangle.OpacityMask>
-                            </Rectangle>
-                            <Rectangle Fill="Green" Width="20" Height="20" Margin="0,0,8,0">
-                                <Rectangle.OpacityMask>
-                                    <VisualBrush>
-                                        <VisualBrush.Visual>
-                                            <Image>
-                                                <Image.Source>
-                                                    <BitmapImage UriSource="/Icons/headphone.png" />
-                                                </Image.Source>
-                                            </Image>
-                                        </VisualBrush.Visual>
-                                    </VisualBrush>
-                                </Rectangle.OpacityMask>
-                            </Rectangle>
-                        </StackPanel>
-                        <Button Grid.Column="2" Grid.Row="0" Height="30" Width="30" VerticalAlignment="Top" HorizontalAlignment="Right" Background="White" BorderBrush="White">
-                            <Image VerticalAlignment="Top" HorizontalAlignment="Right">
-                                <Image.Source>
-                                    <BitmapImage UriSource="/Icons/bookmark.png" />
-                                </Image.Source>
-                            </Image>
-                        </Button>
-                    </Grid>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" MinHeight="200" Width="373" Margin="0,0,0,0">
+                <StackPanel x:Name="Recs" Width="373">
+                    <!--<Separator Foreground="LightGray" Margin="10,0,10,8" />-->
                 </StackPanel>
             </ScrollViewer>
         </StackPanel>
