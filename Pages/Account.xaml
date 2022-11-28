@@ -27,8 +27,8 @@
                                 <ColumnDefinition Width="0.5*" />
                                 <ColumnDefinition Width="0.5*" />
                             </Grid.ColumnDefinitions>
-                            
-                            <TextBlock Grid.Column="0" FontSize="14" Text="Fees" VerticalAlignment="Center" HorizontalAlignment="Left" />
+
+                            <TextBlock Grid.Column="0" FontSize="14" Text="Fees ($3.00)" VerticalAlignment="Center" HorizontalAlignment="Left" />
                             <Rectangle Grid.Column="1" Fill="Gray" Width="14" Height="14" VerticalAlignment="Center" HorizontalAlignment="Right">
                                 <Rectangle.OpacityMask>
                                     <VisualBrush>
@@ -64,16 +64,6 @@
             </Border>
 
             <Border Margin="0,32,0,0" Background="White" BorderBrush="White" BorderThickness="1" CornerRadius="8" Padding="4">
-                <StackPanel x:Name="AccountDetails">
-                    <Label Content="Items checked out: 1" Margin="10,0,10,8"/>
-                    <Separator Foreground="#F6F6F6" Margin="10,0,10,8" />
-                    <Label Content="Items on hold: 1" Margin="10,0,10,8"/>
-                    <Separator Foreground="#F6F6F6" Margin="10,0,10,8" />
-                    <Label Content="Overdue fees: $3.00" Margin="10,0,10,8" />
-                </StackPanel>
-            </Border>
-
-            <Border Margin="0,32,0,0" Background="White" BorderBrush="White" BorderThickness="1" CornerRadius="8" Padding="4">
                 <StackPanel x:Name="AccountContent">
                     <Button x:Name="CheckedOut" Background="White" BorderBrush="White" HorizontalContentAlignment="Stretch" Margin="10,4,10,4">
                         <Grid HorizontalAlignment="Stretch">
@@ -82,7 +72,7 @@
                                 <ColumnDefinition Width="0.5*" />
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Grid.Column="0" FontSize="14" Text="Checked Out Items" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                            <TextBlock Grid.Column="0" FontSize="14" Text="Checked Out Items (1)" VerticalAlignment="Center" HorizontalAlignment="Left" />
                             <Rectangle Grid.Column="1" Fill="Gray" Width="14" Height="14" VerticalAlignment="Center" HorizontalAlignment="Right">
                                 <Rectangle.OpacityMask>
                                     <VisualBrush>
@@ -102,7 +92,7 @@
                                 <ColumnDefinition Width="0.5*" />
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Grid.Column="0" FontSize="14" Text="Held Items" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                            <TextBlock Grid.Column="0" FontSize="14" Text="Held Items (1)" VerticalAlignment="Center" HorizontalAlignment="Left" />
                             <Rectangle Grid.Column="1" Fill="Gray" Width="14" Height="14" VerticalAlignment="Center" HorizontalAlignment="Right">
                                 <Rectangle.OpacityMask>
                                     <VisualBrush>
@@ -112,6 +102,21 @@
                                     </VisualBrush>
                                 </Rectangle.OpacityMask>
                             </Rectangle>
+                        </Grid>
+                    </Button>
+                </StackPanel>
+            </Border>
+
+            <Border Margin="0,32,0,0" Background="White" BorderBrush="White" BorderThickness="1" CornerRadius="8" Padding="4">
+                <StackPanel x:Name="SignOutContainer">
+                    <Button x:Name="SignOutBtn" Background="White" BorderBrush="White" HorizontalContentAlignment="Stretch" Margin="10,4,10,4">
+                        <Grid HorizontalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*" />
+                                <ColumnDefinition Width="0.5*" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" FontSize="14" Text="Sign out" VerticalAlignment="Center" HorizontalAlignment="Left" />
                         </Grid>
                     </Button>
                 </StackPanel>
