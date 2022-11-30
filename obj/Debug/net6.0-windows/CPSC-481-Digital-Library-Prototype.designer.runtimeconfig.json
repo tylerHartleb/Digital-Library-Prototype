@@ -12,8 +12,9 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\Daniel Jin\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Daniel Jin\\.nuget\\packages"
+      "C:\\Users\\doowo\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\doowo\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
