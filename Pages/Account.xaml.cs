@@ -39,5 +39,10 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
         {
 
         }
+
+        private void Fees_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
