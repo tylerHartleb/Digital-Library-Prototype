@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\Daniel Jin\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Daniel Jin\\.nuget\\packages"
+      "C:\\Users\\FallenByGravity\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\FallenByGravity\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

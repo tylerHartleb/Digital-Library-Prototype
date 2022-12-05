@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:CPSC_481_Digital_Library_Prototype"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary Source="/Styles/Styles.xaml" />
+      <ResourceDictionary Source="/Styles/Styles.xaml" />
     </Application.Resources>
 </Application>

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Daniel Jin\\Desktop\\CPSC 481\\CPSC-481-Digital-Library-Prototype.csproj": {}
+    "C:\\Users\\FallenByGravity\\Documents\\University\\CPSC481\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Daniel Jin\\Desktop\\CPSC 481\\CPSC-481-Digital-Library-Prototype.csproj": {
+    "C:\\Users\\FallenByGravity\\Documents\\University\\CPSC481\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Daniel Jin\\Desktop\\CPSC 481\\CPSC-481-Digital-Library-Prototype.csproj",
+        "projectUniqueName": "C:\\Users\\FallenByGravity\\Documents\\University\\CPSC481\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj",
         "projectName": "CPSC-481-Digital-Library-Prototype",
-        "projectPath": "C:\\Users\\Daniel Jin\\Desktop\\CPSC 481\\CPSC-481-Digital-Library-Prototype.csproj",
-        "packagesPath": "C:\\Users\\Daniel Jin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Daniel Jin\\Desktop\\CPSC 481\\obj\\",
+        "projectPath": "C:\\Users\\FallenByGravity\\Documents\\University\\CPSC481\\CPSC-481-Digital-Library-Prototype\\CPSC-481-Digital-Library-Prototype.csproj",
+        "packagesPath": "C:\\Users\\FallenByGravity\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\FallenByGravity\\Documents\\University\\CPSC481\\CPSC-481-Digital-Library-Prototype\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Daniel Jin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\FallenByGravity\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

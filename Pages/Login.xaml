@@ -24,20 +24,23 @@
         <!--Username block-->
         <StackPanel Grid.Row="1" Margin="10 0 10 108">
             <TextBlock Text="Library Card Number:" FontWeight="Bold"/>
-            <TextBox Padding="16"/>
+            <TextBox x:Name="UsernameTextBox" Padding="16"/>
         </StackPanel>
 
         <!--Password block-->
         <StackPanel Grid.Row="1" Margin="10 108 10 0">
             <TextBlock Text="Password:" FontWeight="Bold"/>
-            <TextBox Padding="16" UndoLimit="101"/>
+            <TextBox x:Name="PasswordTextBox" Padding="16" UndoLimit="101"/>
         </StackPanel>
 
         <!--Login Click block-->
         <Button
+            x:Name="loginButton"
             Grid.Row="2"
             Style="{StaticResource styleBtnPrimary}"
             Height="50" Width="273"
+            Click="loginButton_Click"
+            Cursor="Hand"
         >
             <TextBlock Text="Login" />
         </Button>
