@@ -65,6 +65,10 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
         {
             return _title;
         }
+        public string[] GetCategories() {
+            return _categories;
+        }
         #endregion
+
     }
 }

@@ -21,7 +21,7 @@
                             <BitmapImage UriSource="/Icons/search.png" />
                         </Image.Source>
                     </Image>
-                    <TextBox Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Books, Audiobooks, and more" VerticalAlignment="Top" Width="321" Height="18" Margin="0,6,0,0" TextChanged="TextBox_TextChanged" BorderBrush="Transparent" VerticalContentAlignment="Center" />
+                    <TextBox Name="SearchInput" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Books, Audiobooks, and more" VerticalAlignment="Top" Width="321" Height="18" Margin="0,6,0,0" TextChanged="TextBox_TextChanged" BorderBrush="Transparent" VerticalContentAlignment="Center" />
                 </Grid>
             </Border>
             <Grid Margin="0,0,0,16">
