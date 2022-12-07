@@ -19,5 +19,10 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
         {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Content = new Account();
+        }
     }
 }

@@ -20,12 +20,8 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" TextAlignment="Center" Margin="20,65,0,0"><Run Language="en-ca" Text="On Hold"/><LineBreak/><Run Language="en-ca"/></TextBlock>
-            <TextBlock  HorizontalAlignment="Left" TextWrapping="Wrap" Text="Back" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="44,22,0,0" Width="48"/>
-            <Image Margin="13,22,354,599" Stretch="Fill">
-                <Image.Source>
-                    <BitmapImage UriSource="/Icons/back.png"/>
-                </Image.Source>
-            </Image>
+
+            <Button Content="Back" HorizontalAlignment="Left" Margin="20,14,0,0" VerticalAlignment="Top" Height="38" Width="54" BorderBrush="Snow" Background="White" FontSize="20px" FontWeight="Bold" Click="Button_Click" />
 
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" MinHeight="200" Width="373" Margin="20,109,0,71">
                 <StackPanel Width="373">

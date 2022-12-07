@@ -8,12 +8,7 @@
       d:DesignHeight="648" d:DesignWidth="393"
 >
     <Grid Background="White">
-        <TextBlock x:Name="Back_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Back" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="54,22,0,0" Width="48"/>
-        <Image Margin="23,22,344,599" Stretch="Fill">
-            <Image.Source>
-                <BitmapImage UriSource="/Icons/back.png" />
-            </Image.Source>
-        </Image>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="20,14,0,0" VerticalAlignment="Top" Height="38" Width="54" BorderBrush="Snow" Background="White" FontSize="20px" FontWeight="Bold" Click="Button_Click" />
 
         <StackPanel Margin="104,196,109,215">
             <TextBlock HorizontalAlignment="Center" Margin="0,0,0,5" TextWrapping="Wrap" Text="You Owe" FontSize="25" FontWeight="Bold"/>
