@@ -24,23 +24,32 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
         {
             enteredId = UsernameTextBox.Text;
             enteredPassword = PasswordTextBox.Text;
-            enteredIdFormated = (long)Convert.ToDouble(enteredPassword);
+            try
+            {
+                enteredIdFormated = (long)Convert.ToDouble(enteredId);
+            }
+            catch
+            {
+            }
+            
             if(udb.ContainsKey(enteredIdFormated) == true)
             {
-                if(String.Equals(enteredPassword, udb.GetValueOrDefault(enteredIdFormated))){
+                if(String.Equals(enteredPassword, udb[enteredIdFormated])){
                     //This is where we'd send them to the next page since the username exists
                     //and the password is correct for said username.
+                    Debug.WriteLine("[Login Log]: Id: Correct - Password: Correct");
                 }
                 else
                 {
                     //the username exists but the password was wrong.
+                    Debug.WriteLine("[Login Log]: Id: Correct - Password: Incorrect");
                 }
             }
             else
             {
                 //The username/id does not exist.
+                Debug.WriteLine("[Login Log]: Id: Incorrect - Password: Incorrect");
             }
-            Console.WriteLine("Button clicked");
         }
     }
 }
