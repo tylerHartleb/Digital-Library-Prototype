@@ -46,6 +46,12 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
         {
             return _author;
         }
+
+        public string GetDescription()
+        {
+            return _description;
+        }
+
         public string GetImagePath()
         {
             return _imagePath;

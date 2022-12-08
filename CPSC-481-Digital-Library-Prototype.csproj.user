@@ -10,7 +10,13 @@
     <Compile Update="Components\BookDetail.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Components\BookInfo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Components\Format.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\FormatPill.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Components\TabIcon.xaml.cs">
@@ -24,7 +30,13 @@
     <Page Update="Components\BookDetail.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Components\BookInfo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Components\Format.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\FormatPill.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Login.xaml">

@@ -40,7 +40,7 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
             };
             Book titanCurse = new Book(rickRiordan, new string[1] { "adventure" }, titanFormats, "/Book covers/the-titans-curse.jpg", 4.9f)
                 .SetTitle("The Titan's Curse")
-                .SetDescription("");
+                .SetDescription("When Percy Jackson gets an urgent distress call from his friend Grover, he immediately prepares for battle. He knows he will need his powerful demigod allies at his side, his trusty bronze sword Riptide, and… a ride from his mom.");
             _books.Add("The Titan's Curse", titanCurse);
         }
     }

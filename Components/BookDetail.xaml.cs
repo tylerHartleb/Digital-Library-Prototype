@@ -22,16 +22,18 @@ namespace CPSC_481_Digital_Library_Prototype.Components
     public partial class BookDetail : UserControl
     {
         public Classes.Book _book { get; set; }
+        private bool _showFormat = true;
 
-        public BookDetail(Classes.Book book)
+        public BookDetail(Classes.Book book, bool showFormat = true)
         {
             InitializeComponent();
             _book = book;
+            _showFormat = showFormat;
 
             // Set values programatically
             SetBookAuthor();
             SetBookCover();
-            SetBookFormats();
+            if (_showFormat) SetBookFormats();
             SetBookRating();
             SetBookTitle();
         }
