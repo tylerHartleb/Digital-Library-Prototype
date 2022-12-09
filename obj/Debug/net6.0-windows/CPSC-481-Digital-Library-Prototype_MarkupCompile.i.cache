@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\rant2\Documents\My School\CPSC-481\CPSC-481-Digital-Library-Prototype\App.xaml
-219776291
+22669853552
 
-271801348970
+28-676748167
 194618410957
-Components\BookDetail.xaml;Components\BookInfo.xaml;Components\Format.xaml;Components\FormatPill.xaml;Components\Tabicon.xaml;MainWindow.xaml;Pages\Account.xaml;Pages\CheckItems.xaml;Pages\Details-hold_confirm-modal.xaml;Pages\Details-hold_digital-modal.xaml;Pages\Details-hold_modal.xaml;Pages\Details.xaml;Pages\Details_digital.xaml;Pages\EmailPassword.xaml;Pages\Fees.xaml;Pages\HoldItems.xaml;Pages\Login.xaml;Pages\Results.xaml;Pages\Scan.xaml;Pages\Search.xaml;Styles\Styles.xaml;
+Components\BookDetail.xaml;Components\BookDetailCompact.xaml;Components\BookInfo.xaml;Components\Format.xaml;Components\FormatPill.xaml;Components\Tabicon.xaml;MainWindow.xaml;Pages\Account.xaml;Pages\CheckItems.xaml;Pages\Details-hold_confirm-modal.xaml;Pages\Details-hold_digital-modal.xaml;Pages\Details-hold_modal.xaml;Pages\Details.xaml;Pages\Details_digital.xaml;Pages\EmailPassword.xaml;Pages\Fees.xaml;Pages\HoldItems.xaml;Pages\Login.xaml;Pages\Results.xaml;Pages\Scan.xaml;Pages\Search.xaml;Styles\Styles.xaml;
 
-True
+False
 

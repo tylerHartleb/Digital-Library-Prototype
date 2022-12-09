@@ -10,6 +10,9 @@
     <Compile Update="Components\BookDetail.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Components\BookDetailCompact.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Components\BookInfo.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,6 +31,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="Components\BookDetail.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\BookDetailCompact.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\BookInfo.xaml">

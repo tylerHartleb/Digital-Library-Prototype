@@ -21,10 +21,24 @@
                             <BitmapImage UriSource="/Icons/search.png" />
                         </Image.Source>
                     </Image>
-                    <TextBox Name="SearchInput" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Books, Audiobooks, and more" VerticalAlignment="Top" Width="321" Height="18" Margin="0,6,0,0" TextChanged="TextBox_TextChanged" BorderBrush="Transparent" VerticalContentAlignment="Center" />
+                    <Grid Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0">
+                        <TextBox Name="SearchInput" TextWrapping="Wrap" Text=""  Width="320" Height="20" TextChanged="TextBox_TextChanged" KeyDown="SearchInput_OnKeyDown"  PreviewMouseDown="SearchInput_MouseDown" LostFocus="SearchInput_LostFocus" BorderBrush="Transparent" VerticalContentAlignment="Center" />
+                        <TextBlock IsHitTestVisible="False" x:Name="SearchPlaceHolder" Text="Books, Audiobooks, and more" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,6,0,0" Foreground="DarkGray">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=SearchInput}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
                 </Grid>
             </Border>
-            <Grid Margin="0,0,0,16">
+            <Grid Margin="0,0,0,16" x:Name="Discover">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -91,8 +105,8 @@
                     </Button>
                 </StackPanel>
             </Grid>
-            <TextBlock x:Name="Rec_Heading" HorizontalAlignment="Left" Margin="10,0,0,16" TextWrapping="Wrap" Text="Reccommended" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" MinHeight="200" Width="373" Margin="0,0,0,0">
+            <TextBlock x:Name="Rec_Heading" HorizontalAlignment="Left" Margin="0,0,0,16" TextWrapping="Wrap" Text="Reccommended" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" MinHeight="200" Height="500" Width="373" Margin="0,0,0,0">
                 <StackPanel x:Name="Recs" Width="373">
                     <!--<Separator Foreground="LightGray" Margin="10,0,10,8" />-->
                 </StackPanel>

@@ -12,6 +12,7 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
 
         private Dictionary<string, Book> _books = new Dictionary<string, Book>();
         private Dictionary<string, List<Book>> _booksCategory = new Dictionary<string, List<Book>>();
+        private Dictionary<string, List<Book>> _series = new Dictionary<string, List<Book>>();
 
         private Books() {
             CreateBookDict();
@@ -27,6 +28,11 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
         public Dictionary<string, List<Book>> getBookCategories()
         {
             return _booksCategory;
+        }
+
+        public Dictionary<string, List<Book>> GetBookSeries()
+        {
+            return _series;
         }
 
         private void CreateBookDict()
@@ -68,18 +74,6 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
             // Add books here
 
             //Adventure Books--------------------------
-            // Titan's Curse
-            Dictionary<string, bool> titanFormats = new Dictionary<string, bool>() {
-                { "book", true },
-                { "smartphone", true },
-                { "headphone", false }
-            };
-            Book titanCurse = new Book(rickRiordan, new string[2] { "adventure", "fantasy" }, titanFormats, "/Book covers/the-titans-curse.jpg", 4.9f)
-                .SetTitle("The Titan's Curse")
-                .SetDescription("");
-            _books.Add("The Titan's Curse".ToLower(), titanCurse);
-            booksAdventure.Add(titanCurse);
-            booksFantasy.Add(titanCurse);
 
             // The Lightning Thief
             Dictionary<string, bool> lightningThiefFormats = new Dictionary<string, bool>() {
@@ -87,12 +81,76 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
                 { "smartphone", true },
                 { "headphone", false }
             };
-            Book lightningThief = new Book(rickRiordan, new string[2] { "adventure", "fantasy" }, lightningThiefFormats, "/Book covers/lightningThief.jpg", 4.9f)
+            Book lightningThief = new Book(rickRiordan, new string[2] { "adventure", "fantasy" }, lightningThiefFormats, "/Book covers/lightningThief.jpg", 4.8f)
                 .SetTitle("The Lightning Thief")
+                .SetSeries("Percy Jackson & the Olympians")
+                .SetNextInSeries("The Sea of Monsters")
                 .SetDescription("Percy Jackson is a good kid, but he can't seem to focus on his schoolwork or control his temper. And lately, being away at boarding school is only getting worse - Percy could have sworn his pre-algebra teacher turned into a monster and tried to kill him. When Percy's mom finds out, she knows it's time that he knew the truth about where he came from, and that he go to the one place he'll be safe. She sends Percy to Camp Half Blood, a summer camp for demigods (on Long Island), where he learns that the father he never knew is Poseidon, God of the Sea. Soon a mystery unfolds and together with his friends—one a satyr and the other the demigod daughter of Athena - Percy sets out on a quest across the United States to reach the gates of the Underworld (located in a recording studio in Hollywood) and prevent a catastrophic war between the gods.");
             _books.Add("The Lightning Thief".ToLower(), lightningThief);
             booksAdventure.Add(lightningThief);
             booksFantasy.Add(lightningThief);
+
+            // The Sea of Monsters
+            Dictionary<string, bool> seaMonstersFormats = new Dictionary<string, bool>() {
+                { "book", true },
+                { "smartphone", true },
+                { "headphone", false }
+            };
+            Book seaMonsters = new Book(rickRiordan, new string[2] { "adventure", "fantasy" }, seaMonstersFormats, "/Book covers/seaofmonsters.jpg", 4.8f)
+                .SetTitle("The Sea of Monsters")
+                .SetSeries("Percy Jackson & the Olympians")
+                .SetNextInSeries("The Titan's Curse")
+                .SetDescription("When Thalia’s tree is mysteriously poisoned, the magical borders of Camp Half-Blood begin to fail. Now Percy and his friends have just days to find the only magic item powerful to save the camp before it is overrun by monsters. The catch: they must sail into the Sea of Monsters to find it. Along the way, Percy must stage a daring rescue operation to save his old friend Grover, and he learns a terrible secret about his own family, which makes him question whether being the son of Poseidon is an honor or a curse.");
+            _books.Add("The Sea of Monsters".ToLower(), seaMonsters);
+            booksAdventure.Add(seaMonsters);
+            booksFantasy.Add(seaMonsters);
+
+            // Titan's Curse
+            Dictionary<string, bool> titanFormats = new Dictionary<string, bool>() {
+                { "book", true },
+                { "smartphone", true },
+                { "headphone", false }
+            };
+            Book titanCurse = new Book(rickRiordan, new string[2] { "adventure", "fantasy" }, titanFormats, "/Book covers/the-titans-curse.jpg", 4.6f)
+                .SetTitle("The Titan's Curse")
+                .SetSeries("Percy Jackson & the Olympians")
+                .SetNextInSeries("The Battle of the Labyrinth")
+                .SetDescription("\"When Percy Jackson gets an urgent distress call from his friend Grover, he immediately prepares for battle. He knows he will need his powerful demigod allies at his side, his trusty bronze sword Riptide, and… a ride from his mom.\"");
+            _books.Add("The Titan's Curse".ToLower(), titanCurse);
+            booksAdventure.Add(titanCurse);
+            booksFantasy.Add(titanCurse);
+
+            // The Battle of the Labyrinth
+            Dictionary<string, bool> labFormats = new Dictionary<string, bool>() {
+                { "book", true },
+                { "smartphone", true },
+                { "headphone", false }
+            };
+            Book battleOfLab = new Book(rickRiordan, new string[2] { "adventure", "fantasy" }, labFormats, "/Book covers/battleoflab.jpg", 4.8f)
+                .SetTitle("The Battle of the Labyrinth")
+                .SetSeries("Percy Jackson & the Olympians")
+                .SetNextInSeries("The Last Olympian")
+                .SetDescription("Percy Jackson isn’t expecting freshman orientation to be any fun, but when a mysterious mortal acquaintance appears, pursued by demon cheerleaders, things quickly go from bad to worse.");
+            _books.Add("The Battle of the Labyrinth".ToLower(), battleOfLab);
+            booksAdventure.Add(battleOfLab);
+            booksFantasy.Add(battleOfLab);
+
+            // The Last Olympian
+            Dictionary<string, bool> lastOlympianFormats = new Dictionary<string, bool>() {
+                { "book", true },
+                { "smartphone", true },
+                { "headphone", false }
+            };
+            Book lastOlympian = new Book(rickRiordan, new string[2] { "adventure", "fantasy" }, lastOlympianFormats, "/Book covers/lastolympian.jpg", 4.8f)
+                .SetTitle("The Last Olympian")
+                .SetSeries("Percy Jackson & the Olympians")
+                .SetDescription("All year the half-bloods have been preparing for battle against the Titans, knowing the odds of victory are grim. Kronos’s army is stronger than ever, and with every god and half-blood he recruits, the evil Titan’s power only grows.");
+            _books.Add("The Last Olympian".ToLower(), lastOlympian);
+            booksAdventure.Add(lastOlympian);
+            booksFantasy.Add(lastOlympian);
+
+            _series.Add("Percy Jackson & the Olympians", new List<Book>() { lightningThief, seaMonsters, titanCurse, battleOfLab, lastOlympian });
+
 
             // Daughter of the Deep
             Dictionary<string, bool> daughterOfDeepFormats = new Dictionary<string, bool>() {
@@ -452,13 +510,15 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
 
             //Fantasy Books END---------------------
 
+            // Add Books to Author
+            rickRiordan.SetBooks(new List<Book>() { lightningThief, seaMonsters, titanCurse, battleOfLab, lastOlympian });
+
             _booksCategory.Add("adventure", booksAdventure);
             _booksCategory.Add("fantasy", booksFantasy);
             _booksCategory.Add("mystery", booksMystery);
             _booksCategory.Add("motivation", booksMotivation);
             _booksCategory.Add("cookbook", booksCookbook);
             _booksCategory.Add("history", booksHistory);
-
         }
     }
 }

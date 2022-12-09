@@ -16,7 +16,9 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
         private string[] _categories;
         private string _description = "";
         private float _rating;
-        private string _title = ""; 
+        private string _title = "";
+        private string _series = "";
+        private string _nextinseries = "";
 
         public Book(Author author, string[] categories, Dictionary<string, bool> formats, string imagePath, float rating)
         {
@@ -31,6 +33,18 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
         public Book SetDescription(string description)
         {
             _description = description;
+            return this;
+        }
+
+        public Book SetNextInSeries(string next)
+        {
+            _nextinseries = next;
+            return this;
+        }
+
+        public Book SetSeries(string series)
+        {
+            _series = series;
             return this;
         }
 
@@ -62,15 +76,26 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
             return _formatAvailability;
         }
 
+        public string GetNextInSeries()
+        {
+            return _nextinseries;
+        }
+
         public float GetRating()
         {
             return _rating;
+        }
+
+        public string GetSeries()
+        {
+            return _series;
         }
 
         public string GetTitle()
         {
             return _title;
         }
+
         public string[] GetCategories() {
             return _categories;
         }

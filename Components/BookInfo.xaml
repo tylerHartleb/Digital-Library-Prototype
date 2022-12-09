@@ -9,7 +9,9 @@
     <Grid Background="white" Margin="0,0,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <Button x:Name="Back_Button" Grid.Row="0" HorizontalAlignment="Left" Margin="0,16,0,0" VerticalAlignment="Top" Height="43" Width="149" Background="White" BorderBrush="White">
@@ -18,15 +20,14 @@
                 <TextBlock x:Name="Back_to_Search" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Margin="29,3,0,0" Height="27" TextAlignment="Center"/>
             </Grid>
         </Button>
-        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden" MinHeight="200" Width="393" Margin="0,0,0,0">
-            <StackPanel x:Name="Info" Width="373">
-                <Grid x:Name="MainBook"></Grid>
-                <Grid x:Name="Formats" Margin="0,0,8,8">
-                </Grid>
-                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Synopsis" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,8"/>
-                <TextBlock x:Name="Synopsis" Width="373" TextWrapping="WrapWithOverflow" Margin="0,0,0,8">
-                </TextBlock>
-                <TextBlock x:Name="Next" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Next in the Series" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,8"/>
+        <Grid x:Name="MainBook" Grid.Row="1" Margin="0,4,0,4" />
+        <Grid x:Name="Formats" Grid.Row="2" Margin="0,4,0,4"/>
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Height="355" Width="393" Margin="0,0,0,0">
+            <StackPanel x:Name="Info" Width="393">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Synopsis" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" TextAlignment="Center" Margin="0,4,0,4" />
+                <TextBlock x:Name="Synopsis" Width="373" TextWrapping="WrapWithOverflow" Margin="0,4,0,4" />
+                <StackPanel x:Name="NextInSeries" Margin="0,4,0,4" />
+                <StackPanel x:Name="MoreByAuthor" Margin="0,4,0,4" />
             </StackPanel>
         </ScrollViewer>
     </Grid>
