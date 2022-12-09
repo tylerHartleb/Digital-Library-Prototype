@@ -14,41 +14,29 @@
                     x:Name="AccountInfo"
                 >
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-                        <Image Source="\Images\account.png" HorizontalAlignment="Center" Height="64"  VerticalAlignment="Top" Width="64"/>
+                        <Image Source="\Images\account.png" Height="64"  VerticalAlignment="Top" Width="78"/>
                         <StackPanel x:Name="AccountName">
-                            <Label Content="Name" FontSize="20" VerticalAlignment="Top"/>
-                            <Label Content="Library Card: 123456789" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                            <Label Content="example@gmail.com" FontSize="20" VerticalAlignment="Top"/>
+                            <Label Content="Library Card: 123456789" FontSize="12" HorizontalAlignment="Center" Width="194"/>
                         </StackPanel>
                     </StackPanel>
-                    <Separator Foreground="#F6F6F6" Margin="10,0,10,8" />
-                    <Button x:Name="Fees" Background="White" BorderBrush="White" Click="Fees_Click" HorizontalContentAlignment="Stretch" Margin="10,0,10,4">
-                        <Grid HorizontalAlignment="Stretch">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="0.5*" />
-                                <ColumnDefinition Width="0.5*" />
-                            </Grid.ColumnDefinitions>
+                    <Grid HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*" />
+                            <ColumnDefinition Width="0.5*" />
+                        </Grid.ColumnDefinitions>
 
-                            <TextBlock Grid.Column="0" FontSize="14" Text="Fees ($3.00)" VerticalAlignment="Center" HorizontalAlignment="Left" />
-                            <Rectangle Grid.Column="1" Fill="Gray" Width="14" Height="14" VerticalAlignment="Center" HorizontalAlignment="Right">
-                                <Rectangle.OpacityMask>
-                                    <VisualBrush>
-                                        <VisualBrush.Visual>
-                                            <Image Source="/Icons/icon-forward.png" />
-                                        </VisualBrush.Visual>
-                                    </VisualBrush>
-                                </Rectangle.OpacityMask>
-                            </Rectangle>
-                        </Grid>
-                    </Button>
+                        <TextBlock Grid.Column="0" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Width="223" Grid.ColumnSpan="2" ><Run Text="Preferred Library: Crowfoot "/><Run Text="L"/><Run Text="ibrary"/></TextBlock>
+                    </Grid>
                     <Separator Foreground="#F6F6F6" Margin="10,8,10,8" />
-                    <Button x:Name="ViewAccountInfo" Background="White" BorderBrush="White" HorizontalContentAlignment="Stretch" Margin="10,0,10,4" Click="ViewAccountInfo_Click">
+                    <Button x:Name="ViewAccountInfo" Background="White" BorderBrush="White" HorizontalContentAlignment="Stretch" Margin="10,0,10,4" Click="Fees_Click">
                         <Grid HorizontalAlignment="Stretch">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="0.5*" />
                                 <ColumnDefinition Width="0.5*" />
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Grid.Column="0" FontSize="14" Text="View Account Info" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                            <TextBlock Grid.Column="0" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" ><Run Language="en-ca" Text="Fees($3.00)"/></TextBlock>
                             <Rectangle Grid.Column="1" Fill="Gray" Width="14" Height="14" VerticalAlignment="Center" HorizontalAlignment="Right">
                                 <Rectangle.OpacityMask>
                                     <VisualBrush>

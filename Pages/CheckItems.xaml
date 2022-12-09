@@ -32,7 +32,7 @@
                             <BitmapImage UriSource="/Book covers/harryPotter.jpg"/>
                         </Image.Source>
                     </Image>
-                    
+
                     <StackPanel Grid.Column="1" Grid.Row="0">
                         <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="The Goblet of Fire" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
                         <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="J.K Rowling" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
@@ -42,8 +42,9 @@
 
 
                         </StackPanel>
-                        <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="Checked Out: Nov 20 2022" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="Return By: Dec 12 2022" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="Checked Out: Nov 20 2022" FontSize="14" FontWeight="Medium" Width="181"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"><Run Text="Return By: Dec "/><Run Language="en-ca" Text="8"/><Run Text=" 2022"/></TextBlock>
+                        <TextBlock TextWrapping="Wrap" Text="Overdue" FontSize="8" FontWeight="Medium" Background="red" Width="179"/>
                         <TextBlock HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="Library: Crowfoot Library" FontSize="14" FontWeight="Medium"/>
                     </StackPanel>
 
