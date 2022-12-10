@@ -96,6 +96,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
             {
                 SearchPage.Children[0].Visibility = Visibility.Collapsed;
                 SearchPage.Children[1].Visibility = Visibility.Collapsed;
+                SearchPage.Children[SearchPage.Children.Count - 1].Visibility = Visibility.Collapsed;
                 BookInfo bookInfo = new BookInfo(_book, _callingPage);
                 SearchPage.Children.Add(bookInfo);
             }

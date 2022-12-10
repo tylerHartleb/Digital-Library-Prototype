@@ -76,7 +76,6 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
        
         private void AddResults(Book[] results)
         {
-            //UIElementCollection prevScrollContent = Utils.Clone(SearchPageScrollContent.Children as UIElementCollection);
             Rec_Heading.Text = "Results";
             Discover.Visibility = Visibility.Collapsed;
 

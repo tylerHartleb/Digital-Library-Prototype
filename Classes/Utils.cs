@@ -13,18 +13,6 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
 {
     public class Utils
     {
-        public static T Clone<T>(T source)
-        {
-            string savedObject = XamlWriter.Save(source);
-
-            // Load the XamlObject
-            StringReader stringReader = new StringReader(savedObject);
-            XmlReader xmlReader = XmlReader.Create(stringReader);
-            T target = (T) XamlReader.Load(xmlReader);
-
-            return target;
-        }
-
         public static T FindElementInTree<T>(DependencyObject child, string parentName)
             where T : DependencyObject
             {

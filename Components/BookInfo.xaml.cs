@@ -27,6 +27,8 @@ namespace CPSC_481_Digital_Library_Prototype.Components
         public Book _book { get; private set; }
         public IPage _prevPage { get; private set; }
 
+        private FormatPill[] _formatPills = { };
+
         public BookInfo(Book book, IPage prevPage)
         {
             InitializeComponent();
@@ -34,16 +36,20 @@ namespace CPSC_481_Digital_Library_Prototype.Components
             _book = book;
             _prevPage = prevPage;
 
-            InitializeInfo();
-            
+            InitializeBookComponent();
         }
 
         public void ReDrawContent()
         {
-            Debug.WriteLine("Redrawing content now");
+            StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(BookInfomation, "SearchPage");
+
+            if (SearchPage != null)
+            {
+                SearchPage.Children[SearchPage.Children.Count - 1].Visibility = Visibility.Visible;
+            }
         }
 
-        private void InitializeInfo()
+        public void InitializeBookComponent()
         {
             BackButtonText.Text = _prevPage.Name;
             AddMainBook(_book);
@@ -73,6 +79,8 @@ namespace CPSC_481_Digital_Library_Prototype.Components
                 bool selected = false;
                 if (index == 0) selected = true;
                 FormatPill formatEntry = new FormatPill(selected, 0, entry.Value, entry.Key);
+                _formatPills.Append(formatEntry);
+                formatEntry.PreviewMouseDown += Format_MouseDown;
                 formatEntry.Margin = new Thickness(8, 0, 8, 0);
                 formats.Children.Add(formatEntry);
             }
@@ -94,13 +102,14 @@ namespace CPSC_481_Digital_Library_Prototype.Components
                 if (book.GetNextInSeries() != "")
                 {
                     TextBlock nextInSeriesTextBlock = CreateTitleBlock("Next in the Series");
-                    Debug.WriteLine("Series: " + book.GetSeries() + " Book: " + book.GetTitle() + " Next: " + book.GetNextInSeries());
                     Book nextInSeries = booksInstance[book.GetNextInSeries().ToLower()];
                     BookDetail nextDetails = new BookDetail(nextInSeries, this);// "Details");
                     NextInSeries.Children.Add(nextInSeriesTextBlock);
                     NextInSeries.Children.Add(nextDetails);
+                    SeeAllButton seeAll = new SeeAllButton() { HorizontalAlignment = HorizontalAlignment.Right, Margin = new Thickness(0, 0, 8, 0) };
+                    seeAll.PreviewMouseDown += SeeAllNext_MouseDown;
+                    NextInSeries.Children.Add(seeAll);
                 }
-                // TODO: Add see all button.
             }
         }
 
@@ -156,15 +165,51 @@ namespace CPSC_481_Digital_Library_Prototype.Components
         #region Handlers
         private void BackButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Debug.WriteLine("Clicked!");
             StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(BookInfomation, "SearchPage");
 
             if (SearchPage != null)
             {
                 // Remove the last element i.e. this one
-                //SearchPage.Children.Remove(BookInfomation);
                 SearchPage.Children.RemoveAt(SearchPage.Children.Count - 1);
                 _prevPage.ReDrawContent();
+            }
+        }
+
+        private void Format_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            FormatPill? clickedFormat = sender as FormatPill;
+
+            if (clickedFormat != null)
+            {
+                // Set all false
+                StackPanel? formats = Formats.Children[0] as StackPanel;
+
+                foreach(UIElement format in formats.Children)
+                {
+                    FormatPill? selFormat = format as FormatPill;
+                    selFormat?.SetSelected(false);
+                }
+
+                // Set clicked true
+                clickedFormat.SetSelected(true);
+            }
+        }
+
+        private void SeeAllNext_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(BookInfomation, "SearchPage");
+
+            if (SearchPage != null)
+            {
+                // Remove the last element i.e. this one
+                SearchPage.Children[SearchPage.Children.Count - 1].Visibility = Visibility.Collapsed;
+                Books instance = Books.Instance;
+                string series = _book.GetSeries();
+                if (instance.GetBookSeries().ContainsKey(series))
+                {
+                    MoreInfo moreInfo = new MoreInfo(Books.Instance.GetBookSeries()[series].ToArray(), "Details", this);
+                    SearchPage.Children.Add(moreInfo);
+                }
             }
         }
         #endregion

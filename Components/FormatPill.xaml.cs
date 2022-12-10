@@ -35,6 +35,12 @@ namespace CPSC_481_Digital_Library_Prototype.Components
             ChangePillState();
         }
 
+        public void SetSelected(bool sel)
+        {
+            _selected = sel;
+            ChangePillState();
+        }
+
         private void ChangePillState()
         {
             ChangePillColor();
