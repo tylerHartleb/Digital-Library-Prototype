@@ -15,25 +15,37 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CPSC_481_Digital_Library_Prototype.Classes;
+using CPSC_481_Digital_Library_Prototype.Interfaces;
 
 namespace CPSC_481_Digital_Library_Prototype.Components
 {
     /// <summary>
     /// Interaction logic for BookInfo.xaml
     /// </summary>
-    public partial class BookInfo : UserControl
+    public partial class BookInfo : UserControl, IPage
     {
-        public Book _book { get; set; }
+        public Book _book { get; private set; }
+        public IPage _prevPage { get; private set; }
 
-        public BookInfo(Book book)
+        public BookInfo(Book book, IPage prevPage)
         {
             InitializeComponent();
+            Name = "Details";
             _book = book;
+            _prevPage = prevPage;
+
             InitializeInfo();
+            
+        }
+
+        public void ReDrawContent()
+        {
+            Debug.WriteLine("Redrawing content now");
         }
 
         private void InitializeInfo()
         {
+            BackButtonText.Text = _prevPage.Name;
             AddMainBook(_book);
             AddFormats(_book);
             AddSynopsis(_book);
@@ -41,9 +53,10 @@ namespace CPSC_481_Digital_Library_Prototype.Components
             AddMoreByThisAuthor(_book);
         }
 
+        #region Set Component Info
         private void AddMainBook(Book book)
         {
-            BookDetail mainDetail = new BookDetail(book, false);
+            BookDetail mainDetail = new BookDetail(book, this);// "Details", false);
             MainBook.Children.Add(mainDetail);
         }
 
@@ -83,7 +96,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
                     TextBlock nextInSeriesTextBlock = CreateTitleBlock("Next in the Series");
                     Debug.WriteLine("Series: " + book.GetSeries() + " Book: " + book.GetTitle() + " Next: " + book.GetNextInSeries());
                     Book nextInSeries = booksInstance[book.GetNextInSeries().ToLower()];
-                    BookDetail nextDetails = new BookDetail(nextInSeries);
+                    BookDetail nextDetails = new BookDetail(nextInSeries, this);// "Details");
                     NextInSeries.Children.Add(nextInSeriesTextBlock);
                     NextInSeries.Children.Add(nextDetails);
                 }
@@ -138,6 +151,23 @@ namespace CPSC_481_Digital_Library_Prototype.Components
                 MoreByAuthor.Children.Add(scrollViewer);
             }
         }
+        #endregion
+
+        #region Handlers
+        private void BackButton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Debug.WriteLine("Clicked!");
+            StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(BookInfomation, "SearchPage");
+
+            if (SearchPage != null)
+            {
+                // Remove the last element i.e. this one
+                //SearchPage.Children.Remove(BookInfomation);
+                SearchPage.Children.RemoveAt(SearchPage.Children.Count - 1);
+                _prevPage.ReDrawContent();
+            }
+        }
+        #endregion
 
         private TextBlock CreateTitleBlock(string titleText)
         {

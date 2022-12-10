@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CPSC_481_Digital_Library_Prototype.Classes;
+using CPSC_481_Digital_Library_Prototype.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -13,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace CPSC_481_Digital_Library_Prototype.Components
 {
@@ -21,14 +24,18 @@ namespace CPSC_481_Digital_Library_Prototype.Components
     /// </summary>
     public partial class BookDetail : UserControl
     {
-        public Classes.Book _book { get; set; }
+        public Book _book { get; set; }
+        //private string _callingPage = "Search";
         private bool _showFormat = true;
 
-        public BookDetail(Classes.Book book, bool showFormat = true)
+        private IPage _callingPage; 
+
+        public BookDetail(Book book, IPage callingPage) //string callingPage = "Search", bool showFormat = true)
         {
             InitializeComponent();
             _book = book;
-            _showFormat = showFormat;
+            _callingPage = callingPage;
+            //_showFormat = showFormat;
 
             // Set values programatically
             SetBookAuthor();
@@ -38,6 +45,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
             SetBookTitle();
         }
 
+        #region Set component infomation
         private void SetBookAuthor()
         {
             Author.Text = _book.GetAuthor().GetName();
@@ -77,5 +85,22 @@ namespace CPSC_481_Digital_Library_Prototype.Components
 
             BookDetails.Children.Add(formats);
         }
+        #endregion
+
+        #region Handlers
+        private void BookDetail_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(BookDetails, "SearchPage");
+
+            if (SearchPage != null)
+            {
+                SearchPage.Children[0].Visibility = Visibility.Collapsed;
+                SearchPage.Children[1].Visibility = Visibility.Collapsed;
+                BookInfo bookInfo = new BookInfo(_book, _callingPage);
+                SearchPage.Children.Add(bookInfo);
+            }
+        }
+
+        #endregion
     }
 }

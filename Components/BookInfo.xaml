@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:CPSC_481_Digital_Library_Prototype.Components"
              mc:Ignorable="d" 
              d:DesignHeight="648" d:DesignWidth="393">
-    <Grid Background="white" Margin="0,0,0,0">
+    <Grid x:Name="BookInfomation" Background="white" Margin="0,0,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -14,10 +14,10 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Button x:Name="Back_Button" Grid.Row="0" HorizontalAlignment="Left" Margin="0,16,0,0" VerticalAlignment="Top" Height="43" Width="149" Background="White" BorderBrush="White">
+        <Button x:Name="BackButton" PreviewMouseDown="BackButton_MouseDown" Grid.Row="0" HorizontalAlignment="Left" Margin="0,16,0,0" VerticalAlignment="Top" Height="43" Width="149" Background="White" BorderBrush="White">
             <Grid Width="149">
                 <Image Source="/Icons/back.png" Margin="0,8,125,7" />
-                <TextBlock x:Name="Back_to_Search" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Margin="29,3,0,0" Height="27" TextAlignment="Center"/>
+                <TextBlock x:Name="BackButtonText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Margin="29,3,0,0" Height="27" TextAlignment="Center"/>
             </Grid>
         </Button>
         <Grid x:Name="MainBook" Grid.Row="1" Margin="0,4,0,4" />

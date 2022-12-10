@@ -1,5 +1,6 @@
 ﻿using CPSC_481_Digital_Library_Prototype.Classes;
 using CPSC_481_Digital_Library_Prototype.Components;
+using CPSC_481_Digital_Library_Prototype.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,16 +15,29 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
     /// <summary>
     /// Interaction logic for Search.xaml
     /// </summary>
-    public partial class Search : UserControl
+    public partial class Search : UserControl, IPage
     {
+
+        Object[] prevChildren = { };
     
         public Search()
         {
             InitializeComponent();
+            Name = "Search";
             //AddRecs();
             //TestSomething();
         }
 
+        #region Overrides
+        public void ReDrawContent()
+        {
+            Debug.WriteLine("Creating self");
+            SearchPage.Children[0].Visibility = Visibility.Visible;
+            SearchPage.Children[1].Visibility = Visibility.Visible;
+        }
+        #endregion
+
+        #region Handlers
         private void SearchInput_MouseDown(Object sender, MouseButtonEventArgs e)
         {
             SearchPlaceHolder.Visibility = Visibility.Collapsed;
@@ -45,78 +59,58 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
 
                 if (bookResults.Length > 0)
                 {
-                    Recs.Children.Clear();
-                    Rec_Heading.Text = "Results";
-                    Discover.Visibility = Visibility.Collapsed;
-                    foreach (Book book in bookResults)
-                    {
-                        Grid grid = new Grid() { Margin = new Thickness(0,8,0,8) };
-                        BookDetail details = new(book);
-                        grid.Children.Add(details);
-                        Recs.Children.Add(grid);
-                    }
+                    AddResults(bookResults);
                 }
             }
         }
-
-        private void TextBox_TextChanged(Object sender, TextChangedEventArgs e)
-        {
-            //If statement to make sure we dont get an error when it first starts it hasnt populated recs yet (Only needed if ur calling some Rec based function)
-            if (Recs != null)
-            {
-                //Debug.WriteLine("hello");
-                //Display the Book
-                //var bookResult = booksInstance[SearchInput.Text.ToLower()];
-                //BookDetail bookDetail = new BookDetail(bookResult);
-                //Recs.Children.Add(bookDetail);
-                //First category
-                //var bookCategory = booksInstance[SearchInput.Text.ToLower()].GetCategories()[0];
-                //And display 2 books from the same category/author. 
-                //var bookCategoryInstance = Books.Instance.getBookCategories();
-                //First book in that category
-                //int bookIndex = 0;
-                //if (bookCategoryInstance[bookCategory][bookIndex] == bookResult) bookIndex++;
-                //var firstBook = bookCategoryInstance[bookCategory][bookIndex];
-                //bookDetail = new BookDetail(firstBook);
-                //Recs.Children.Add(bookDetail);
-                //Second book in that category
-                //if (bookCategoryInstance[bookCategory][bookIndex] == bookResult) bookIndex++;
-                //var secondBook = bookCategoryInstance[bookCategory][bookIndex + 1];
-                //bookDetail = new BookDetail(secondBook);
-                //Recs.Children.Add(bookDetail);
-                /*
-                else
-                {
-                    Recs.Children.Clear();
-                    AddRecs();
-                }
-                */
-            }
-        }
+        #endregion
 
         private void AddRecs()
         {
             Rec_Heading.Text = "Reccommended";
             foreach (var entry in Books.Instance.GetBooks())
             {
-                //var temp = Books.Instance.GetBooks();
                 Debug.WriteLine(entry.Value.GetTitle());
-            
-                //BookDetail bookDetail = new BookDetail(entry.Value);
-                //Recs.Children.Add(bookDetail);
             }
         }
+       
+        private void AddResults(Book[] results)
+        {
+            //UIElementCollection prevScrollContent = Utils.Clone(SearchPageScrollContent.Children as UIElementCollection);
+            Rec_Heading.Text = "Results";
+            Discover.Visibility = Visibility.Collapsed;
 
-        //private void TestSomething()
-        //{
-        //var instance = Books.Instance.GetBooks();
-        //Book titan = instance["the titan's curse"];
-        //BookInfo bookInfo = new BookInfo(titan);
-        //SearchPage.Children.Clear();
-        //SearchPage.Children.Add(bookInfo);
-        //}
+            // Add results to scroll viewer
+            SearchPageScrollContent.Children.Clear();
+            foreach (Book book in results)
+            {
+                Grid grid = new Grid() { Margin = new Thickness(0, 8, 0, 8) };
+                BookDetail details = new(book, this);
+                grid.Children.Add(details);
+                SearchPageScrollContent.Children.Add(grid);
+                Separator bookSep = new Separator() { Foreground = Brushes.LightGray, Margin = new Thickness(10, 8, 10, 8)  };
+                SearchPageScrollContent.Children.Add(bookSep);
+            }
+            // Remove the last separator
+            SearchPageScrollContent.Children.RemoveAt(SearchPageScrollContent.Children.Count - 1);
+        }
 
-        public Book[] Flattened(KeyValuePair<string, Book>[] keyValueArray)
+        private TextBlock CreateTitleBlock(String title)
+        {
+            return new TextBlock() {
+                Text = title,
+                Margin = new Thickness(0,0,0,16),
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Top, 
+                FontSize = 24, 
+                FontWeight = FontWeights.Bold 
+            };
+        }
+
+        /**
+         * Flattens a Key value pair to a list of books 
+        **/
+        public static Book[] Flattened(KeyValuePair<string, Book>[] keyValueArray)
         {
             Book[] books = new Book[keyValueArray.Length];
             for (int index = 0; index < keyValueArray.Length; index++)

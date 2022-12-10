@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:CPSC_481_Digital_Library_Prototype.Components"
              mc:Ignorable="d" 
              d:DesignHeight="135" d:DesignWidth="373">
-    <Grid x:Name="BookDetails" Background="White" Width="373" Height="135">
+    <Grid x:Name="BookDetails" Background="White" Width="373" Height="135" MouseDown="BookDetail_MouseDown">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="Auto" />
