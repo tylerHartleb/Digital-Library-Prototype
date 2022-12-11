@@ -24,15 +24,29 @@
         <!--Username block-->
         <StackPanel Grid.Row="1" Margin="10 0 10 108">
             <TextBlock Text="Library Card Number:" FontWeight="Bold"/>
-            <TextBox x:Name="UsernameTextBox" Padding="16"/>
-            <TextBlock x:Name="UsernameWarning" Text=""/>
+            <Grid>
+                <TextBox x:Name="UsernameTextBox" Padding="16" PreviewMouseDown="UserInput_MouseDown" LostFocus="UserInput_LostFocus" PreviewTextInput="UserInput_PreviewTextChanged" MaxLength="14" />
+                <TextBlock IsHitTestVisible="False" x:Name="UserNamePlaceHolder" Text="12345678901234" HorizontalAlignment="Left" Foreground="DarkGray" VerticalAlignment="Center" Padding="16">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Text, ElementName=UsernameTextBox}" Value="">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Grid>
+            <TextBlock x:Name="UsernameWarning" Text="" Foreground="Red"/>
         </StackPanel>
 
         <!--Password block-->
         <StackPanel Grid.Row="1" Margin="10 108 10 0">
             <TextBlock Text="Password:" FontWeight="Bold"/>
-            <TextBox x:Name="PasswordTextBox" Padding="16" UndoLimit="101"/>
-            <TextBlock x:Name="PasswordWarning" Text=""/>
+            <PasswordBox x:Name="PasswordTextBox" Padding="16" PreviewMouseDown="PasswordInput_MouseDown" PasswordChar="*" />
+            <TextBlock x:Name="PasswordWarning" Text="" Foreground="Red"/>
         </StackPanel>
 
         <!--Login Click block-->

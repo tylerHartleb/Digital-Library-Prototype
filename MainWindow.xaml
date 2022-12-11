@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:CPSC_481_Digital_Library_Prototype"
         xmlns:components="clr-namespace:CPSC_481_Digital_Library_Prototype.Components"
         xmlns:pages="clr-namespace:CPSC_481_Digital_Library_Prototype.Pages"
+        xmlns:classes="clr-namespace:CPSC_481_Digital_Library_Prototype.Classes"
         mc:Ignorable="d"
         Title="MainWindow" Height="706" Width="413">
     <Window.Resources>
@@ -46,6 +47,7 @@
                 <DiscreteObjectKeyFrame KeyTime="0:0:.1" Value="{x:Static Visibility.Collapsed}"/>
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
+        <x:StaticExtension Member="classes:Users.Instance" x:Key="Users"/>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -65,7 +67,14 @@
                             </components:TabIcon.ImagePath>
                         </components:TabIcon>
                     </TabItem.Header>
-                    <pages:Login/>
+                    <Grid>
+                        <local:If Condition="False">
+                            <pages:Login/>
+                        </local:If>
+                        <local:If Condition="True">
+                            <pages:Account/>
+                        </local:If>
+                    </Grid>
                 </TabItem>
 
                 <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
@@ -87,7 +96,14 @@
                             </components:TabIcon.ImagePath>
                         </components:TabIcon>
                     </TabItem.Header>
-                    <pages:Scan/>
+                    <Grid>
+                        <local:If Condition="False">
+                            <pages:Login/>
+                        </local:If>
+                        <local:If Condition="True">
+                            <pages:Scan/>
+                        </local:If>
+                    </Grid>
                 </TabItem>
             </TabControl>
         </Grid>
