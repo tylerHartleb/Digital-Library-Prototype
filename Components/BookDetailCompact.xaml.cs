@@ -1,4 +1,5 @@
 ﻿using CPSC_481_Digital_Library_Prototype.Classes;
+using CPSC_481_Digital_Library_Prototype.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,11 +23,13 @@ namespace CPSC_481_Digital_Library_Prototype.Components
     public partial class BookDetailCompact : UserControl
     {
         Book _book;
+        private IPage _callingPage;
 
-        public BookDetailCompact(Book book)
+        public BookDetailCompact(Book book, IPage callingPage)
         {
             InitializeComponent();
             _book = book;
+            _callingPage = callingPage;
 
             SetBookAuthor();
             SetBookCover();
@@ -50,5 +53,21 @@ namespace CPSC_481_Digital_Library_Prototype.Components
         {
             Title.Text = _book.GetTitle();
         }
+
+        #region Handlers
+        private void BookDetail_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(CompactDetails, "SearchPage");
+
+            if (SearchPage != null)
+            {
+                SearchPage.Children[0].Visibility = Visibility.Collapsed;
+                SearchPage.Children[1].Visibility = Visibility.Collapsed;
+                SearchPage.Children[SearchPage.Children.Count - 1].Visibility = Visibility.Collapsed;
+                BookInfo bookInfo = new BookInfo(_book, _callingPage);
+                SearchPage.Children.Add(bookInfo);
+            }
+        }
+        #endregion
     }
 }

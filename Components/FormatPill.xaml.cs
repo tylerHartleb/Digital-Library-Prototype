@@ -22,7 +22,8 @@ namespace CPSC_481_Digital_Library_Prototype.Components
     {
         private bool _selected = false;
         private int _numCopies = 0;
-        private bool _available = false;
+        public bool _available { get; private set; } = false;
+        public string _format { get; private set; }
 
         public FormatPill(bool selected, int numCopies, bool available, String Format)
         {
@@ -30,6 +31,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
             _selected = selected;
             _numCopies = numCopies;
             _available = available;
+            _format = Format;
 
             FormatText.Text = Format;
             ChangePillState();

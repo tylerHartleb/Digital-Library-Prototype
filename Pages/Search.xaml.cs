@@ -24,14 +24,12 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
         {
             InitializeComponent();
             Name = "Search";
-            //AddRecs();
-            //TestSomething();
+            RenderReccommended();
         }
 
         #region Overrides
         public void ReDrawContent()
         {
-            Debug.WriteLine("Creating self");
             SearchPage.Children[0].Visibility = Visibility.Visible;
             SearchPage.Children[1].Visibility = Visibility.Visible;
         }
@@ -41,33 +39,123 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
         private void SearchInput_MouseDown(Object sender, MouseButtonEventArgs e)
         {
             SearchPlaceHolder.Visibility = Visibility.Collapsed;
+            CancelSearch.Visibility = Visibility.Visible;
         }
 
         private void SearchInput_LostFocus(Object sender, RoutedEventArgs e)
         {
-            if (SearchInput.Text == "") SearchPlaceHolder.Visibility = Visibility.Visible;
+            if (SearchInput.Text == "")
+            {
+                SearchPlaceHolder.Visibility = Visibility.Visible;
+                CancelSearch.Visibility = Visibility.Collapsed;
+            }   
         }
 
+        // Handles Search
         private void SearchInput_OnKeyDown(Object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return && SearchInput.Text != "")
             {
-                var booksInstance = Books.Instance.GetBooks();
-                // Check for a match
-                IEnumerable<KeyValuePair<string, Book>> results = booksInstance.Where(kvp => kvp.Key.Contains(SearchInput.Text.ToLower()));
-                Book[] bookResults = Flattened(results.Take(6).ToArray());
+                Debug.WriteLine("The light, The lightning thief distance: " + Utils.ComputeLevenshteinDistance("the light", "the light"));
+                Books instance = Books.Instance;
+                string searchString = SearchInput.Text.ToLower();
+                Dictionary<string, int> levenshteinDistances = new Dictionary<string, int>();
 
-                if (bookResults.Length > 0)
+                // Search through books
+                foreach(string key in instance.GetBooks().Keys )
                 {
-                    AddResults(bookResults);
+                    int distance = Utils.ComputeLevenshteinDistance(searchString, key);
+                    levenshteinDistances.TryAdd(key, distance);
+                }
+
+                // Search through series
+                foreach (string key in instance.GetBookSeries().Keys)
+                {
+                    int distance = Utils.ComputeLevenshteinDistance(searchString, key);
+                    levenshteinDistances.TryAdd(key, distance);
+                }
+
+                // Search through categories
+                foreach (string key in instance.getBookCategories().Keys)
+                {
+                    int distance = Utils.ComputeLevenshteinDistance(searchString, key);
+                    levenshteinDistances.TryAdd(key, distance);
+                }
+
+                // Search through authors
+                foreach (string key in instance.GetAuthors().Keys)
+                {
+                    int distance = Utils.ComputeLevenshteinDistance(searchString, key);
+                    levenshteinDistances.TryAdd(key, distance);
+                }               
+
+                SortedDictionary<string, int> sortedMatches = new SortedDictionary<string, int>(
+                    Comparer<string>.Create(
+                        (x, y) =>
+                        {
+                            int vx = levenshteinDistances[x];
+                            int vy = levenshteinDistances[y];
+
+                            // If values are the same then compare keys.
+                            if (vx == vy)
+                                return x.CompareTo(y);
+
+                            // Otherwise - compare values.
+                            return vx.CompareTo(vy);
+                        }));
+
+                foreach(var pair in levenshteinDistances)
+                {
+                    sortedMatches.Add(pair.Key, pair.Value);
+                }
+
+                // Get the first 15 matches
+                int closestMatch = sortedMatches.First().Value;
+                int offset = 5;
+
+                IEnumerable<KeyValuePair<string, int>> closestMatches = sortedMatches.Where(kvp => kvp.Value < closestMatch + offset);
+                Book[] results = GetBookResults(closestMatches.ToArray());
+
+                if (results.Length > 0)
+                {
+                    AddResults(results);
                 }
             }
         }
+
+        private void SearchInput_OnTextChanged(Object sender, EventArgs e)
+        {
+            if (SearchInput.Text.Equals(""))
+            {
+                ClearSearchInput.Visibility = Visibility.Collapsed;
+            } else
+            {
+                ClearSearchInput.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void ClearSearchInput_MouseDown(Object sender, MouseButtonEventArgs e)
+        {
+            SearchInput.Text = "";
+        }
+
+        private void CancelSearch_MouseDown(Object sender, MouseButtonEventArgs e)
+        {
+            Discover.Visibility = Visibility.Visible;
+            SearchInput.Text = "";
+            RenderReccommended();
+        }
+
+        public static void Search_FlowControl(Object? sender, FlowControlEventArgs e)
+        {
+            Debug.WriteLine("Book Info has pushed a checkout flow");
+        }
         #endregion
 
-        private void AddRecs()
+        private void RenderReccommended()
         {
             Rec_Heading.Text = "Reccommended";
+            SearchPageScrollContent.Children.Clear();
             foreach (var entry in Books.Instance.GetBooks())
             {
                 Debug.WriteLine(entry.Value.GetTitle());
@@ -109,6 +197,60 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
         /**
          * Flattens a Key value pair to a list of books 
         **/
+
+        public static Book[] GetBookResults(KeyValuePair<string, int>[] kvps)
+        {
+            Books instance = Books.Instance;
+
+            List<Book> result = new List<Book>();
+            foreach (KeyValuePair<string, int> kvp in kvps)
+            {
+                string match = kvp.Key;
+
+                Book tmp_book;
+                List<Book> tmp_series;
+                List<Book> tmp_cat;
+                Author tmp_author;
+
+                if (instance.GetBooks().TryGetValue(match, out tmp_book))
+                {
+                    if (!result.Contains(tmp_book))
+                    {
+                        result.Add(tmp_book);
+                    }
+                } else if (instance.GetBookSeries().TryGetValue(match, out tmp_series))
+                {
+                    foreach (Book book in tmp_series)
+                    {
+                        if (!result.Contains(book))
+                        {
+                            result.Add(book);
+                        }
+                    }
+                } else if (instance.getBookCategories().TryGetValue(match, out tmp_cat))
+                {
+                    foreach (Book book in tmp_cat)
+                    {
+                        if (!result.Contains(book))
+                        {
+                            result.Add(book);
+                        }
+                    }
+                }else if (instance.GetAuthors().TryGetValue(match, out tmp_author))
+                {
+                    foreach (Book book in tmp_author.GetBooks())
+                    {
+                        if (!result.Contains(book))
+                        {
+                            result.Add(book);
+                        }
+                    }
+                }
+            }
+
+            return result.ToArray();
+        }
+
         public static Book[] Flattened(KeyValuePair<string, Book>[] keyValueArray)
         {
             Book[] books = new Book[keyValueArray.Length];

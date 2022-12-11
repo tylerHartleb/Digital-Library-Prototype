@@ -1,5 +1,6 @@
 ﻿using CPSC_481_Digital_Library_Prototype.Classes;
 using CPSC_481_Digital_Library_Prototype.Interfaces;
+using CPSC_481_Digital_Library_Prototype.Pages;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -30,12 +31,12 @@ namespace CPSC_481_Digital_Library_Prototype.Components
 
         private IPage _callingPage; 
 
-        public BookDetail(Book book, IPage callingPage) //string callingPage = "Search", bool showFormat = true)
+        public BookDetail(Book book, IPage callingPage, bool showformat = true)
         {
             InitializeComponent();
             _book = book;
             _callingPage = callingPage;
-            //_showFormat = showFormat;
+            _showFormat = showformat;
 
             // Set values programatically
             SetBookAuthor();
@@ -71,15 +72,16 @@ namespace CPSC_481_Digital_Library_Prototype.Components
 
         private void SetBookFormats()
         {
+            Books instance = Books.Instance;
             StackPanel formats = new StackPanel() { Orientation = Orientation.Horizontal, VerticalAlignment = VerticalAlignment.Bottom };
             formats.SetValue(Grid.RowProperty, 1);
             formats.SetValue(Grid.ColumnProperty, 1);
             
             // Add aval formats
-            foreach(var entry in _book.GetFormatAvailabilities())
+            foreach(var entry in instance.GetLibraries().formatAvailability[_book.GetTitle().ToLower()])
             {
                 string imagePath = "/icons/" + entry.Key + ".png";
-                Format formatEntry = new Format(entry.Value, imagePath);
+                Format formatEntry = new Format(entry.Value > 0, imagePath);
                 formats.Children.Add(formatEntry);
             }
 
@@ -98,10 +100,14 @@ namespace CPSC_481_Digital_Library_Prototype.Components
                 SearchPage.Children[1].Visibility = Visibility.Collapsed;
                 SearchPage.Children[SearchPage.Children.Count - 1].Visibility = Visibility.Collapsed;
                 BookInfo bookInfo = new BookInfo(_book, _callingPage);
+
+                // Add event capturing
+                MainWindow mainWin = (MainWindow) Application.Current.MainWindow;
+                bookInfo.FlowControl += mainWin.Info_FlowControl;
+                
                 SearchPage.Children.Add(bookInfo);
             }
         }
-
         #endregion
     }
 }

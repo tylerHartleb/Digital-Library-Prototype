@@ -7,18 +7,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="648" d:DesignWidth="393">
     <Grid Background="White" Margin="0,0,0,0">
-        <StackPanel x:Name="BooksInfo">
-            <Button x:Name="BackButton" PreviewMouseDown="BackButton_MouseDown" Grid.Row="0" HorizontalAlignment="Left" Margin="0,16,0,0" VerticalAlignment="Top" Height="43" Width="149" Background="White" BorderBrush="White">
-                <Grid Width="373" Height="43">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-
-                    <Image Source="/Icons/back.png" Margin="0,0,0,0" Grid.Column="0" VerticalAlignment="Center" Height="27" />
-                    <TextBlock Grid.Column="1" x:Name="BackButtonText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Margin="0,0,0,4" TextAlignment="Center"/>
-                </Grid>
-            </Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+           
+        <Button Grid.Row="0" x:Name="BackButton" PreviewMouseDown="BackButton_MouseDown" HorizontalAlignment="Left" Margin="0,16,0,0" VerticalAlignment="Top" Height="43" Width="149" Background="White" BorderBrush="White">
+            <Grid Width="149">
+                <Image Source="/Icons/back.png" Margin="0,8,125,7" />
+                <TextBlock x:Name="BackButtonText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Margin="29,3,0,0" Height="27" TextAlignment="Center"/>
+            </Grid>
+        </Button>
+        <StackPanel Grid.Row="1" x:Name="BooksInfo">
             <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" MinHeight="200" Height="550" Width="373" Margin="0,0,0,0">
                 <StackPanel x:Name="PageScrollContent" Width="373" />
             </ScrollViewer>

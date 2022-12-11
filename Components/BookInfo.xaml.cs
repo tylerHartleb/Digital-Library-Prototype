@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
+using System.DirectoryServices.ActiveDirectory;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
         public IPage _prevPage { get; private set; }
 
         private FormatPill[] _formatPills = { };
+        private string _selectedFormat = "";
 
         public BookInfo(Book book, IPage prevPage)
         {
@@ -57,28 +59,34 @@ namespace CPSC_481_Digital_Library_Prototype.Components
             AddSynopsis(_book);
             AddNextInSeries(_book);
             AddMoreByThisAuthor(_book);
+            AddRelatedBooks(_book);
         }
 
         #region Set Component Info
         private void AddMainBook(Book book)
         {
-            BookDetail mainDetail = new BookDetail(book, this);// "Details", false);
+            BookDetail mainDetail = new BookDetail(book, this);
             MainBook.Children.Add(mainDetail);
         }
 
         private void AddFormats(Book book)
         {
+            Books instance = Books.Instance;
             StackPanel formats = new StackPanel() { Orientation = Orientation.Horizontal, VerticalAlignment = VerticalAlignment.Bottom, HorizontalAlignment = HorizontalAlignment.Center };
             formats.SetValue(Grid.RowProperty, 1);
             formats.SetValue(Grid.ColumnProperty, 1);
 
             // Add aval formats
-            foreach (var entry in _book.GetFormatAvailabilities())
+            foreach (var entry in instance.GetLibraries().formatAvailability[book.GetTitle().ToLower()])
             {
-                int index = _book.GetFormatAvailabilities().ToList().IndexOf(entry);
+                int index = instance.GetLibraries().formatAvailability[book.GetTitle().ToLower()].ToList().IndexOf(entry);
                 bool selected = false;
-                if (index == 0) selected = true;
-                FormatPill formatEntry = new FormatPill(selected, 0, entry.Value, entry.Key);
+                if (index == 0)
+                {
+                    selected = true;
+                    _selectedFormat = entry.Key;
+                }
+                FormatPill formatEntry = new FormatPill(selected, entry.Value, entry.Value > 0, entry.Key);
                 _formatPills.Append(formatEntry);
                 formatEntry.PreviewMouseDown += Format_MouseDown;
                 formatEntry.Margin = new Thickness(8, 0, 8, 0);
@@ -118,6 +126,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
             var bookAuthor = book.GetAuthor();
             List<Book> writtenBooks = bookAuthor.GetBooks();
             ScrollViewer scrollViewer = new ScrollViewer() { VerticalScrollBarVisibility = ScrollBarVisibility.Disabled, HorizontalScrollBarVisibility = ScrollBarVisibility.Auto, Width = 393 };
+            scrollViewer.PreviewMouseWheel += ScrollViewer_PreviewMouseWheel;
             StackPanel bookPanel = new StackPanel() { Orientation = Orientation.Horizontal };
 
             if (writtenBooks.Count() != 1)
@@ -128,7 +137,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
                 {
                     if (writtenBook != book)
                     {
-                        BookDetailCompact bookDetail = new BookDetailCompact(writtenBook);
+                        BookDetailCompact bookDetail = new BookDetailCompact(writtenBook, this);
                         bookPanel.Children.Add(bookDetail);
                     }
                 }
@@ -139,25 +148,49 @@ namespace CPSC_481_Digital_Library_Prototype.Components
 
         private void AddRelatedBooks(Book book)
         {
-            var bookAuthor = book.GetAuthor();
-            List<Book> writtenBooks = bookAuthor.GetBooks();
+            Books instance = Books.Instance;
+            string[] categories = book.GetCategories();
+            List<Book> relatedBooks = new List<Book>() { };
+            foreach(string category in categories)
+            {
+                List<Book> tmp_books;
+                if(instance.getBookCategories().TryGetValue(category, out tmp_books))
+                {
+                    foreach(Book cat_book in tmp_books)
+                    {
+                        bool inSeries = false;
+
+                        if (!cat_book.GetSeries().Equals(""))
+                        {
+                            inSeries = cat_book.GetSeries() == book.GetSeries();
+                        }
+
+                        if (!relatedBooks.Contains(cat_book) && !inSeries)
+                        {
+                            relatedBooks.Add(cat_book);
+                        }
+                    }
+                }
+            }
+
             ScrollViewer scrollViewer = new ScrollViewer() { VerticalScrollBarVisibility = ScrollBarVisibility.Disabled, HorizontalScrollBarVisibility = ScrollBarVisibility.Auto, Width = 393 };
+            scrollViewer.PreviewMouseWheel += ScrollViewer_PreviewMouseWheel;
             StackPanel bookPanel = new StackPanel() { Orientation = Orientation.Horizontal };
 
-            if (writtenBooks.Count() != 1)
+            if (relatedBooks.Count() != 1)
             {
-                TextBlock moreByThisAuthor = CreateTitleBlock("More by this Author");
+                TextBlock moreByThisAuthor = CreateTitleBlock("Related Books");
                 MoreByAuthor.Children.Add(moreByThisAuthor);
-                foreach (Book writtenBook in writtenBooks)
+                foreach (Book writtenBook in relatedBooks)
                 {
                     if (writtenBook != book)
                     {
-                        BookDetailCompact bookDetail = new BookDetailCompact(writtenBook);
+                        BookDetailCompact bookDetail = new BookDetailCompact(writtenBook, this);
                         bookPanel.Children.Add(bookDetail);
                     }
                 }
                 scrollViewer.Content = bookPanel;
-                MoreByAuthor.Children.Add(scrollViewer);
+                RelatedBooks.Children.Add(scrollViewer);
             }
         }
         #endregion
@@ -192,6 +225,8 @@ namespace CPSC_481_Digital_Library_Prototype.Components
 
                 // Set clicked true
                 clickedFormat.SetSelected(true);
+                _selectedFormat = clickedFormat._format;
+                updateGetButtonText(clickedFormat._available, clickedFormat._format);
             }
         }
 
@@ -204,12 +239,56 @@ namespace CPSC_481_Digital_Library_Prototype.Components
                 // Remove the last element i.e. this one
                 SearchPage.Children[SearchPage.Children.Count - 1].Visibility = Visibility.Collapsed;
                 Books instance = Books.Instance;
-                string series = _book.GetSeries();
+                string series = _book.GetSeries().ToLower();
                 if (instance.GetBookSeries().ContainsKey(series))
                 {
                     MoreInfo moreInfo = new MoreInfo(Books.Instance.GetBookSeries()[series].ToArray(), "Details", this);
                     SearchPage.Children.Add(moreInfo);
                 }
+            }
+        }
+
+        private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            var mouseWheelEventArgs = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
+            mouseWheelEventArgs.RoutedEvent = MouseWheelEvent;
+            mouseWheelEventArgs.Source = sender;
+            BookInfoContent.RaiseEvent(mouseWheelEventArgs);
+        }
+
+
+        #region Flow Control Handler
+        public event EventHandler<FlowControlEventArgs>? FlowControl;
+
+        private void GetBook_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            FlowControlEventArgs args = new FlowControlEventArgs();
+            args.book = _book.GetTitle().ToLower();
+            args.format = _selectedFormat;
+            OnFlowControl(args);
+        }
+
+        protected virtual void OnFlowControl(FlowControlEventArgs e)
+        {
+            EventHandler<FlowControlEventArgs> handler = FlowControl;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
+        }
+        #endregion
+        #endregion
+
+        #region Helpers
+        private void updateGetButtonText(bool available, string format)
+        {
+            if (available && format != "book")
+            {
+                GetBook.Content = "Checkout";
+            }
+            else
+            {
+                GetBook.Content = "Place Hold";
             }
         }
         #endregion

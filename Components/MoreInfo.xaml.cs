@@ -31,11 +31,11 @@ namespace CPSC_481_Digital_Library_Prototype.Components
         public MoreInfo(Book[] books, string name, IPage prevPage)
         {
             InitializeComponent();
-            //Name = name;
+            Name = "Series";
             _title = name;
             _books = books;
             _prevPage = prevPage;
-            BackButtonText.Text = name;
+            BackButtonText.Text = _title;
             RenderBooks();
         }
 

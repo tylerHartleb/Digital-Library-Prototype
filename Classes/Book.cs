@@ -9,7 +9,6 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
     public class Book
     {
         private string _imagePath;
-        private Dictionary<string, bool> _formatAvailability;
 
         // Book details
         private Author _author;
@@ -20,11 +19,10 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
         private string _series = "";
         private string _nextinseries = "";
 
-        public Book(Author author, string[] categories, Dictionary<string, bool> formats, string imagePath, float rating)
+        public Book(Author author, string[] categories, string imagePath, float rating)
         {
             _author = author;
             _imagePath = imagePath;
-            _formatAvailability = formats;
             _rating = rating;
             _categories = categories;
         }
@@ -69,11 +67,6 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
         public string GetImagePath()
         {
             return _imagePath;
-        }
-
-        public Dictionary<string, bool> GetFormatAvailabilities()
-        {
-            return _formatAvailability;
         }
 
         public string GetNextInSeries()

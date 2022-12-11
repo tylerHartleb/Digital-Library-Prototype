@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Book covers\a-storm-of-swords.jpg" />
     <None Remove="Book covers\a-study-of-history.jpg" />
     <None Remove="Book covers\aroundWorldEightyDays.jpg" />
     <None Remove="Book covers\badassHabits.jpg" />
@@ -18,12 +19,14 @@
     <None Remove="Book covers\book-cover-placeholder.png" />
     <None Remove="Book covers\chooseLife.jpg" />
     <None Remove="Book covers\civOnTrial.jpg" />
+    <None Remove="Book covers\clashofkings.jpg" />
     <None Remove="Book covers\cookFromSpirit.jpg" />
     <None Remove="Book covers\customsInCommon.jpg" />
     <None Remove="Book covers\danceOfDragons.jpg" />
     <None Remove="Book covers\daughter-of-the-deep.jpg" />
     <None Remove="Book covers\daughterOfDeep.jpg" />
     <None Remove="Book covers\fatalGrace.jpg" />
+    <None Remove="Book covers\feastofcrows.jpg" />
     <None Remove="Book covers\feedTheSoul.jpg" />
     <None Remove="Book covers\fireAndBlood.jpg" />
     <None Remove="Book covers\gameOfThrones.jpg" />
@@ -49,6 +52,7 @@
     <None Remove="Book covers\the-lost-hero.jpg" />
     <None Remove="Book covers\the-titans-curse.jpg" />
     <None Remove="Book covers\willMeaning.jpg" />
+    <None Remove="Book covers\windsofwinter.jpg" />
     <None Remove="Book covers\wiseManFear.jpg" />
     <None Remove="Book covers\workingClass.jpg" />
     <None Remove="Book covers\yesLife.jpg" />
@@ -76,6 +80,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Collections.Specialized" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Book covers\a-storm-of-swords.jpg" />
     <Resource Include="Book covers\a-study-of-history.jpg" />
     <Resource Include="Book covers\aroundWorldEightyDays.jpg" />
     <Resource Include="Book covers\badassHabits.jpg" />
@@ -85,12 +94,14 @@
     <Resource Include="Book covers\book-cover-placeholder.png" />
     <Resource Include="Book covers\chooseLife.jpg" />
     <Resource Include="Book covers\civOnTrial.jpg" />
+    <Resource Include="Book covers\clashofkings.jpg" />
     <Resource Include="Book covers\cookFromSpirit.jpg" />
     <Resource Include="Book covers\customsInCommon.jpg" />
     <Resource Include="Book covers\danceOfDragons.jpg" />
     <Resource Include="Book covers\daughter-of-the-deep.jpg" />
     <Resource Include="Book covers\daughterOfDeep.jpg" />
     <Resource Include="Book covers\fatalGrace.jpg" />
+    <Resource Include="Book covers\feastofcrows.jpg" />
     <Resource Include="Book covers\feedTheSoul.jpg" />
     <Resource Include="Book covers\fireAndBlood.jpg" />
     <Resource Include="Book covers\gameOfThrones.jpg" />
@@ -116,6 +127,7 @@
     <Resource Include="Book covers\the-lost-hero.jpg" />
     <Resource Include="Book covers\the-titans-curse.jpg" />
     <Resource Include="Book covers\willMeaning.jpg" />
+    <Resource Include="Book covers\windsofwinter.jpg" />
     <Resource Include="Book covers\wiseManFear.jpg" />
     <Resource Include="Book covers\workingClass.jpg" />
     <Resource Include="Book covers\yesLife.jpg" />

@@ -22,6 +22,9 @@
     <Compile Update="Components\FormatPill.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Components\Location.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Components\MoreInfo.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -49,6 +52,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\FormatPill.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\Location.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\MoreInfo.xaml">
