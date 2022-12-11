@@ -9,20 +9,20 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
     public class Book
     {
         private string _imagePath;
-        private Dictionary<string, bool> _formatAvailability;
 
         // Book details
         private Author _author;
         private string[] _categories;
         private string _description = "";
         private float _rating;
-        private string _title = ""; 
+        private string _title = "";
+        private string _series = "";
+        private string _nextinseries = "";
 
-        public Book(Author author, string[] categories, Dictionary<string, bool> formats, string imagePath, float rating)
+        public Book(Author author, string[] categories, string imagePath, float rating)
         {
             _author = author;
             _imagePath = imagePath;
-            _formatAvailability = formats;
             _rating = rating;
             _categories = categories;
         }
@@ -31,6 +31,18 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
         public Book SetDescription(string description)
         {
             _description = description;
+            return this;
+        }
+
+        public Book SetNextInSeries(string next)
+        {
+            _nextinseries = next;
+            return this;
+        }
+
+        public Book SetSeries(string series)
+        {
+            _series = series;
             return this;
         }
 
@@ -46,14 +58,20 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
         {
             return _author;
         }
+
+        public string GetDescription()
+        {
+            return _description;
+        }
+
         public string GetImagePath()
         {
             return _imagePath;
         }
 
-        public Dictionary<string, bool> GetFormatAvailabilities()
+        public string GetNextInSeries()
         {
-            return _formatAvailability;
+            return _nextinseries;
         }
 
         public float GetRating()
@@ -61,10 +79,20 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
             return _rating;
         }
 
+        public string GetSeries()
+        {
+            return _series;
+        }
+
         public string GetTitle()
         {
             return _title;
         }
+
+        public string[] GetCategories() {
+            return _categories;
+        }
         #endregion
+
     }
 }

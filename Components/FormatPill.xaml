@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="CPSC_481_Digital_Library_Prototype.Components.FormatPill"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CPSC_481_Digital_Library_Prototype.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="100">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.5*" />
+        </Grid.RowDefinitions>
+
+        <Border x:Name="FormatBorder" Width="100" Grid.Row="0" BorderBrush="Gray" BorderThickness="2" Margin="-1,0,-1,0" >
+            <Button x:Name="FormatBtn" Background="Transparent" BorderBrush="Transparent">
+                <TextBlock x:Name="FormatText" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Digital copy" FontSize="14" FontWeight="Medium" />
+            </Button>
+        </Border>
+        <TextBlock x:Name="NumCopies" Foreground="Green" Grid.Row="1" Text="3 available" HorizontalAlignment="Center" FontSize="10"  />
+    </Grid>
+</UserControl>
