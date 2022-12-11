@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="CPSC_481_Digital_Library_Prototype.Components.SeeAllButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CPSC_481_Digital_Library_Prototype.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="25" d:DesignWidth="75">
+    <Button Width="75" HorizontalAlignment="Right" Background="White" BorderBrush="White">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="See all" Grid.Column="0" FontWeight="Black" VerticalAlignment="Center" TextAlignment="Center"/>
+            <Image Source="/Icons/forward.png" Grid.Column="1" Height="15" Width="20" />
+        </Grid>
+    </Button>
+</UserControl>

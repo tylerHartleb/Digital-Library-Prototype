@@ -8,6 +8,45 @@
         xmlns:pages="clr-namespace:CPSC_481_Digital_Library_Prototype.Pages"
         mc:Ignorable="d"
         Title="MainWindow" Height="706" Width="413">
+    <Window.Resources>
+        <Storyboard x:Key="ExpandModal">
+            <DoubleAnimation    
+                Storyboard.TargetName="Modal" 
+                Storyboard.TargetProperty="Height"
+                From="{Binding ElementName=Modal, Path=Height}" 
+                To="{Binding ElementName=ContentSize, Path=DesiredSize.Height}"
+                Duration="0:0:.1" 
+            />
+            <DoubleAnimation Storyboard.TargetName="Overlay" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:.1"/>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Overlay" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Collapsed}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:.1" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="MoveModal">
+            <DoubleAnimation    
+                Storyboard.TargetName="Modal" 
+                Storyboard.TargetProperty="Height"
+                From="{Binding ElementName=Modal, Path=Height}" 
+                To="548"
+                Duration="0:0:.1" 
+            />
+        </Storyboard>
+        <Storyboard x:Key="CloseModal">
+            <DoubleAnimation 
+                Storyboard.TargetName="Modal" 
+                Storyboard.TargetProperty="Height"
+                From="{Binding ElementName=Modal, Path=Height}" 
+                To="0"
+                Duration="0:0:.1" 
+            />
+            <DoubleAnimation Storyboard.TargetName="Overlay" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:.1"/>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Overlay" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:.1" Value="{x:Static Visibility.Collapsed}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Name="SafeArea" Height="706*"/>
@@ -52,5 +91,49 @@
                 </TabItem>
             </TabControl>
         </Grid>
+        <Grid 
+            x:Name="Overlay"
+            Visibility="Collapsed"
+            Opacity="0"
+            Background="#50000000"
+        />
+
+        <StackPanel x:Name="Modal" Grid.Row="1" Height="0" VerticalAlignment="Bottom">
+            <Border
+                x:Name="ContentSize"
+                CornerRadius="8,8,0,0" 
+                BorderBrush="White"
+                Background="White"
+                Width="393" Height="275" 
+            >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Margin="10,8,10,12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock x:Name="ModalTitle" Grid.Column="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" TextAlignment="Center" Margin="0,4,0,4" />
+                        <Button x:Name="ModalClose" Grid.Column="1" Background="White" BorderBrush="White" HorizontalAlignment="Right" PreviewMouseDown="ModalClose_MouseDown">
+                            <Button.Triggers>
+                                <EventTrigger RoutedEvent="PreviewMouseDown">
+                                    <BeginStoryboard Storyboard="{StaticResource CloseModal}"/>
+                                </EventTrigger>
+                            </Button.Triggers>
+                            <Image Source="/Icons/close.png" Width="35" Height="35" />
+                        </Button>
+                    </Grid>
+
+                    <StackPanel x:Name="ModalContent" Grid.Row="1" Margin="10, 0, 10, 12" />
+                    <StackPanel x:Name="ModalActions" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,16" Panel.ZIndex="99" Background="Transparent" />
+                </Grid>
+            </Border>
+        </StackPanel>
     </Grid>
 </Window>
