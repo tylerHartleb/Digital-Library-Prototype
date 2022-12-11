@@ -87,7 +87,7 @@
                             </components:TabIcon.ImagePath>
                         </components:TabIcon>
                     </TabItem.Header>
-                    <pages:Scan/>
+                    <pages:Login/>
                 </TabItem>
             </TabControl>
         </Grid>

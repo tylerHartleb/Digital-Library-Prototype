@@ -37,8 +37,7 @@
         <Button
             Grid.Row="2"
             Style="{StaticResource styleBtnPrimary}"
-            Height="50" Width="273"
-        >
+            Height="50" Width="273">
             <TextBlock Text="Login" />
         </Button>
     </Grid>
