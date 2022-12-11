@@ -65,7 +65,7 @@
                             </components:TabIcon.ImagePath>
                         </components:TabIcon>
                     </TabItem.Header>
-                    <pages:Account/>
+                    <pages:Login/>
                 </TabItem>
 
                 <TabItem Style="{DynamicResource ResourceKey=styleTabItemDefault}">
