@@ -19,7 +19,7 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
         private string _series = "";
         private string _nextinseries = "";
 
-        {
+        public Book(Author author, string[] categories, string imagePath, float rating) {
             _author = author;
             _imagePath = imagePath;
             _rating = rating;
