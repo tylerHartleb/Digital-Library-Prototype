@@ -1,9 +1,7 @@
 ﻿using CPSC_481_Digital_Library_Prototype.Classes;
 using CPSC_481_Digital_Library_Prototype.Interfaces;
-using CPSC_481_Digital_Library_Prototype.Pages;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,37 +14,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Xml.Linq;
 
 namespace CPSC_481_Digital_Library_Prototype.Components
 {
     /// <summary>
-    /// Interaction logic for BookDetail.xaml
+    /// Interaction logic for BookDetailCompact.xaml
     /// </summary>
-    public partial class BookDetail : UserControl
+    public partial class BookDetailCompact : UserControl
     {
-        public Book _book { get; set; }
-        //private string _callingPage = "Search";
-        private bool _showFormat = true;
+        Book _book;
+        private IPage _callingPage;
 
-        private IPage _callingPage; 
-
-        public BookDetail(Book book, IPage callingPage, bool showformat = true)
+        public BookDetailCompact(Book book, IPage callingPage)
         {
             InitializeComponent();
             _book = book;
             _callingPage = callingPage;
-            _showFormat = showformat;
 
-            // Set values programatically
             SetBookAuthor();
             SetBookCover();
-            if (_showFormat) SetBookFormats();
-            SetBookRating();
             SetBookTitle();
         }
 
-        #region Set component infomation
         private void SetBookAuthor()
         {
             Author.Text = _book.GetAuthor().GetName();
@@ -60,39 +49,15 @@ namespace CPSC_481_Digital_Library_Prototype.Components
             BookCover.Source = imageBitmap;
         }
 
-        private void SetBookRating()
-        {
-            BookRating.Text = _book.GetRating().ToString();
-        }
-
         private void SetBookTitle()
         {
             Title.Text = _book.GetTitle();
         }
 
-        private void SetBookFormats()
-        {
-            Books instance = Books.Instance;
-            StackPanel formats = new StackPanel() { Orientation = Orientation.Horizontal, VerticalAlignment = VerticalAlignment.Bottom };
-            formats.SetValue(Grid.RowProperty, 1);
-            formats.SetValue(Grid.ColumnProperty, 1);
-            
-            // Add aval formats
-            foreach(var entry in instance.GetLibraries().formatAvailability[_book.GetTitle().ToLower()])
-            {
-                string imagePath = "/icons/" + entry.Key + ".png";
-                Format formatEntry = new Format(entry.Value > 0, imagePath);
-                formats.Children.Add(formatEntry);
-            }
-
-            BookDetails.Children.Add(formats);
-        }
-        #endregion
-
         #region Handlers
         private void BookDetail_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(BookDetails, "SearchPage");
+            StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(CompactDetails, "SearchPage");
 
             if (SearchPage != null)
             {
@@ -100,11 +65,6 @@ namespace CPSC_481_Digital_Library_Prototype.Components
                 SearchPage.Children[1].Visibility = Visibility.Collapsed;
                 SearchPage.Children[SearchPage.Children.Count - 1].Visibility = Visibility.Collapsed;
                 BookInfo bookInfo = new BookInfo(_book, _callingPage);
-
-                // Add event capturing
-                MainWindow mainWin = (MainWindow) Application.Current.MainWindow;
-                bookInfo.FlowControl += mainWin.Info_FlowControl;
-                
                 SearchPage.Children.Add(bookInfo);
             }
         }

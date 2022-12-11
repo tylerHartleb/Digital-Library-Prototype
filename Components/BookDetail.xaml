@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:CPSC_481_Digital_Library_Prototype.Components"
              mc:Ignorable="d" 
              d:DesignHeight="135" d:DesignWidth="373">
-    <Grid x:Name="BookDetails" Background="White" Width="373" Height="135">
+    <Grid x:Name="BookDetails" Background="White" Width="373" Height="135" MouseDown="BookDetail_MouseDown">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="Auto" />
@@ -19,8 +19,8 @@
 
         <Image Name="BookCover" Source="/Book covers/book-cover-placeholder.png" Width="106" Height="135" Margin="0,0,8,0" Stretch="Fill" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" />
         <StackPanel Grid.Column="1" Grid.Row="0">
-            <TextBlock x:Name="Title" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="Placeholder Title" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-            <TextBlock x:Name="Author" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="PlaceHolder Author" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
+            <TextBlock x:Name="Title" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="Placeholder Title" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="220"/>
+            <TextBlock x:Name="Author" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="PlaceHolder Author" VerticalAlignment="Top" FontSize="14" FontWeight="Medium" Width="220"/>
             <StackPanel Orientation="Horizontal">
                 <TextBlock x:Name="BookRating" HorizontalAlignment="Left" Margin="0,0,4,0" TextWrapping="Wrap" Text="5.0" VerticalAlignment="Top" FontSize="14" FontWeight="Medium"/>
                 <Image Source="/Icons/star.png" Width="15" Height="15" />

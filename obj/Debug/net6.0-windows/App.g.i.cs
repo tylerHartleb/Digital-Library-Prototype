@@ -47,6 +47,7 @@ namespace CPSC_481_Digital_Library_Prototype {
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "7.0.0.0")]
         public void InitializeComponent() {
             if (_contentLoaded) {
                 return;
@@ -72,6 +73,7 @@ namespace CPSC_481_Digital_Library_Prototype {
         /// </summary>
         [System.STAThreadAttribute()]
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "7.0.0.0")]
         public static void Main() {
             CPSC_481_Digital_Library_Prototype.App app = new CPSC_481_Digital_Library_Prototype.App();
             app.InitializeComponent();

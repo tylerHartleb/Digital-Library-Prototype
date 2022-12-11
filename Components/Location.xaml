@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="CPSC_481_Digital_Library_Prototype.Components.Location"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CPSC_481_Digital_Library_Prototype.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="70" d:DesignWidth="377">
+    <Border x:Name="LocationBorder" BorderBrush="Transparent" BorderThickness="2">
+        <Grid Width="373" Background="white" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="LocationTitle" Grid.Column="0" Grid.Row="0" Text="Place Holder Location" HorizontalAlignment="Left" Margin="10,10,10,4" FontSize="18" FontWeight="SemiBold" TextAlignment="Center"  VerticalAlignment="Center"/>
+            <TextBlock x:Name="LocationInventory" Grid.Column="0" Grid.Row="1" Text="0 Available, 7 on Hold" HorizontalAlignment="Left" Margin="10,0,0,10" FontSize="12" TextAlignment="Center"  VerticalAlignment="Center"/>
+            <Grid x:Name="LocationSelect" Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Right" Margin="10" Background="white" VerticalAlignment="Center" Visibility="Visible">
+                <TextBlock Text="Select" FontSize="18" FontWeight="Medium" />
+            </Grid>
+            <Rectangle x:Name="LocationSelected" Fill="Green" Grid.RowSpan="2" Grid.Column="1" Visibility="Collapsed" Width="40" Height="40" HorizontalAlignment="Right" Margin="10">
+                <Rectangle.OpacityMask>
+                    <VisualBrush>
+                        <VisualBrush.Visual>
+                            <Image Source="/Icons/checkmark.png"  />
+                        </VisualBrush.Visual>
+                    </VisualBrush>
+                </Rectangle.OpacityMask>
+            </Rectangle>
+        </Grid>
+    </Border>
+</UserControl>

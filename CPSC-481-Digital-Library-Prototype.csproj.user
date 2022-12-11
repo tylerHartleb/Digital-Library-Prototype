@@ -10,7 +10,25 @@
     <Compile Update="Components\BookDetail.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Components\BookDetailCompact.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\BookInfo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Components\Format.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\FormatPill.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\Location.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\MoreInfo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\SeeAllButton.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Components\TabIcon.xaml.cs">
@@ -24,7 +42,25 @@
     <Page Update="Components\BookDetail.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Components\BookDetailCompact.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\BookInfo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Components\Format.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\FormatPill.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\Location.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\MoreInfo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\SeeAllButton.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Login.xaml">
