@@ -25,12 +25,14 @@
         <StackPanel Grid.Row="1" Margin="10 0 10 108">
             <TextBlock Text="Library Card Number:" FontWeight="Bold"/>
             <TextBox x:Name="UsernameTextBox" Padding="16"/>
+            <TextBlock x:Name="UsernameWarning" Text=""/>
         </StackPanel>
 
         <!--Password block-->
         <StackPanel Grid.Row="1" Margin="10 108 10 0">
             <TextBlock Text="Password:" FontWeight="Bold"/>
             <TextBox x:Name="PasswordTextBox" Padding="16" UndoLimit="101"/>
+            <TextBlock x:Name="PasswordWarning" Text=""/>
         </StackPanel>
 
         <!--Login Click block-->

@@ -43,13 +43,18 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
                 {
                     //the username exists but the password was wrong.
                     Debug.WriteLine("[Login Log]: Id: Correct - Password: Incorrect");
+                    UsernameWarning.Text = "";
+                    PasswordWarning.Text = "Incorrect password entered!";
                 }
             }
             else
             {
                 //The username/id does not exist.
                 Debug.WriteLine("[Login Log]: Id: Incorrect - Password: Incorrect");
+                UsernameWarning.Text = "Username does not exist!";
+                PasswordWarning.Text = "";
             }
+
         }
     }
 }
