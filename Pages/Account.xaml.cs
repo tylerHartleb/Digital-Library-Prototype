@@ -13,23 +13,6 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
             InitializeComponent();
         }
 
-        
-
-        private void CheckOut_Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void OnHold_Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Fees_Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void EmailPassword_Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -42,7 +25,22 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
 
         private void Fees_Click(object sender, RoutedEventArgs e)
         {
+            Content = new Fees();
+        }
 
+        private void CheckedOut_Click(object sender, RoutedEventArgs e)
+        {
+            Content = new CheckedItems();
+        }
+
+        private void Held_Click(object sender, RoutedEventArgs e)
+        {
+            Content = new HoldItems();
+        }
+
+        private void ViewAccountInfo_Click(object sender, RoutedEventArgs e)
+        {
+            Content = new EmailPassword();
         }
     }
 }
