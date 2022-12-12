@@ -65,7 +65,7 @@ There are a number of example books with filled in data available to interact wi
  Once you have selected a book, you are shown the "Book Details" page, this displays the book title, it's formats, a synopsis. Additionally, it will display books written by the same author, related books, and books in the same series (each fully interactable).
  From here you can select a format and (if you're signed in) can check out or place a hold depending on the format and the availability. The book will be added to the account section under either checked out books, or held books*. 
  
- *Note checked out / held books are persisted through application resets and are not deducted from the total from the library location.
+ *Note checked out / held books are not persisted through application resets and are not deducted from the total from the library location.
  
  #### Example walkthrough
  
