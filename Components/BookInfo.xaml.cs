@@ -103,7 +103,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
                     selected = true;
                     _selectedFormat = entry.Key;
                 }
-                FormatPill formatEntry = new FormatPill(selected, entry.Value, entry.Value > 0, entry.Key);
+                FormatPill formatEntry = new FormatPill(selected, entry.Value, entry.Key);
                 _formatPills.Append(formatEntry);
                 formatEntry.PreviewMouseDown += Format_MouseDown;
                 formatEntry.Margin = new Thickness(8, 0, 8, 0);
@@ -244,7 +244,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
                 clickedFormat.SetSelected(true);
                 _selectedFormat = clickedFormat._format;
 
-                updateGetButtonText(clickedFormat._available, clickedFormat._format);
+                updateGetButtonText(clickedFormat._numCopies > 0, clickedFormat._format);
             }
         }
 

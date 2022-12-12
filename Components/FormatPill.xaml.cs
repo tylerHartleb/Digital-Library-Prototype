@@ -21,16 +21,14 @@ namespace CPSC_481_Digital_Library_Prototype.Components
     public partial class FormatPill : UserControl
     {
         private bool _selected = false;
-        private int _numCopies = 0;
-        public bool _available { get; private set; } = false;
+        public int _numCopies = 0;
         public string _format { get; private set; }
 
-        public FormatPill(bool selected, int numCopies, bool available, String Format)
+        public FormatPill(bool selected, int numCopies, string Format)
         {
             InitializeComponent();
             _selected = selected;
             _numCopies = numCopies;
-            _available = available;
             _format = Format;
 
             FormatText.Text = Format;
@@ -53,7 +51,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
         {
             if (_selected)
             {
-                if (_available)
+                if (_numCopies > 0)
                 {
                     FormatBorder.BorderBrush = Brushes.Green;
                     FormatText.Foreground = Brushes.Green;
@@ -72,7 +70,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
 
         private void ChangePillText()
         {
-            if (_available)
+            if (_numCopies > 0)
             {
                 NumCopies.Text = _numCopies + " available";
                 NumCopies.Foreground = Brushes.Green;

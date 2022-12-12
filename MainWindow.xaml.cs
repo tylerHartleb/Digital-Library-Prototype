@@ -27,6 +27,7 @@ namespace CPSC_481_Digital_Library_Prototype
         private string _book = "";
         private string _format = "";
         private Location? _location;
+        private string _setLocation;
 
         public MainWindow()
         {
@@ -91,6 +92,7 @@ namespace CPSC_481_Digital_Library_Prototype
                 Location preferedLibrary = new Location(preferredLocation, book.GetTitle().ToLower(), true);
                 preferedLibrary.PreviewMouseDown += Loc_MouseDown;
                 _location = preferedLibrary;
+                _setLocation = preferredLocation;
                 innerView.Children.Add(preferedLibrary);
                 Separator bookSep = new Separator() { Foreground = Brushes.LightGray, Margin = new Thickness(10, 8, 10, 8) };
                 innerView.Children.Add(bookSep);
@@ -131,6 +133,7 @@ namespace CPSC_481_Digital_Library_Prototype
 
                 // Set clicked true
                 clickLoc.SetSelected(true);
+                _setLocation = clickLoc._location;
                 _location = clickLoc;
             }
         }
@@ -166,9 +169,9 @@ namespace CPSC_481_Digital_Library_Prototype
 
             HeldBook heldBook = new HeldBook(bookToCheckout, _format);
 
-            if (_location != null)
+            if (_setLocation != null)
             {
-                heldBook.SetLocation(_location.Name);
+                heldBook.SetLocation(_setLocation);
             }
 
             user.GetHeldBooks().Add(heldBook);
@@ -182,6 +185,7 @@ namespace CPSC_481_Digital_Library_Prototype
             if (ContentSize.Height != 275)
             {
                 ContentSize.Height = 275;
+
                 Storyboard sb = FindResource("MoveModal") as Storyboard;
                 sb.Begin();
             }

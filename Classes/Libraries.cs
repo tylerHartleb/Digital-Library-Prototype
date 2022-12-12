@@ -232,7 +232,7 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
                     { "headphone", 2 }
                 }},
                 { "the sea of monsters", new Dictionary<string, int>() {
-                    { "book", GetTotalPhysicalAvailable("the sea of monstersf".ToLower()) },
+                    { "book", GetTotalPhysicalAvailable("the sea of monsters".ToLower()) },
                     { "smartphone", 0 },
                     { "headphone", 1 }
                 }},
@@ -242,7 +242,7 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
                     { "headphone", 0 }
                 }},
                 { "the battle of the labyrinth", new Dictionary<string, int>() {
-                    { "book", GetTotalPhysicalAvailable("the titan's curse".ToLower()) },
+                    { "book", GetTotalPhysicalAvailable("the battle of the labyrinth".ToLower()) },
                     { "smartphone", 2 },
                     { "headphone", 0 }
                 }},
@@ -367,7 +367,7 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
                     { "headphone", 2 }
                 }},
                 { "Fire & Blood".ToLower(), new Dictionary<string, int>() {
-                    { "book", GetTotalPhysicalAvailable("Fire & Bloods".ToLower()) },
+                    { "book", GetTotalPhysicalAvailable("Fire & Blood".ToLower()) },
                     { "smartphone", 3 },
                     { "headphone", 2 }
                 }},
