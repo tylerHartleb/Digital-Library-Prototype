@@ -29,10 +29,10 @@ namespace CPSC_481_Digital_Library_Prototype.Components
         private string _title = "";
         private string _parentPage;
 
-        public MoreInfo(IBook[] books, string name, string pageTitle, IPage prevPage, string parentPage)
+        public MoreInfo(IBook[] books, string name, string pageTitle, IPage prevPage, string parentPage, string pageName = "Series")
         {
             InitializeComponent();
-            Name = "Series";
+            Name = pageName;
             _title = name;
             _parentPage = parentPage;
             _books = books;
@@ -44,7 +44,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
 
         public void ReDrawContent()
         {
-            StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(BooksInfo, "SearchPage");
+            StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(BooksInfo, _parentPage);
 
             if (SearchPage != null)
             {

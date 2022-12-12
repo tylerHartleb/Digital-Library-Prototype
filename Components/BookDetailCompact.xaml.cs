@@ -59,13 +59,17 @@ namespace CPSC_481_Digital_Library_Prototype.Components
         #region Handlers
         private void BookDetail_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(CompactDetails, "SearchPage");
+            StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(CompactDetails, _parentPage);
 
             if (SearchPage != null)
             {
                 SearchPage.Children[0].Visibility = Visibility.Collapsed;
                 SearchPage.Children[SearchPage.Children.Count - 1].Visibility = Visibility.Collapsed;
                 BookInfo bookInfo = new BookInfo(_book, _callingPage, _parentPage);
+
+                MainWindow mainWin = (MainWindow)Application.Current.MainWindow;
+                bookInfo.FlowControl += mainWin.Info_FlowControl;
+
                 SearchPage.Children.Add(bookInfo);
             }
         }

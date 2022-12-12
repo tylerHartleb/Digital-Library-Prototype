@@ -53,7 +53,7 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
                     if (fees > 0)
                     {
                         Fees.Visibility = Visibility.Visible;
-                        FeesText.Content = "Fees (" + fees + ")";
+                        FeesText.Content = "Fees ($" + fees + ")";
                     }
                 }
             }
@@ -128,7 +128,7 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
                 AccountPrefLib.Content = "Preferred Location: " + user.location + " Library";
 
                 AccountInfo.Visibility = Visibility.Collapsed;
-                MoreInfo checkedItems = new MoreInfo(user.GetCheckedOutBooks().ToArray(), "Account", "Checked Out Books", this, "AccountPage");
+                MoreInfo checkedItems = new MoreInfo(user.GetCheckedOutBooks().ToArray(), "Account", "Checked Out Books", this, "AccountPage", "Books");
                 AccountPage.Children.Add(checkedItems);
             }
         }
@@ -145,7 +145,7 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
                 AccountPrefLib.Content = "Preferred Location: " + user.location + " Library";
 
                 AccountInfo.Visibility = Visibility.Collapsed;
-                MoreInfo heldItems = new MoreInfo(user.GetHeldBooks().ToArray(), "Account", "Books on Hold", this, "AccountPage");
+                MoreInfo heldItems = new MoreInfo(user.GetHeldBooks().ToArray(), "Account", "Books on Hold", this, "AccountPage", "Books");
                 AccountPage.Children.Add(heldItems);
             }
         }

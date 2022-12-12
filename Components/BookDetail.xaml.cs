@@ -27,7 +27,6 @@ namespace CPSC_481_Digital_Library_Prototype.Components
     public partial class BookDetail : UserControl
     {
         public IBook _book { get; set; }
-        //private string _callingPage = "Search";
         private bool _showFormat = true;
 
         private IPage _callingPage;
@@ -48,9 +47,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
             SetBookRating();
             SetBookTitle();
 
-            SetBookSpecific();
-
-            
+            SetBookSpecific(); 
         }
 
         #region Set component infomation
@@ -101,7 +98,6 @@ namespace CPSC_481_Digital_Library_Prototype.Components
 
             if (type.Equals("heldBook"))
             {
-                Bookmark.Visibility = Visibility.Collapsed;
                 HeldBook heldBook = _book as HeldBook;
                 TextBlock heldUntil = new TextBlock() { HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, Margin = new Thickness(0, 0, 4, 0), FontSize = 12, FontWeight = FontWeights.Light };
                 heldUntil.Text = "Due date: " + heldBook.holdUntil.ToString("yyyy/MM/dd");
@@ -114,7 +110,6 @@ namespace CPSC_481_Digital_Library_Prototype.Components
                 }
             } else if (type.Equals("checkOutBook"))
             {
-                Bookmark.Visibility = Visibility.Collapsed;
                 CheckedBook checkBook = _book as CheckedBook;
                 TextBlock dueDate = new TextBlock() { HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, Margin = new Thickness(0,0,4,0), FontSize = 12, FontWeight = FontWeights.Light };
                 dueDate.Text = "Due date: " + checkBook.due.ToString("yyyy/MM/dd");
@@ -146,8 +141,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
                 SearchPage.Children[SearchPage.Children.Count - 1].Visibility = Visibility.Collapsed;
                 BookInfo bookInfo = new BookInfo(_book, _callingPage, _parentPage);
 
-                // Add event capturing
-                MainWindow mainWin = (MainWindow) Application.Current.MainWindow;
+                MainWindow mainWin = (MainWindow)Application.Current.MainWindow;
                 bookInfo.FlowControl += mainWin.Info_FlowControl;
                 
                 SearchPage.Children.Add(bookInfo);

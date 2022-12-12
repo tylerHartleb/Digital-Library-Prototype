@@ -60,7 +60,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
 
         public void ReDrawContent()
         {
-            StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(BookInfomation, "SearchPage");
+            StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(BookInfomation, _parentPage);
 
             if (SearchPage != null)
             {
@@ -82,7 +82,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
         #region Set Component Info
         private void AddMainBook()
         {
-            BookDetail mainDetail = new BookDetail(_book, this, _parentPage);
+            BookDetail mainDetail = new BookDetail(_book, this, _parentPage, false);
             MainBook.Children.Add(mainDetail);
         }
 
@@ -215,7 +215,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
         #region Handlers
         private void BackButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(BookInfomation, "SearchPage");
+            StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(BookInfomation, _parentPage);
 
             if (SearchPage != null)
             {

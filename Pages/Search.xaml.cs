@@ -17,8 +17,6 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
     /// </summary>
     public partial class Search : UserControl, IPage
     {
-
-        Object[] prevChildren = { };
     
         public Search()
         {
@@ -103,11 +101,6 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
             CancelSearch.Visibility = Visibility.Collapsed;
             SearchInput.Text = "";
             RenderReccommended();
-        }
-
-        public static void Search_FlowControl(Object? sender, FlowControlEventArgs e)
-        {
-            Debug.WriteLine("Book Info has pushed a checkout flow");
         }
 
         private void SearchBooks(string searchString)
@@ -215,18 +208,6 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
             }
             // Remove the last separator
             SearchPageScrollContent.Children.RemoveAt(SearchPageScrollContent.Children.Count - 1);
-        }
-
-        private TextBlock CreateTitleBlock(String title)
-        {
-            return new TextBlock() {
-                Text = title,
-                Margin = new Thickness(0,0,0,16),
-                HorizontalAlignment = HorizontalAlignment.Left,
-                VerticalAlignment = VerticalAlignment.Top, 
-                FontSize = 24, 
-                FontWeight = FontWeights.Bold 
-            };
         }
 
         /**
