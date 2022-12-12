@@ -31,7 +31,18 @@ namespace CPSC_481_Digital_Library_Prototype.Components
             _numCopies = numCopies;
             _format = Format;
 
-            FormatText.Text = Format;
+            if (Format.Equals("book"))
+            {
+                FormatText.Text = "Physical Copy";
+            } else if (Format.Equals("smartphone"))
+            {
+                FormatText.Text = "Digital Copy";
+            } else
+            {
+                FormatText.Text = "Audiobook";
+            }
+
+            
             ChangePillState();
         }
 
