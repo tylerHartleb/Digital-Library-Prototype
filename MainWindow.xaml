@@ -136,14 +136,18 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock x:Name="ModalTitle" Grid.Column="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" TextAlignment="Center" Margin="0,4,0,4" />
-                        <Button x:Name="ModalClose" Grid.Column="1" Background="White" BorderBrush="White" HorizontalAlignment="Right" PreviewMouseDown="ModalClose_MouseDown">
-                            <Button.Triggers>
-                                <EventTrigger RoutedEvent="PreviewMouseDown">
-                                    <BeginStoryboard Storyboard="{StaticResource CloseModal}"/>
-                                </EventTrigger>
-                            </Button.Triggers>
+                        <Button x:Name="ModalClose" Visibility="Visible" Grid.Column="1" Background="White" BorderBrush="White" HorizontalAlignment="Right" PreviewMouseDown="ModalClose_MouseDown">
                             <Image Source="/Icons/close.png" Width="35" Height="35" />
                         </Button>
+                        <Rectangle x:Name="Confirmed" Visibility="Collapsed" Fill="Green" Grid.Column="1" Width="35" Height="35" HorizontalAlignment="Right">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush>
+                                    <VisualBrush.Visual>
+                                        <Image Source="/Icons/checkmark.png"  />
+                                    </VisualBrush.Visual>
+                                </VisualBrush>
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
                     </Grid>
 
                     <StackPanel x:Name="ModalContent" Grid.Row="1" Margin="10, 0, 10, 12" />

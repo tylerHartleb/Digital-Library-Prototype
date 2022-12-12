@@ -7,108 +7,96 @@
       mc:Ignorable="d" 
       d:DesignHeight="648" d:DesignWidth="393"
 >
-    <Grid Background="#F6F6F6">
-        <StackPanel Margin="10,0,10,0">
-            <Border Margin="0,32,0,0" Background="White" BorderBrush="White" BorderThickness="1" CornerRadius="8" Padding="4">
-                <StackPanel 
-                    x:Name="AccountInfo"
-                >
-                    <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-                        <Image Source="\Images\account.png" Height="64"  VerticalAlignment="Top" Width="78"/>
-                        <StackPanel x:Name="AccountName">
-                            <Label Content="example@gmail.com" FontSize="20" VerticalAlignment="Top"/>
-                            <Label Content="Library Card: 123456789" FontSize="12" HorizontalAlignment="Center" Width="194"/>
+    <Grid>
+        <StackPanel x:Name="AccountPage" Background="#F6F6F6">
+            <StackPanel x:Name="AccountInfo">
+                <Border Margin="10,32,10,0" Background="White" BorderBrush="White" BorderThickness="1" CornerRadius="8" Padding="4">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                            <Image Source="\Images\account.png" Height="64"  VerticalAlignment="Top" Width="78"/>
+                            <StackPanel x:Name="AccountDetails">
+                                <Label x:Name="AccountName" Content="Placeholder Name" FontSize="20" VerticalAlignment="Top"/>
+                                <Label x:Name="AccountCard" Content="Library Card: 123456789" FontSize="12" HorizontalAlignment="Center" Width="194"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <Grid HorizontalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="AccountPrefLib" Content="Placeholder location" Grid.Column="0" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" HorizontalContentAlignment="Stretch" Grid.ColumnSpan="2" ></Label>
+                        </Grid>
+                        <StackPanel x:Name="Fees" Visibility="Collapsed">
+                            <Separator Foreground="#F6F6F6" Margin="10,8,10,8" />
+                            <Grid x:Name="ViewAccountInfo" Background="White" HorizontalAlignment="Stretch" Margin="10,0,10,4">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label x:Name="FeesText" Grid.Column="0" FontSize="14" Content="Fees Place Holder" VerticalAlignment="Center" HorizontalAlignment="Left" ></Label>
+                            </Grid>
                         </StackPanel>
                     </StackPanel>
-                    <Grid HorizontalAlignment="Stretch">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.5*" />
-                            <ColumnDefinition Width="0.5*" />
-                        </Grid.ColumnDefinitions>
+                </Border>
 
-                        <TextBlock Grid.Column="0" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Width="223" Grid.ColumnSpan="2" ><Run Text="Preferred Library: Crowfoot "/><Run Text="L"/><Run Text="ibrary"/></TextBlock>
-                    </Grid>
-                    <Separator Foreground="#F6F6F6" Margin="10,8,10,8" />
-                    <Button x:Name="ViewAccountInfo" Background="White" BorderBrush="White" HorizontalContentAlignment="Stretch" Margin="10,0,10,4" Click="Fees_Click">
-                        <Grid HorizontalAlignment="Stretch">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="0.5*" />
-                                <ColumnDefinition Width="0.5*" />
-                            </Grid.ColumnDefinitions>
+                <Border x:Name="AccountContent" Margin="10,32,10,0" Background="White" BorderBrush="White" BorderThickness="1" CornerRadius="8" Padding="4" Visibility="Collapsed">
+                    <StackPanel>
+                        <Button x:Name="CheckedOut" Background="White" BorderBrush="White" HorizontalContentAlignment="Stretch" Margin="10,4,10,4" Click="CheckedOut_Click">
+                            <Grid HorizontalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*" />
+                                    <ColumnDefinition Width="0.5*" />
+                                </Grid.ColumnDefinitions>
 
-                            <TextBlock Grid.Column="0" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" ><Run Language="en-ca" Text="Fees($3.00)"/></TextBlock>
-                            <Rectangle Grid.Column="1" Fill="Gray" Width="14" Height="14" VerticalAlignment="Center" HorizontalAlignment="Right">
-                                <Rectangle.OpacityMask>
-                                    <VisualBrush>
-                                        <VisualBrush.Visual>
-                                            <Image Source="/Icons/icon-forward.png" />
-                                        </VisualBrush.Visual>
-                                    </VisualBrush>
-                                </Rectangle.OpacityMask>
-                            </Rectangle>
-                        </Grid>
-                    </Button>
-                </StackPanel>
-            </Border>
+                                <Label x:Name="CheckText" Grid.Column="0" FontSize="14" Content="Checked Out Items (1)" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                                <Rectangle Grid.Column="1" Fill="Gray" Width="14" Height="14" VerticalAlignment="Center" HorizontalAlignment="Right">
+                                    <Rectangle.OpacityMask>
+                                        <VisualBrush>
+                                            <VisualBrush.Visual>
+                                                <Image Source="/Icons/icon-forward.png" />
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                            </Grid>
+                        </Button>
+                        <Separator Visibility="Collapsed" x:Name="HeldSep" Foreground="#F6F6F6" Margin="10,8,10,8" />
+                        <Button x:Name="Held" Background="White" BorderBrush="White" HorizontalContentAlignment="Stretch" Margin="10,0,10,4" Click="Held_Click">
+                            <Grid HorizontalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*" />
+                                    <ColumnDefinition Width="0.5*" />
+                                </Grid.ColumnDefinitions>
 
-            <Border Margin="0,32,0,0" Background="White" BorderBrush="White" BorderThickness="1" CornerRadius="8" Padding="4">
-                <StackPanel x:Name="AccountContent">
-                    <Button x:Name="CheckedOut" Background="White" BorderBrush="White" HorizontalContentAlignment="Stretch" Margin="10,4,10,4" Click="CheckedOut_Click">
-                        <Grid HorizontalAlignment="Stretch">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="0.5*" />
-                                <ColumnDefinition Width="0.5*" />
-                            </Grid.ColumnDefinitions>
+                                <Label x:Name="HeldText" Grid.Column="0" FontSize="14" Content="Held Items (1)" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                                <Rectangle Grid.Column="1" Fill="Gray" Width="14" Height="14" VerticalAlignment="Center" HorizontalAlignment="Right">
+                                    <Rectangle.OpacityMask>
+                                        <VisualBrush>
+                                            <VisualBrush.Visual>
+                                                <Image Source="/Icons/icon-forward.png" />
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                            </Grid>
+                        </Button>
+                    </StackPanel>
+                </Border>
 
-                            <TextBlock Grid.Column="0" FontSize="14" Text="Checked Out Items (1)" VerticalAlignment="Center" HorizontalAlignment="Left" />
-                            <Rectangle Grid.Column="1" Fill="Gray" Width="14" Height="14" VerticalAlignment="Center" HorizontalAlignment="Right">
-                                <Rectangle.OpacityMask>
-                                    <VisualBrush>
-                                        <VisualBrush.Visual>
-                                            <Image Source="/Icons/icon-forward.png" />
-                                        </VisualBrush.Visual>
-                                    </VisualBrush>
-                                </Rectangle.OpacityMask>
-                            </Rectangle>
-                        </Grid>
-                    </Button>
-                    <Separator Foreground="#F6F6F6" Margin="10,8,10,8" />
-                    <Button x:Name="Held" Background="White" BorderBrush="White" HorizontalContentAlignment="Stretch" Margin="10,0,10,4" Click="Held_Click">
-                        <Grid HorizontalAlignment="Stretch">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="0.5*" />
-                                <ColumnDefinition Width="0.5*" />
-                            </Grid.ColumnDefinitions>
+                <Border Margin="10,32,10,0" Background="White" BorderBrush="White" BorderThickness="1" CornerRadius="8" Padding="4" PreviewMouseDown="SignOut_Button_Click">
+                    <StackPanel x:Name="SignOutContainer">
+                        <Button x:Name="SignOutBtn" Background="White" BorderBrush="White" HorizontalContentAlignment="Stretch" Margin="10,4,10,4">
+                            <Grid HorizontalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*" />
+                                    <ColumnDefinition Width="0.5*" />
+                                </Grid.ColumnDefinitions>
 
-                            <TextBlock Grid.Column="0" FontSize="14" Text="Held Items (1)" VerticalAlignment="Center" HorizontalAlignment="Left" />
-                            <Rectangle Grid.Column="1" Fill="Gray" Width="14" Height="14" VerticalAlignment="Center" HorizontalAlignment="Right">
-                                <Rectangle.OpacityMask>
-                                    <VisualBrush>
-                                        <VisualBrush.Visual>
-                                            <Image Source="/Icons/icon-forward.png" />
-                                        </VisualBrush.Visual>
-                                    </VisualBrush>
-                                </Rectangle.OpacityMask>
-                            </Rectangle>
-                        </Grid>
-                    </Button>
-                </StackPanel>
-            </Border>
-
-            <Border Margin="0,32,0,0" Background="White" BorderBrush="White" BorderThickness="1" CornerRadius="8" Padding="4">
-                <StackPanel x:Name="SignOutContainer">
-                    <Button x:Name="SignOutBtn" Background="White" BorderBrush="White" HorizontalContentAlignment="Stretch" Margin="10,4,10,4">
-                        <Grid HorizontalAlignment="Stretch">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="0.5*" />
-                                <ColumnDefinition Width="0.5*" />
-                            </Grid.ColumnDefinitions>
-
-                            <TextBlock Grid.Column="0" FontSize="14" Text="Sign out" VerticalAlignment="Center" HorizontalAlignment="Left" />
-                        </Grid>
-                    </Button>
-                </StackPanel>
-            </Border>
+                                <TextBlock Grid.Column="0" FontSize="14" Text="Sign out" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                            </Grid>
+                        </Button>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </UserControl>

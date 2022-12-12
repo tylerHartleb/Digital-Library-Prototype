@@ -31,7 +31,7 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
                     LoginChange(this, null);
             }
         }
-        public string signedInUser = "";
+        public long signedInUser = 0;
 
         private Users()
         {
@@ -41,15 +41,22 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
 
         private void CreateUserDict()
         {
-            User JohnDoe = new User("John Doe", 12345678910111, "password");
-            User JaneDoe = new User("Jane Doe", 10020050060099, "ILoveUoC");
-            User PeterJohnson = new User("Peter Johnson", 30051478900000, "password1");
-            User AliceBlue = new User("Alice Blue", 00000000000000, "password");
+            Books instance = Books.Instance;
+
+            User JohnDoe = new User("John Doe", "Nose Hill", 12345678910111, "password");
+            User JaneDoe = new User("Jane Doe", "Downtown", 10020050060099, "ILoveUoC");
+            User PeterJohnson = new User("Peter Johnson", "Fish Creek", 30051478900000, "password1");
+            User AliceBlue = new User("Alice Blue", "Bowness", 10000000000000, "password");
+
+            Book dance = instance.GetBooks()["A Dance with Dragons".ToLower()];
+            AliceBlue.GetHeldBooks().Add(new HeldBook(dance, "book").SetLocation("Bowness").SetHoldUntil(DateTime.Today.AddDays(1)));
+            Book crows = instance.GetBooks()["A Feast for Crows".ToLower()];
+            AliceBlue.GetCheckedOutBooks().Add(new CheckedBook(crows, "book", DateTime.Now.AddDays(-1)).SetLocation("Bowness"));
 
             UserDataBase.Add(12345678910111, JohnDoe);
             UserDataBase.Add(10020050060099, JaneDoe);
             UserDataBase.Add(30051478900000, PeterJohnson);
-            UserDataBase.Add(00000000000000, AliceBlue);
+            UserDataBase.Add(10000000000000, AliceBlue);
         }
     }
 }

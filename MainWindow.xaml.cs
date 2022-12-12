@@ -59,6 +59,9 @@ namespace CPSC_481_Digital_Library_Prototype
             ContentSize.Height = 275;
             ModalContent.Children.Clear();
             ModalActions.Children.Clear();
+
+            Storyboard sb = FindResource("CloseModal") as Storyboard;
+            sb.Begin();
         }
 
         private void More_MouseDown(Object sender, MouseButtonEventArgs e)
@@ -69,6 +72,7 @@ namespace CPSC_481_Digital_Library_Prototype
             ContentSize.Height = 548;
 
             Books instance = Books.Instance;
+            Users userInstance = Users.Instance;
             Book book = instance.GetBooks()[_book];
 
             TextBlock title = CreateTitleBlock("Locations", 20, FontWeights.Medium);
@@ -79,37 +83,42 @@ namespace CPSC_481_Digital_Library_Prototype
             ScrollViewer scrollView = new ScrollViewer() { VerticalScrollBarVisibility = ScrollBarVisibility.Hidden, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Height = 325 };
             StackPanel innerView = new StackPanel() { };
 
-            // TODO - Get actual preferred location
-            string preferredLocation = "fish creek";
-            Location preferedLibrary = new Location(preferredLocation, book.GetTitle().ToLower(), true);
-            preferedLibrary.PreviewMouseDown += Loc_MouseDown;
-            _location = preferedLibrary;
-            innerView.Children.Add(preferedLibrary);
-            Separator bookSep = new Separator() { Foreground = Brushes.LightGray, Margin = new Thickness(10, 8, 10, 8) };
-            innerView.Children.Add(bookSep);
 
-            foreach (string loc in instance.GetLibraries().locations.Keys)
+            User user;
+            if (userInstance.UserDataBase.TryGetValue(userInstance.signedInUser, out user))
             {
-                if (loc != preferredLocation)
+                string preferredLocation = user.location.ToLower();
+                Location preferedLibrary = new Location(preferredLocation, book.GetTitle().ToLower(), true);
+                preferedLibrary.PreviewMouseDown += Loc_MouseDown;
+                _location = preferedLibrary;
+                innerView.Children.Add(preferedLibrary);
+                Separator bookSep = new Separator() { Foreground = Brushes.LightGray, Margin = new Thickness(10, 8, 10, 8) };
+                innerView.Children.Add(bookSep);
+
+                foreach (string loc in instance.GetLibraries().locations.Keys)
                 {
-                    Location locDetails = new Location(loc, book.GetTitle().ToLower(), false);
-                    locDetails.PreviewMouseDown += Loc_MouseDown;
-                    innerView.Children.Add(locDetails);
-                    Separator tmp_sep = new Separator() { Foreground = Brushes.LightGray, Margin = new Thickness(10, 8, 10, 8) };
-                    innerView.Children.Add(tmp_sep);
+                    if (loc != preferredLocation)
+                    {
+                        Location locDetails = new Location(loc, book.GetTitle().ToLower(), false);
+                        locDetails.PreviewMouseDown += Loc_MouseDown;
+                        innerView.Children.Add(locDetails);
+                        Separator tmp_sep = new Separator() { Foreground = Brushes.LightGray, Margin = new Thickness(10, 8, 10, 8) };
+                        innerView.Children.Add(tmp_sep);
+                    }
                 }
+                innerView.Children.RemoveAt(innerView.Children.Count - 1);
+
+                scrollView.Content = innerView;
+                ModalContent.Children.Add(scrollView);
+
+                ModalActions.Margin = new Thickness(0, 0, 0, 16);
+                Button confHold = CreatePrimaryButton("Confirm Hold", 250);
+                confHold.PreviewMouseDown += PlaceHold_MouseDown;
+                ModalActions.Children.Add(confHold);
+
+                Storyboard sb = FindResource("MoveModal") as Storyboard;
+                sb.Begin();
             }
-            innerView.Children.RemoveAt(innerView.Children.Count - 1);
-
-            scrollView.Content = innerView;
-            ModalContent.Children.Add(scrollView);
-
-            ModalActions.Margin = new Thickness(0, 0, 0, 16);
-            Button confHold = CreatePrimaryButton("Confirm Hold", 250);
-            ModalActions.Children.Add(confHold);
-
-            Storyboard sb = FindResource("MoveModal") as Storyboard;
-            sb.Begin();
         }
 
         private void Loc_MouseDown(Object sender, MouseButtonEventArgs e)
@@ -124,6 +133,61 @@ namespace CPSC_481_Digital_Library_Prototype
                 clickLoc.SetSelected(true);
                 _location = clickLoc;
             }
+        }
+
+        private void Checkout_MouseDown(Object sender, MouseButtonEventArgs e)
+        {
+            Books bookInstance = Books.Instance;
+            Users userInstance = Users.Instance;
+
+            Book bookToCheckout = bookInstance.GetBooks()[_book];
+            User user = userInstance.UserDataBase[userInstance.signedInUser];
+
+            CheckedBook checkoutBook = new CheckedBook(bookToCheckout, _format, DateTime.Now.AddDays(7) );
+            ContentSize.Height = 275;
+
+            user.GetCheckedOutBooks().Add(checkoutBook);
+            ModalClose.Visibility = Visibility.Collapsed;
+            Confirmed.Visibility = Visibility.Visible;
+            ModalTitle.Text = "Confirmed";
+            ModalContent.Children.Clear();
+            ModalActions.Children.Clear();
+            AddBookInfo(bookToCheckout, true);
+            SetModalConfirmActions();
+        }
+
+        private void PlaceHold_MouseDown(Object sender, MouseButtonEventArgs e)
+        {
+            Books bookInstance = Books.Instance;
+            Users userInstance = Users.Instance;
+
+            Book bookToCheckout = bookInstance.GetBooks()[_book];
+            User user = userInstance.UserDataBase[userInstance.signedInUser];
+
+            HeldBook heldBook = new HeldBook(bookToCheckout, _format);
+
+            if (_location != null)
+            {
+                heldBook.SetLocation(_location.Name);
+            }
+
+            user.GetHeldBooks().Add(heldBook);
+            ModalClose.Visibility = Visibility.Collapsed;
+            Confirmed.Visibility = Visibility.Visible;
+            ModalTitle.Text = "Confirmed";
+
+            ModalContent.Children.Clear();
+            ModalActions.Children.Clear();
+
+            if (ContentSize.Height != 275)
+            {
+                ContentSize.Height = 275;
+                Storyboard sb = FindResource("MoveModal") as Storyboard;
+                sb.Begin();
+            }
+
+            AddBookInfo(bookToCheckout, true, "Hold until");
+            SetModalConfirmActions();
         }
         #endregion
 
@@ -143,28 +207,43 @@ namespace CPSC_481_Digital_Library_Prototype
         {
             if (flow == "checkout")
             {
-                TextBlock title = CreateTitleBlock(book.GetTitle(), 20, FontWeights.Medium);
-                title.Margin = new Thickness(0, 0, 0, 6);
-                TextBlock subTitle = CreateTitleBlock(book.GetAuthor().GetName(), 16, FontWeights.Normal);
-                TextBlock date = CreateTitleBlock("10/10/23", 12, FontWeights.Normal);
-                subTitle.Margin = new Thickness(0, 0, 0, 6);
-
-                ModalContent.Children.Add(title);
-                ModalContent.Children.Add(subTitle);
-                ModalContent.Children.Add(date);
+                AddBookInfo(book);
             } else
             {
                 TextBlock title = CreateTitleBlock("Preferred Location", 20, FontWeights.Medium);
                 title.Margin = new Thickness(0, 0, 0, 6);
 
-                // TODO - Get actual preferred location
-                string preferredLocation = "fish creek";
-                Location preferedLibrary = new Location(preferredLocation, book.GetTitle().ToLower(), true);
-                _location = preferedLibrary;
+                Users userInstance = Users.Instance;
+                User user;
+                if (userInstance.UserDataBase.TryGetValue(userInstance.signedInUser, out user))
+                {
+                    string preferredLocation = user.location.ToLower();
+                    Location preferedLibrary = new Location(preferredLocation, book.GetTitle().ToLower(), true);
+                    _location = preferedLibrary;
 
-                ModalContent.Children.Add(title);
-                ModalContent.Children.Add(preferedLibrary);
+                    ModalContent.Children.Add(title);
+                    ModalContent.Children.Add(preferedLibrary);
+                }   
             }      
+        }
+
+        private void AddBookInfo(Book book, bool confirm = false, string dateText = "Return Date")
+        {
+            TextBlock title = CreateTitleBlock(book.GetTitle(), 20, FontWeights.Medium);
+            title.Margin = new Thickness(0, 0, 0, 6);
+            TextBlock subTitle = CreateTitleBlock(book.GetAuthor().GetName(), 16, FontWeights.Normal);
+            TextBlock date = CreateTitleBlock(dateText + ": " + DateTime.Now.AddDays(7).ToString("yy/MM/dd"), 12, FontWeights.Normal);
+            subTitle.Margin = new Thickness(0, 0, 0, 6);
+
+            ModalContent.Children.Add(title);
+            ModalContent.Children.Add(subTitle);
+            if (confirm)
+            {
+                TextBlock enjoy = CreateTitleBlock("Enjoy your book!", 12, FontWeights.Normal);
+                enjoy.Margin = new Thickness(0, 0, 0, 3);
+                ModalContent.Children.Add(enjoy);
+            }
+            ModalContent.Children.Add(date);
         }
 
         private void SetModalActions(string flow)
@@ -174,18 +253,28 @@ namespace CPSC_481_Digital_Library_Prototype
             {
                 ModalActions.Margin = new Thickness(0, 0, 0, 16);
                 Button checkoutBtn = CreatePrimaryButton("Confirm Check Out", 250);
+                checkoutBtn.PreviewMouseDown += Checkout_MouseDown;
                 ModalActions.Children.Add(checkoutBtn);
             } else
             {
                 ModalActions.Margin = new Thickness(0, 0, 0, 8);
                 Button holdBtn = CreatePrimaryButton("Place Hold", 175);
                 holdBtn.Margin = new Thickness(4, 0, 4, 4);
+                holdBtn.PreviewMouseDown += PlaceHold_MouseDown;
                 Button moreBtn = CreateSecondaryButton("More Locations", 171);
                 moreBtn.Margin = new Thickness(4, 0, 4, 4);
                 moreBtn.PreviewMouseDown += More_MouseDown;
                 ModalActions.Children.Add(holdBtn);
                 ModalActions.Children.Add(moreBtn);
             }
+        }
+
+        private void SetModalConfirmActions()
+        {
+            ModalActions.Margin = new Thickness(0, 0, 0, 16);
+            Button confirm = CreatePrimaryButton("Confirmed", 250);
+            confirm.PreviewMouseDown += ModalClose_MouseDown;
+            ModalActions.Children.Add(confirm);
         }
 
         private TextBlock CreateTitleBlock(string title, int fontSize, FontWeight fontWeight)

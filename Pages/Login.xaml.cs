@@ -61,7 +61,7 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
                 {
                     if (user.PasswordMatch(enteredPassword))
                     {
-                        instance.signedInUser = user.name;
+                        instance.signedInUser = enteredIdFormated;
                         instance.IsLoggedIn = true;
 
                         //TODO go to account page

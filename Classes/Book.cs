@@ -1,12 +1,14 @@
-﻿using System;
+﻿using CPSC_481_Digital_Library_Prototype.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace CPSC_481_Digital_Library_Prototype.Classes
 {
-    public class Book
+    public class Book: IBook
     {
         private string _imagePath;
 
@@ -19,11 +21,28 @@ namespace CPSC_481_Digital_Library_Prototype.Classes
         private string _series = "";
         private string _nextinseries = "";
 
+        protected Book(Book other)
+        {
+            _author = other._author;
+            _categories = other._categories;
+            _description = other._description;
+            _rating = other._rating;
+            _title = other._title;
+            _series = other._series;
+            _imagePath = other._imagePath;
+            _nextinseries = other._nextinseries;
+    }
+
         public Book(Author author, string[] categories, string imagePath, float rating) {
             _author = author;
             _imagePath = imagePath;
             _rating = rating;
             _categories = categories;
+        }
+
+        public string GetBookType()
+        {
+            return "book";
         }
 
         #region Setters

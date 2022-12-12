@@ -24,12 +24,14 @@ namespace CPSC_481_Digital_Library_Prototype.Components
     {
         Book _book;
         private IPage _callingPage;
+        private string _parentPage;
 
-        public BookDetailCompact(Book book, IPage callingPage)
+        public BookDetailCompact(Book book, IPage callingPage, string parentPage)
         {
             InitializeComponent();
             _book = book;
             _callingPage = callingPage;
+            _parentPage = parentPage;
 
             SetBookAuthor();
             SetBookCover();
@@ -62,9 +64,8 @@ namespace CPSC_481_Digital_Library_Prototype.Components
             if (SearchPage != null)
             {
                 SearchPage.Children[0].Visibility = Visibility.Collapsed;
-                SearchPage.Children[1].Visibility = Visibility.Collapsed;
                 SearchPage.Children[SearchPage.Children.Count - 1].Visibility = Visibility.Collapsed;
-                BookInfo bookInfo = new BookInfo(_book, _callingPage);
+                BookInfo bookInfo = new BookInfo(_book, _callingPage, _parentPage);
                 SearchPage.Children.Add(bookInfo);
             }
         }

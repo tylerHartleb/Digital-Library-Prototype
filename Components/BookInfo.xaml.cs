@@ -25,20 +25,37 @@ namespace CPSC_481_Digital_Library_Prototype.Components
     /// </summary>
     public partial class BookInfo : UserControl, IPage
     {
-        public Book _book { get; private set; }
+        public IBook _book { get; private set; }
         public IPage _prevPage { get; private set; }
 
         private FormatPill[] _formatPills = { };
         private string _selectedFormat = "";
+        private string _parentPage;
 
-        public BookInfo(Book book, IPage prevPage)
+        public BookInfo(IBook book, IPage prevPage, string parentPage)
         {
             InitializeComponent();
             Name = "Details";
             _book = book;
             _prevPage = prevPage;
+            _parentPage = parentPage;
 
             InitializeBookComponent();
+
+            Users instance = Users.Instance;
+            User user;
+            if (instance.UserDataBase.TryGetValue(instance.signedInUser, out user))
+            {
+                user.GetCheckedOutBooks().CollectionChanged += Account_CollectionChanged;
+                user.GetHeldBooks().CollectionChanged += Account_CollectionChanged;
+
+                ShouldHideButton();
+            }
+        }
+
+        private void Account_CollectionChanged(object? sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            ShouldHideButton();
         }
 
         public void ReDrawContent()
@@ -54,22 +71,22 @@ namespace CPSC_481_Digital_Library_Prototype.Components
         public void InitializeBookComponent()
         {
             BackButtonText.Text = _prevPage.Name;
-            AddMainBook(_book);
-            AddFormats(_book);
-            AddSynopsis(_book);
-            AddNextInSeries(_book);
-            AddMoreByThisAuthor(_book);
-            AddRelatedBooks(_book);
+            AddMainBook();
+            AddFormats();
+            AddSynopsis();
+            AddNextInSeries();
+            AddMoreByThisAuthor();
+            AddRelatedBooks();
         }
 
         #region Set Component Info
-        private void AddMainBook(Book book)
+        private void AddMainBook()
         {
-            BookDetail mainDetail = new BookDetail(book, this);
+            BookDetail mainDetail = new BookDetail(_book, this, _parentPage);
             MainBook.Children.Add(mainDetail);
         }
 
-        private void AddFormats(Book book)
+        private void AddFormats()
         {
             Books instance = Books.Instance;
             StackPanel formats = new StackPanel() { Orientation = Orientation.Horizontal, VerticalAlignment = VerticalAlignment.Bottom, HorizontalAlignment = HorizontalAlignment.Center };
@@ -77,9 +94,9 @@ namespace CPSC_481_Digital_Library_Prototype.Components
             formats.SetValue(Grid.ColumnProperty, 1);
 
             // Add aval formats
-            foreach (var entry in instance.GetLibraries().formatAvailability[book.GetTitle().ToLower()])
+            foreach (var entry in instance.GetLibraries().formatAvailability[_book.GetTitle().ToLower()])
             {
-                int index = instance.GetLibraries().formatAvailability[book.GetTitle().ToLower()].ToList().IndexOf(entry);
+                int index = instance.GetLibraries().formatAvailability[_book.GetTitle().ToLower()].ToList().IndexOf(entry);
                 bool selected = false;
                 if (index == 0)
                 {
@@ -96,22 +113,22 @@ namespace CPSC_481_Digital_Library_Prototype.Components
             Formats.Children.Add(formats);
         }
 
-        private void AddSynopsis(Book book)
+        private void AddSynopsis()
         {
-            Synopsis.Text = book.GetDescription();
+            Synopsis.Text = _book.GetDescription();
         }
 
-        private void AddNextInSeries(Book book)
+        private void AddNextInSeries()
         {
             var booksInstance = Books.Instance.GetBooks();
 
-            if (book.GetSeries() != "")
+            if (_book.GetSeries() != "")
             {
-                if (book.GetNextInSeries() != "")
+                if (_book.GetNextInSeries() != "")
                 {
                     TextBlock nextInSeriesTextBlock = CreateTitleBlock("Next in the Series");
-                    Book nextInSeries = booksInstance[book.GetNextInSeries().ToLower()];
-                    BookDetail nextDetails = new BookDetail(nextInSeries, this);// "Details");
+                    Book nextInSeries = booksInstance[_book.GetNextInSeries().ToLower()];
+                    BookDetail nextDetails = new BookDetail(nextInSeries, this, _parentPage);// "Details");
                     NextInSeries.Children.Add(nextInSeriesTextBlock);
                     NextInSeries.Children.Add(nextDetails);
                     SeeAllButton seeAll = new SeeAllButton() { HorizontalAlignment = HorizontalAlignment.Right, Margin = new Thickness(0, 0, 8, 0) };
@@ -121,9 +138,9 @@ namespace CPSC_481_Digital_Library_Prototype.Components
             }
         }
 
-        private void AddMoreByThisAuthor(Book book)
+        private void AddMoreByThisAuthor()
         {
-            var bookAuthor = book.GetAuthor();
+            var bookAuthor = _book.GetAuthor();
             List<Book> writtenBooks = bookAuthor.GetBooks();
             ScrollViewer scrollViewer = new ScrollViewer() { VerticalScrollBarVisibility = ScrollBarVisibility.Disabled, HorizontalScrollBarVisibility = ScrollBarVisibility.Auto, Width = 393 };
             scrollViewer.PreviewMouseWheel += ScrollViewer_PreviewMouseWheel;
@@ -135,9 +152,9 @@ namespace CPSC_481_Digital_Library_Prototype.Components
                 MoreByAuthor.Children.Add(moreByThisAuthor);
                 foreach (Book writtenBook in writtenBooks)
                 {
-                    if (writtenBook != book)
+                    if (writtenBook != _book)
                     {
-                        BookDetailCompact bookDetail = new BookDetailCompact(writtenBook, this);
+                        BookDetailCompact bookDetail = new BookDetailCompact(writtenBook, this, _parentPage);
                         bookPanel.Children.Add(bookDetail);
                     }
                 }
@@ -146,10 +163,10 @@ namespace CPSC_481_Digital_Library_Prototype.Components
             }
         }
 
-        private void AddRelatedBooks(Book book)
+        private void AddRelatedBooks()
         {
             Books instance = Books.Instance;
-            string[] categories = book.GetCategories();
+            string[] categories = _book.GetCategories();
             List<Book> relatedBooks = new List<Book>() { };
             foreach(string category in categories)
             {
@@ -162,7 +179,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
 
                         if (!cat_book.GetSeries().Equals(""))
                         {
-                            inSeries = cat_book.GetSeries() == book.GetSeries();
+                            inSeries = cat_book.GetSeries() == _book.GetSeries();
                         }
 
                         if (!relatedBooks.Contains(cat_book) && !inSeries)
@@ -183,9 +200,9 @@ namespace CPSC_481_Digital_Library_Prototype.Components
                 MoreByAuthor.Children.Add(moreByThisAuthor);
                 foreach (Book writtenBook in relatedBooks)
                 {
-                    if (writtenBook != book)
+                    if (writtenBook != _book)
                     {
-                        BookDetailCompact bookDetail = new BookDetailCompact(writtenBook, this);
+                        BookDetailCompact bookDetail = new BookDetailCompact(writtenBook, this, _parentPage);
                         bookPanel.Children.Add(bookDetail);
                     }
                 }
@@ -226,13 +243,14 @@ namespace CPSC_481_Digital_Library_Prototype.Components
                 // Set clicked true
                 clickedFormat.SetSelected(true);
                 _selectedFormat = clickedFormat._format;
+
                 updateGetButtonText(clickedFormat._available, clickedFormat._format);
             }
         }
 
         private void SeeAllNext_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(BookInfomation, "SearchPage");
+            StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(BookInfomation, _parentPage);
 
             if (SearchPage != null)
             {
@@ -242,7 +260,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
                 string series = _book.GetSeries().ToLower();
                 if (instance.GetBookSeries().ContainsKey(series))
                 {
-                    MoreInfo moreInfo = new MoreInfo(Books.Instance.GetBookSeries()[series].ToArray(), "Details", this);
+                    MoreInfo moreInfo = new MoreInfo(Books.Instance.GetBookSeries()[series].ToArray(), "Details", _book.GetSeries(), this, _parentPage);
                     SearchPage.Children.Add(moreInfo);
                 }
             }
@@ -304,6 +322,31 @@ namespace CPSC_481_Digital_Library_Prototype.Components
             title.TextAlignment = TextAlignment.Center;
             title.Margin = new Thickness(0, 8, 0, 8);
             return title;
+        }
+
+        private void ShouldHideButton()
+        {
+            Users instance = Users.Instance;
+
+            User user;
+            if (instance.UserDataBase.TryGetValue(instance.signedInUser, out user))
+            {
+                foreach (HeldBook book in user.GetHeldBooks())
+                {
+                    if ((book.GetTitle() == _book.GetTitle()))
+                    {
+                        GetBook.Visibility = Visibility.Collapsed;
+                    }
+                }
+
+                foreach (CheckedBook book in user.GetCheckedOutBooks())
+                {
+                    if ((book.GetTitle() == _book.GetTitle()))
+                    {
+                        GetBook.Visibility = Visibility.Collapsed;
+                    }
+                }
+            }
         }
     }
 }

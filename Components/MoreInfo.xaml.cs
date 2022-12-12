@@ -24,18 +24,21 @@ namespace CPSC_481_Digital_Library_Prototype.Components
     /// </summary>
     public partial class MoreInfo : UserControl, IPage
     {
-        private Book[] _books;
+        private IBook[] _books;
         public IPage _prevPage { get; private set; }
         private string _title = "";
+        private string _parentPage;
 
-        public MoreInfo(Book[] books, string name, IPage prevPage)
+        public MoreInfo(IBook[] books, string name, string pageTitle, IPage prevPage, string parentPage)
         {
             InitializeComponent();
             Name = "Series";
             _title = name;
+            _parentPage = parentPage;
             _books = books;
             _prevPage = prevPage;
             BackButtonText.Text = _title;
+            Title.Text = pageTitle;
             RenderBooks();
         }
 
@@ -55,7 +58,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
             foreach (Book book in _books)
             {
                 Grid grid = new Grid() { Margin = new Thickness(0, 8, 0, 8) };
-                BookDetail details = new(book, this);
+                BookDetail details = new(book, this, _parentPage);
                 grid.Children.Add(details);
                 PageScrollContent.Children.Add(grid);
                 Separator bookSep = new Separator() { Foreground = Brushes.LightGray, Margin = new Thickness(10, 8, 10, 8) };
@@ -68,7 +71,7 @@ namespace CPSC_481_Digital_Library_Prototype.Components
         #region Handlers
         private void BackButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(BooksInfo, "SearchPage");
+            StackPanel SearchPage = Utils.FindElementInTree<StackPanel>(BooksInfo, _parentPage);
 
             if (SearchPage != null)
             {

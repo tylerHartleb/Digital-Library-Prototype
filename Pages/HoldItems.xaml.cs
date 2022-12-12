@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using CPSC_481_Digital_Library_Prototype.Classes;
 
 namespace CPSC_481_Digital_Library_Prototype.Pages
 {
@@ -10,17 +11,18 @@ namespace CPSC_481_Digital_Library_Prototype.Pages
     /// </summary>
     public partial class HoldItems : UserControl
     {
-        public HoldItems()
+        public HoldItems(HeldBook[] heldBooks)
         {
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void AddHeldBooks()
         {
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void BackButton_MouseDown(object sender, RoutedEventArgs e)
         {
             Content = new Account();
         }

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:window="clr-namespace:CPSC_481_Digital_Library_Prototype"
              xmlns:local="clr-namespace:CPSC_481_Digital_Library_Prototype.Components"
              mc:Ignorable="d" 
              d:DesignHeight="648" d:DesignWidth="393">
@@ -35,15 +36,16 @@
                 <StackPanel x:Name="RelatedBooks" Margin="0,4,0,90"/>
             </StackPanel>
         </ScrollViewer>
-        <Button 
-            Grid.Row="3"
-            x:Name="GetBook"
-            Style="{StaticResource styleBtnPrimary}"
-            PreviewMouseDown="GetBook_MouseDown"
-            VerticalAlignment="Bottom"
-            Content="Place Hold"
-            Height="50"
-            Width="273"
-        />
+        <window:If Condition="True" Grid.Row="3" VerticalAlignment="Bottom">
+            <Button 
+                x:Name="GetBook"
+                Style="{StaticResource styleBtnPrimary}"
+                Visibility="Visible"
+                PreviewMouseDown="GetBook_MouseDown"
+                Content="Place Hold"
+                Height="50"
+                Width="273"
+            />
+        </window:If>
     </Grid>
 </UserControl>

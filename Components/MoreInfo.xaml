@@ -19,7 +19,8 @@
             </Grid>
         </Button>
         <StackPanel Grid.Row="1" x:Name="BooksInfo">
-            <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" MinHeight="200" Height="550" Width="373" Margin="0,0,0,0">
+            <TextBlock x:Name="Title" Text=""  HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="22" FontWeight="Bold" TextAlignment="Center" Margin="10" Height="30"></TextBlock>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" MinHeight="200" Height="500" Width="373" Margin="0,0,0,0">
                 <StackPanel x:Name="PageScrollContent" Width="373" />
             </ScrollViewer>
         </StackPanel>
