@@ -61,6 +61,9 @@ namespace CPSC_481_Digital_Library_Prototype
             ModalContent.Children.Clear();
             ModalActions.Children.Clear();
 
+            ModalClose.Visibility = Visibility.Visible;
+            Confirmed.Visibility = Visibility.Collapsed;
+
             Storyboard sb = FindResource("CloseModal") as Storyboard;
             sb.Begin();
         }
