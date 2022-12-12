@@ -24,12 +24,21 @@
                 <DiscreteObjectKeyFrame KeyTime="0:0:.1" Value="{x:Static Visibility.Visible}"/>
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
-        <Storyboard x:Key="MoveModal">
+        <Storyboard x:Key="MoveModalUp">
             <DoubleAnimation    
                 Storyboard.TargetName="Modal" 
                 Storyboard.TargetProperty="Height"
                 From="{Binding ElementName=Modal, Path=Height}" 
                 To="548"
+                Duration="0:0:.1" 
+            />
+        </Storyboard>
+        <Storyboard x:Key="MoveModalDown">
+            <DoubleAnimation    
+                Storyboard.TargetName="Modal" 
+                Storyboard.TargetProperty="Height"
+                From="{Binding ElementName=Modal, Path=Height}" 
+                To="275"
                 Duration="0:0:.1" 
             />
         </Storyboard>

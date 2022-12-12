@@ -121,7 +121,7 @@ namespace CPSC_481_Digital_Library_Prototype
                 confHold.PreviewMouseDown += PlaceHold_MouseDown;
                 ModalActions.Children.Add(confHold);
 
-                Storyboard sb = FindResource("MoveModal") as Storyboard;
+                Storyboard sb = FindResource("MoveModalUp") as Storyboard;
                 sb.Begin();
             }
         }
@@ -189,7 +189,7 @@ namespace CPSC_481_Digital_Library_Prototype
             {
                 ContentSize.Height = 275;
 
-                Storyboard sb = FindResource("MoveModal") as Storyboard;
+                Storyboard sb = FindResource("MoveModalDown") as Storyboard;
                 sb.Begin();
             }
 
