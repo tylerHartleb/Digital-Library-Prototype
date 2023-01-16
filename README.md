@@ -1,4 +1,4 @@
-# CPSC 481 Digital Library Vertical Prototype
+# Digital Library Vertical Prototype
 
 ### Contributors
 
@@ -27,7 +27,7 @@ This project is a vertical prototype implemented using Windows Presentation Foun
 
 1. Clone the repo
   ```
-  git clone https://github.com/tylerHartleb/CPSC-481-Digital-Library-Prototype.git
+  git clone https://github.com/tylerHartleb/Digital-Library-Prototype.git
   ```
 2. Open the repo in Visual Studio 2022
 3. Build the project
